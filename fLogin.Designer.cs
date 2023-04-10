@@ -40,66 +40,71 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 88);
+            this.label1.Location = new System.Drawing.Point(27, 138);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 24);
+            this.label1.Size = new System.Drawing.Size(288, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "TÊN ĐĂNG NHẬP:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 88);
+            this.textBox1.Location = new System.Drawing.Point(306, 138);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(517, 22);
+            this.textBox1.Size = new System.Drawing.Size(774, 31);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(204, 172);
+            this.textBox2.Location = new System.Drawing.Point(306, 269);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(517, 22);
+            this.textBox2.Size = new System.Drawing.Size(774, 31);
             this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 172);
+            this.label2.Location = new System.Drawing.Point(27, 269);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 24);
+            this.label2.Size = new System.Drawing.Size(196, 37);
             this.label2.TabIndex = 3;
             this.label2.Text = "MẬT KHẨU:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(466, 237);
+            this.button1.Location = new System.Drawing.Point(699, 370);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 47);
+            this.button1.Size = new System.Drawing.Size(153, 73);
             this.button1.TabIndex = 4;
             this.button1.Text = "Đăng nhập ";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(619, 237);
+            this.button2.Location = new System.Drawing.Point(928, 370);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 47);
+            this.button2.Size = new System.Drawing.Size(153, 73);
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 339);
+            this.ClientSize = new System.Drawing.Size(1202, 530);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
