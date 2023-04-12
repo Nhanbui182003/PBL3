@@ -72,6 +72,18 @@
     <Compile Include="View\Admin\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Học viên\fDMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fDMK.Designer.cs">
+      <DependentUpon>fDMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Học viên\fHocvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fHocvien.Designer.cs">
+      <DependentUpon>fHocvien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Admin\fAddCourse.resx">
       <DependentUpon>fAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +101,12 @@
     </Compile>
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fDMK.resx">
+      <DependentUpon>fDMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fHocvien.resx">
+      <DependentUpon>fHocvien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
