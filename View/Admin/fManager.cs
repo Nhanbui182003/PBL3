@@ -44,5 +44,16 @@ namespace PBL3.View
         {
 
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            fAccount f = new fAccount();
+            f.ShowDialog();
+        }
     }
 }
