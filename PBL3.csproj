@@ -84,6 +84,36 @@
     <Compile Include="View\Admin\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Học viên\fClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fClass.Designer.cs">
+      <DependentUpon>fClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Học viên\fLH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fLH.Designer.cs">
+      <DependentUpon>fLH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Học viên\fHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fHP.Designer.cs">
+      <DependentUpon>fHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Học viên\fHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fHV.Designer.cs">
+      <DependentUpon>fHV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Học viên\fKQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Học viên\fKQ.Designer.cs">
+      <DependentUpon>fKQ.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Admin\fAddCourse.resx">
       <DependentUpon>fAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +134,21 @@
     </Compile>
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fClass.resx">
+      <DependentUpon>fClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fLH.resx">
+      <DependentUpon>fLH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fHP.resx">
+      <DependentUpon>fHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fHV.resx">
+      <DependentUpon>fHV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Học viên\fKQ.resx">
+      <DependentUpon>fKQ.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
