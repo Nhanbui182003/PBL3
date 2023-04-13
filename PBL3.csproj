@@ -85,10 +85,13 @@
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="View\Admin\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>
 =======
+=======
+>>>>>>> abac035e221e8f400f70b73ad076172b6b8ce7fd
     <Compile Include="View\Học viên\fDMK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +104,9 @@
     <Compile Include="View\Học viên\fHocvien.Designer.cs">
       <DependentUpon>fHocvien.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+>>>>>>> abac035e221e8f400f70b73ad076172b6b8ce7fd
+=======
 >>>>>>> abac035e221e8f400f70b73ad076172b6b8ce7fd
     <EmbeddedResource Include="View\Admin\fAddCourse.resx">
       <DependentUpon>fAddCourse.cs</DependentUpon>
