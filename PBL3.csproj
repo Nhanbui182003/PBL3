@@ -105,12 +105,6 @@
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Học viên\fDMK.resx">
-      <DependentUpon>fDMK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Học viên\fHocvien.resx">
-      <DependentUpon>fHocvien.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DB.designer.cs</LastGenOutput>
