@@ -72,14 +72,14 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Location = new System.Drawing.Point(15, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(695, 120);
+            this.panel2.Size = new System.Drawing.Size(695, 100);
             this.panel2.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 14);
+            this.button2.Location = new System.Drawing.Point(15, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 89);
+            this.button2.Size = new System.Drawing.Size(172, 56);
             this.button2.TabIndex = 1;
             this.button2.Text = "Thêm học viên";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             this.panel3.Controls.Add(this.button4);
             this.panel3.Location = new System.Drawing.Point(716, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(583, 120);
+            this.panel3.Size = new System.Drawing.Size(583, 100);
             this.panel3.TabIndex = 4;
             // 
             // panel4
@@ -115,18 +115,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 14);
+            this.button1.Location = new System.Drawing.Point(210, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 89);
+            this.button1.Size = new System.Drawing.Size(172, 56);
             this.button1.TabIndex = 2;
             this.button1.Text = "Xóa học viên";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(503, 14);
+            this.button3.Location = new System.Drawing.Point(405, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 89);
+            this.button3.Size = new System.Drawing.Size(224, 56);
             this.button3.TabIndex = 3;
             this.button3.Text = "Thay đổi giảng viên";
             this.button3.UseVisualStyleBackColor = true;
