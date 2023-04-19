@@ -37,11 +37,22 @@ namespace PBL3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7QF55P0T\\SQLEXPRESS;Initial Catalog=WebSiteEnglishCenter_7;Int" +
-            "egrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7QF55P0\\SQLEXPRESS;InitialCatalog=WebSiteEnglishCenter_7;Integ" +
+            "rated Security=True")]
         public string WebSiteEnglishCenter_7ConnectionString {
             get {
                 return ((string)(this["WebSiteEnglishCenter_7ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-FJTHC2E;Initial Catalog=WebSiteEnglishCenter_7;Integrated Sec" +
+            "urity=True")]
+        public string StrConnection {
+            get {
+                return ((string)(this["StrConnection"]));
             }
         }
     }

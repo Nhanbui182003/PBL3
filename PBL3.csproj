@@ -33,9 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,10 +56,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB.designer.cs">
+    <Compile Include="Account.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Account_Info.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DB.dbml</DependentUpon>
+      <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LearningResult.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fAccount.cs">
       <SubType>Form</SubType>
@@ -131,6 +174,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
@@ -150,14 +194,15 @@
     <EmbeddedResource Include="View\Học viên\fKQ.resx">
       <DependentUpon>fKQ.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EntityDeploy Include="DBEnglishCenter.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBEnglishCenter.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="DBEnglishCenter.edmx.diagram">
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
     </None>
-    <None Include="DB.dbml.layout">
-      <DependentUpon>DB.dbml</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,14 +214,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBEnglishCenter.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBEnglishCenter.Context.cs</LastGenOutput>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBEnglishCenter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+      <LastGenOutput>DBEnglishCenter.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
