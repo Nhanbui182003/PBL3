@@ -1,4 +1,5 @@
 ﻿using PBL3.View;
+using PBL3.View.Giảng_viên;
 using PBL3.View.Học_viên;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,9 @@ namespace PBL3
                 } else
                 if (account.Role_ID == 2)
                 {
-                    
+                    this.Hide();
+                    fTeacher f = new fTeacher();
+                    f.ShowDialog();
                 } else
                 {
                     this.Hide();
