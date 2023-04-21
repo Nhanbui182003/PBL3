@@ -127,6 +127,18 @@
     <Compile Include="View\Admin\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Giảng viên\fTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fTeacher.Designer.cs">
+      <DependentUpon>fTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Giảng viên\MyClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\MyClass.Designer.cs">
+      <DependentUpon>MyClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Học viên\fClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </Compile>
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fTeacher.resx">
+      <DependentUpon>fTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\MyClass.resx">
+      <DependentUpon>MyClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Học viên\fClass.resx">
       <DependentUpon>fClass.cs</DependentUpon>
