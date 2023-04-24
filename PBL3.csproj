@@ -89,6 +89,7 @@
     <Compile Include="Document.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="LearningResult.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
@@ -231,10 +232,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

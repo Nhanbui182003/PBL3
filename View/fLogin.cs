@@ -43,7 +43,8 @@ namespace PBL3
                 } else
                 {
                     this.Hide();
-                    fHV f = new fHV();
+                    var id = account.ID;
+                    fHV f = new fHV(id);
                     f.ShowDialog();
                 }
                 

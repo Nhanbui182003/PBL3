@@ -16,5 +16,13 @@ namespace PBL3.View.Học_viên
         {
             InitializeComponent();
         }
+
+        //private void Show()
+        //{
+        //    using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+        //    {
+
+        //    }
+        //}
     }
 }

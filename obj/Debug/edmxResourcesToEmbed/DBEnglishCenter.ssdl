@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebSiteEnglishCenter_7Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="150" />
+    <Property Name="password" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Account_Info">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="Gender" Type="bit" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="float" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_ID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="MaxStudent" Type="int" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Start_date" Type="datetime" />
+    <Property Name="End_date" Type="datetime" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Price" Type="int" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Class_ID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="LearningResult">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+      <PropertyRef Name="Class_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Class_ID" Type="int" Nullable="false" />
+    <Property Name="Assignment_Point" Type="float" />
+    <Property Name="MidTermExam_Point" Type="float" />
+    <Property Name="FinalExam_Point" Type="float" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Role_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="Account_RoleID">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountInfo_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Account_Info" Type="Self.Account_Info" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Account_Info">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Bill_AccountID">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Class_CourseID">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Class">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Document_ClassID">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Result_AccountID">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="LearningResult" Type="Self.LearningResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LearningResult">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Result_ClassID">
+    <End Role="Class" Type="Self.Class" Multiplicity="1" />
+    <End Role="LearningResult" Type="Self.LearningResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LearningResult">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebSiteEnglishCenter_7ModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Account_Info" EntityType="Self.Account_Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LearningResult" EntityType="Self.LearningResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Account_RoleID" Association="Self.Account_RoleID">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="AccountInfo_Account" Association="Self.AccountInfo_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Account_Info" EntitySet="Account_Info" />
+    </AssociationSet>
+    <AssociationSet Name="Bill_AccountID" Association="Self.Bill_AccountID">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="Class_CourseID" Association="Self.Class_CourseID">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="Document_ClassID" Association="Self.Document_ClassID">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="Result_AccountID" Association="Self.Result_AccountID">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="LearningResult" EntitySet="LearningResult" />
+    </AssociationSet>
+    <AssociationSet Name="Result_ClassID" Association="Self.Result_ClassID">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="LearningResult" EntitySet="LearningResult" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
