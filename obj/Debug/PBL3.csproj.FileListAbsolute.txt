@@ -24,5 +24,3 @@ D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.SqlServer.xml
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacher.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.MyClass.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.fTeacher.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.Teacher.MyClass.resources
