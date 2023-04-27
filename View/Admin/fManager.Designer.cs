@@ -39,7 +39,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvClass = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,8 +87,8 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtSearchCourse = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.dgvCourse = new System.Windows.Forms.DataGridView();
@@ -106,11 +106,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.btnSortCourse = new System.Windows.Forms.Button();
+            this.cbSortCourse = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).BeginInit();
             this.panel6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -135,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -224,21 +228,22 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.dataGridView3);
+            this.panel7.Controls.Add(this.dgvClass);
             this.panel7.Location = new System.Drawing.Point(6, 113);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1452, 760);
             this.panel7.TabIndex = 1;
             // 
-            // dataGridView3
+            // dgvClass
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 82;
-            this.dataGridView3.RowTemplate.Height = 33;
-            this.dataGridView3.Size = new System.Drawing.Size(1446, 757);
-            this.dataGridView3.TabIndex = 0;
+            this.dgvClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClass.Location = new System.Drawing.Point(3, 3);
+            this.dgvClass.Name = "dgvClass";
+            this.dgvClass.RowHeadersWidth = 82;
+            this.dgvClass.RowTemplate.Height = 33;
+            this.dgvClass.Size = new System.Drawing.Size(1446, 757);
+            this.dgvClass.TabIndex = 0;
             // 
             // panel6
             // 
@@ -256,7 +261,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(290, 33);
             this.comboBox1.TabIndex = 1;
-//            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -656,6 +660,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.panel18);
             this.tabPage3.Controls.Add(this.panel17);
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Controls.Add(this.panel3);
@@ -669,28 +674,29 @@
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.textBox21);
-            this.panel17.Controls.Add(this.button3);
-            this.panel17.Location = new System.Drawing.Point(827, 6);
+            this.panel17.Controls.Add(this.txtSearchCourse);
+            this.panel17.Controls.Add(this.btnSearch);
+            this.panel17.Location = new System.Drawing.Point(1059, 6);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(631, 100);
+            this.panel17.Size = new System.Drawing.Size(399, 100);
             this.panel17.TabIndex = 3;
             // 
-            // textBox21
+            // txtSearchCourse
             // 
-            this.textBox21.Location = new System.Drawing.Point(174, 33);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(454, 31);
-            this.textBox21.TabIndex = 26;
+            this.txtSearchCourse.Location = new System.Drawing.Point(148, 32);
+            this.txtSearchCourse.Name = "txtSearchCourse";
+            this.txtSearchCourse.Size = new System.Drawing.Size(248, 31);
+            this.txtSearchCourse.TabIndex = 26;
             // 
-            // button3
+            // btnSearch
             // 
-            this.button3.Location = new System.Drawing.Point(33, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 44);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Tìm kiếm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(25, 26);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(117, 44);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel5
             // 
@@ -727,7 +733,7 @@
             this.panel3.Controls.Add(this.btnAddCourse);
             this.panel3.Location = new System.Drawing.Point(7, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(814, 100);
+            this.panel3.Size = new System.Drawing.Size(597, 100);
             this.panel3.TabIndex = 0;
             // 
             // btnUpdateCourse
@@ -859,6 +865,38 @@
             this.tabControl1.Size = new System.Drawing.Size(1480, 926);
             this.tabControl1.TabIndex = 0;
             // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.cbSortCourse);
+            this.panel18.Controls.Add(this.btnSortCourse);
+            this.panel18.Location = new System.Drawing.Point(610, 6);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(443, 100);
+            this.panel18.TabIndex = 4;
+            // 
+            // btnSortCourse
+            // 
+            this.btnSortCourse.Location = new System.Drawing.Point(26, 26);
+            this.btnSortCourse.Name = "btnSortCourse";
+            this.btnSortCourse.Size = new System.Drawing.Size(117, 44);
+            this.btnSortCourse.TabIndex = 27;
+            this.btnSortCourse.Text = "Sắp xếp";
+            this.btnSortCourse.UseVisualStyleBackColor = true;
+            this.btnSortCourse.Click += new System.EventHandler(this.btnSortCourse_Click);
+            // 
+            // cbSortCourse
+            // 
+            this.cbSortCourse.FormattingEnabled = true;
+            this.cbSortCourse.Items.AddRange(new object[] {
+            "Tên",
+            "Ngày bắt đầu",
+            "Ngày kết thúc",
+            "Giá"});
+            this.cbSortCourse.Location = new System.Drawing.Point(160, 33);
+            this.cbSortCourse.Name = "cbSortCourse";
+            this.cbSortCourse.Size = new System.Drawing.Size(256, 33);
+            this.cbSortCourse.TabIndex = 28;
+            // 
             // fManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -874,7 +912,7 @@
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClass)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
@@ -906,6 +944,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -922,7 +961,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvClass;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
@@ -963,8 +1002,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtSearchCourse;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnUpdateCourse;
         private System.Windows.Forms.Button button16;
@@ -989,5 +1028,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.ComboBox cbSortCourse;
+        private System.Windows.Forms.Button btnSortCourse;
     }
 }

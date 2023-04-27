@@ -66,5 +66,38 @@ namespace PBL3.View
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                var course = db.Courses.Where(p=>p.Name.Contains(txtSearchCourse.Text)).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                if (course!=null)
+                {
+                    dgvCourse.DataSource = course;
+                }
+            }
+        }
+
+        private void btnSortCourse_Click(object sender, EventArgs e)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                switch (cbSortCourse.SelectedIndex)
+                {
+                    case 0:
+                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Name).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                        break;
+                    case 1:
+                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Start_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                        break;
+                    case 2:
+                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.End_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                        break;
+                    case 3:
+                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Price).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                        break;
+                }
+            }
+        }
     }
 }
