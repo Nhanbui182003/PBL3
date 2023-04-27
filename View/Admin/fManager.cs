@@ -16,44 +16,55 @@ namespace PBL3.View
         public fManager()
         {
             InitializeComponent();
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                dgvCourse.DataSource = db.Courses.Select(p=> new {p.ID,p.Name,p.Start_date,p.End_date,p.Price}).ToList();
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAddCourse_Click(object sender, EventArgs e)
         {
             fAddCourse fadd = new fAddCourse();
             fadd.ShowDialog();
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                dgvCourse.DataSource = db.Courses.Select(p => new {p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnDelCourse_Click(object sender, EventArgs e)
         {
-            fAddCourse fupdate = new fAddCourse();
-            fupdate.ShowDialog();
+            if (dgvCourse.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow i in dgvCourse.SelectedRows)
+                {
+                    using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+                    {
+                        int id = Convert.ToInt32(i.Cells["ID"].Value.ToString());
+                        var course = db.Courses.Where(p=>p.ID == id).FirstOrDefault(); 
+                        db.Courses.Remove(course);
+                        db.SaveChanges();
+                        dgvCourse.DataSource = db.Courses.Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+
+                    }
+                }
+            }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void btnUpdateCourse_Click(object sender, EventArgs e)
         {
+            if (dgvCourse.SelectedRows.Count>0)
+            {
+                int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells["ID"].Value.ToString());
+                fAddCourse f = new fAddCourse(id);
+                f.ShowDialog();
+                using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+                {
+                    dgvCourse.DataSource = db.Courses.Select(p=> new { p.ID, p.Name,p.Start_date,p.End_date,p.Price }).ToList();
+                }
 
+            }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            fAccount f = new fAccount();
-            f.ShowDialog();
-        }
     }
 }

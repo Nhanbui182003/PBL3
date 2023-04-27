@@ -91,11 +91,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvCourse = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdateCourse = new System.Windows.Forms.Button();
+            this.btnDelCourse = new System.Windows.Forms.Button();
+            this.btnAddCourse = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -128,7 +128,7 @@
             this.tabPage3.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).BeginInit();
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -184,7 +184,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 25);
             this.label4.TabIndex = 2;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel8
             // 
@@ -213,7 +212,6 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "Quản lý lớp học";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button5
             // 
@@ -223,7 +221,6 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "Thêm lớp học";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel7
             // 
@@ -259,6 +256,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(290, 33);
             this.comboBox1.TabIndex = 1;
+//            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -562,7 +560,6 @@
             this.button14.TabIndex = 0;
             this.button14.Text = "Thêm tài khoản";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // tabPage5
             // 
@@ -698,12 +695,11 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label26);
-            this.panel5.Controls.Add(this.dataGridView2);
+            this.panel5.Controls.Add(this.dgvCourse);
             this.panel5.Location = new System.Drawing.Point(7, 112);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1451, 761);
             this.panel5.TabIndex = 2;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label26
             // 
@@ -713,53 +709,56 @@
             this.label26.Size = new System.Drawing.Size(0, 25);
             this.label26.TabIndex = 15;
             // 
-            // dataGridView2
+            // dgvCourse
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(1448, 755);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourse.Location = new System.Drawing.Point(3, 3);
+            this.dgvCourse.Name = "dgvCourse";
+            this.dgvCourse.RowHeadersWidth = 82;
+            this.dgvCourse.RowTemplate.Height = 33;
+            this.dgvCourse.Size = new System.Drawing.Size(1448, 755);
+            this.dgvCourse.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button19);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnUpdateCourse);
+            this.panel3.Controls.Add(this.btnDelCourse);
+            this.panel3.Controls.Add(this.btnAddCourse);
             this.panel3.Location = new System.Drawing.Point(7, 6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(814, 100);
             this.panel3.TabIndex = 0;
             // 
-            // button19
+            // btnUpdateCourse
             // 
-            this.button19.Location = new System.Drawing.Point(406, 20);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(172, 56);
-            this.button19.TabIndex = 3;
-            this.button19.Text = "Cập nhật";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btnUpdateCourse.Location = new System.Drawing.Point(406, 20);
+            this.btnUpdateCourse.Name = "btnUpdateCourse";
+            this.btnUpdateCourse.Size = new System.Drawing.Size(172, 56);
+            this.btnUpdateCourse.TabIndex = 3;
+            this.btnUpdateCourse.Text = "Cập nhật";
+            this.btnUpdateCourse.UseVisualStyleBackColor = true;
+            this.btnUpdateCourse.Click += new System.EventHandler(this.btnUpdateCourse_Click);
             // 
-            // button4
+            // btnDelCourse
             // 
-            this.button4.Location = new System.Drawing.Point(212, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(172, 56);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDelCourse.Location = new System.Drawing.Point(212, 20);
+            this.btnDelCourse.Name = "btnDelCourse";
+            this.btnDelCourse.Size = new System.Drawing.Size(172, 56);
+            this.btnDelCourse.TabIndex = 2;
+            this.btnDelCourse.Text = "Xóa";
+            this.btnDelCourse.UseVisualStyleBackColor = true;
+            this.btnDelCourse.Click += new System.EventHandler(this.btnDelCourse_Click);
             // 
-            // button2
+            // btnAddCourse
             // 
-            this.button2.Location = new System.Drawing.Point(15, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 56);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAddCourse.Location = new System.Drawing.Point(15, 20);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(172, 56);
+            this.btnAddCourse.TabIndex = 0;
+            this.btnAddCourse.Text = "Thêm";
+            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // tabPage2
             // 
@@ -899,7 +898,7 @@
             this.panel17.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -949,10 +948,10 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvCourse;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelCourse;
+        private System.Windows.Forms.Button btnAddCourse;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -967,7 +966,7 @@
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button btnUpdateCourse;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button20;
