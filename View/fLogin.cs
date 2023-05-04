@@ -32,7 +32,7 @@ namespace PBL3
                 if (account.Role_ID==1)
                 {
                     this.Hide();
-                    fManager f = new fManager();
+                    fManager f = new fManager(account.ID);
                     f.ShowDialog();
                 } else
                 if (account.Role_ID == 2)

@@ -1,4 +1,5 @@
-﻿using PBL3.View.Admin;
+﻿using PBL3.BLL;
+using PBL3.View.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,26 @@ namespace PBL3.View
 {
     public partial class fManager : Form
     {
-        public fManager()
+        public int ID { get; set; }
+        public fManager(int id)
         {
             InitializeComponent();
-            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            SetCBB();
+            ID = id;
+            dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p=> new {p.ID,p.Name,p.Start_date,p.End_date,p.Price}).ToList();
+            dgvClass.DataSource = new ManagerBLL().GetAllClassBLL().ToList().Select(p=>new {p.ID,p.Name,p.Course.ID,p.MaxStudent}).ToList();  
+        }
+        public void SetCBB()
+        {
+            var listCourse = new ManagerBLL().GetALlCourseBLL();
+            cbbListCourse.Items.Add(new CBBItem() { Value = 0,Text="All" }) ;
+            foreach (Course i in listCourse)
             {
-                dgvCourse.DataSource = db.Courses.Select(p=> new {p.ID,p.Name,p.Start_date,p.End_date,p.Price}).ToList();
+                cbbListCourse.Items.Add(new CBBItem()
+                {
+                    Value= i.ID,
+                    Text= i.Name,
+                });
             }
         }
 
@@ -26,10 +41,7 @@ namespace PBL3.View
         {
             fAddCourse fadd = new fAddCourse();
             fadd.ShowDialog();
-            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
-            {
-                dgvCourse.DataSource = db.Courses.Select(p => new {p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-            }
+            dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
         }
 
         private void btnDelCourse_Click(object sender, EventArgs e)
@@ -38,15 +50,9 @@ namespace PBL3.View
             {
                 foreach (DataGridViewRow i in dgvCourse.SelectedRows)
                 {
-                    using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
-                    {
-                        int id = Convert.ToInt32(i.Cells["ID"].Value.ToString());
-                        var course = db.Courses.Where(p=>p.ID == id).FirstOrDefault(); 
-                        db.Courses.Remove(course);
-                        db.SaveChanges();
-                        dgvCourse.DataSource = db.Courses.Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-
-                    }
+                    int id = Convert.ToInt32(i.Cells[0].Value);
+                    new ManagerBLL().DeleteCourseBLL(id);
+                    dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
                 }
             }
         }
@@ -58,45 +64,45 @@ namespace PBL3.View
                 int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells["ID"].Value.ToString());
                 fAddCourse f = new fAddCourse(id);
                 f.ShowDialog();
-                using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
-                {
-                    dgvCourse.DataSource = db.Courses.Select(p=> new { p.ID, p.Name,p.Start_date,p.End_date,p.Price }).ToList();
-                }
-
+                dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
-            {
-                var course = db.Courses.Where(p=>p.Name.Contains(txtSearchCourse.Text)).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-                if (course!=null)
-                {
-                    dgvCourse.DataSource = course;
-                }
-            }
+            dgvCourse.DataSource = new ManagerBLL().GetCourseByNameBLL(txtSearchCourse.Text).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
         }
 
         private void btnSortCourse_Click(object sender, EventArgs e)
         {
-            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            List<Course> list = new ManagerBLL().GetALlCourseBLL();
+            switch (cbSortCourse.SelectedIndex)
             {
-                switch (cbSortCourse.SelectedIndex)
-                {
-                    case 0:
-                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Name).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-                        break;
-                    case 1:
-                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Start_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-                        break;
-                    case 2:
-                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.End_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-                        break;
-                    case 3:
-                        dgvCourse.DataSource = db.Courses.OrderBy(p => p.Price).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
-                        break;
-                }
+                case 0:
+                    dgvCourse.DataSource = list.OrderBy(p => p.Name).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                    break;
+                case 1:
+                    dgvCourse.DataSource = list.OrderBy(p => p.Start_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                    break;
+                case 2:
+                    dgvCourse.DataSource = list.OrderBy(p => p.End_date).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                    break;
+                case 3:
+                    dgvCourse.DataSource = list.OrderBy(p => p.Price).Select(p => new { p.ID, p.Name, p.Start_date, p.End_date, p.Price }).ToList();
+                    break;
+            }
+        }
+
+        private void cbbListCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int courseID = ((CBBItem)cbbListCourse.SelectedItem).Value;
+            if (courseID == 0)
+            {
+                dgvClass.DataSource = new ManagerBLL().GetAllClassBLL().ToList();
+            }
+            else
+            {
+                dgvClass.DataSource = new ManagerBLL().GetAllClassByCourseIDBLL(courseID).ToList();
             }
         }
     }
