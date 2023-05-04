@@ -20,12 +20,12 @@ namespace PBL3
             this.Bills = new HashSet<Bill>();
         }
     
-        public int ID { get; set; }
-        public Nullable<int> Account_ID { get; set; }
-        public Nullable<int> Class_ID { get; set; }
-        public Nullable<double> Assignment_Point { get; set; }
-        public Nullable<double> MidTermExam_Point { get; set; }
-        public Nullable<double> FinalExam_Point { get; set; }
+        public int Id { get; set; }
+        public int AccountId { get; set; }
+        public int ClassId { get; set; }
+        public Nullable<double> AssignmentPoint { get; set; }
+        public Nullable<double> MidTermExamPoint { get; set; }
+        public Nullable<double> FinalExamPoint { get; set; }
     
         public virtual Account Account { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

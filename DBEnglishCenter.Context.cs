@@ -26,7 +26,7 @@ namespace PBL3
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<Account_Info> Account_Info { get; set; }
+        public virtual DbSet<AccountInfo> AccountInfoes { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Calendar> Calendars { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
@@ -34,6 +34,5 @@ namespace PBL3
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<LearningResult> LearningResults { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

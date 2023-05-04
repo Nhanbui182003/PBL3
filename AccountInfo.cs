@@ -12,12 +12,16 @@ namespace PBL3
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class AccountInfo
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int AccountId { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public Nullable<System.DateTime> Birthday { get; set; }
+        public string Address { get; set; }
+        public bool Gender { get; set; }
+    
+        public virtual Account Account { get; set; }
     }
 }

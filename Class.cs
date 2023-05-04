@@ -22,9 +22,9 @@ namespace PBL3
             this.LearningResults = new HashSet<LearningResult>();
         }
     
-        public int ID { get; set; }
-        public Nullable<int> Course_ID { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
+        public int CourseId { get; set; }
+        public string ClassName { get; set; }
         public Nullable<int> MaxStudent { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

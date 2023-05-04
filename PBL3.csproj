@@ -59,7 +59,7 @@
     <Compile Include="Account.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Account_Info.cs">
+    <Compile Include="AccountInfo.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs">
@@ -100,9 +100,6 @@
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fAccount.cs">
@@ -260,6 +257,5 @@
       <LastGenOutput>DBEnglishCenter.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

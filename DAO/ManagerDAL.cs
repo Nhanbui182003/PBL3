@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var course = db.Courses.Where(p => p.ID==id).FirstOrDefault();
+                var course = db.Courses.Where(p => p.Id==id).FirstOrDefault();
                 return course;
             }
         }
@@ -28,7 +29,7 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var course = db.Courses.Where(p => p.Name.Contains(name));
+                var course = db.Courses.Where(p => p.CourseName.Contains(name));
                 return course.ToList();
             }
         }
@@ -44,13 +45,13 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var course = db.Courses.Where(p=>p.ID==id).FirstOrDefault(); 
+                var course = db.Courses.Where(p=>p.Id==id).FirstOrDefault(); 
                 if (course != null)
                 {
-                    var classes = db.Classes.Where(p => p.Course_ID == id);
+                    var classes = db.Classes.Where(p => p.CourseId == id);
                     foreach (var c in classes)
                     {
-                        var learningResult = db.LearningResults.Where(p => p.Class_ID == id);
+                        var learningResult = db.LearningResults.Where(p => p.ClassId == id);
                         db.LearningResults.RemoveRange(learningResult);
                     }
                     db.Classes.RemoveRange(classes);
@@ -63,13 +64,13 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var course = db.Courses.Where(p=>p.ID == newcourse.ID).FirstOrDefault();
+                var course = db.Courses.Where(p=>p.Id == newcourse.Id).FirstOrDefault();
                 if (course != null) 
                 { 
-                    course.Name = newcourse.Name;
+                    course.CourseName = newcourse.CourseName;
                     course.Description = newcourse.Description;
-                    course.Start_date = newcourse.Start_date;
-                    course.End_date= newcourse.End_date;
+                    course.StartDate = newcourse.StartDate;
+                    course.EndDate= newcourse.EndDate;
                     course.Price= newcourse.Price;
                     db.SaveChanges() ;
                 }
@@ -80,14 +81,14 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.ToList();
+                return db.Classes.Include(p=>p.Course).ToList();
             }
         }
         public List<Class> GetAllClassByCourseIDDAL(int id)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Where(p=>p.Course_ID==id).ToList();
+                return db.Classes.Where(p=>p.CourseId==id).ToList();
             }
         }
 
