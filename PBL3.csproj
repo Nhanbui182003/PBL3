@@ -102,6 +102,7 @@
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CbbCourse.cs" />
+    <Compile Include="DAL\ManagerDAL.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBRole.cs" />
     <Compile Include="DTO\Cons.cs" />
