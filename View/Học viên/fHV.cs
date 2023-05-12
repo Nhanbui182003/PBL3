@@ -24,15 +24,15 @@ namespace PBL3.View.Học_viên
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var hv = db.Accounts.Where(p=> p.ID == mshv).FirstOrDefault();
+                var hv = db.Accounts.Where(p=> p.Id == mshv).FirstOrDefault();
                 if (hv != null)
                 {
-                    txtHT.Text = hv.Account_Info.Name;
-                    txtGT.Text = (hv.Account_Info.Gender == true) ? "Nam" : "Nữ";
-                    txtDC.Text = hv.Account_Info.Address;
-                    txtEmail.Text = hv.Account_Info.Email;
-                    txtSDT.Text = hv.Account_Info.Phone;
-                    dtpNS.Value = Convert.ToDateTime(hv.Account_Info.Birthday);
+                    txtHT.Text = hv.AccountInfo.Name;
+                    txtGT.Text = (hv.AccountInfo.Gender == true) ? "Nam" : "Nữ";
+                    txtDC.Text = hv.AccountInfo.Address;
+                    txtEmail.Text = hv.AccountInfo.Email;
+                    txtSDT.Text = hv.AccountInfo.Phone;
+                    dtpNS.Value = Convert.ToDateTime(hv.AccountInfo.Birthday);
                 }
             }
         }
@@ -70,13 +70,13 @@ namespace PBL3.View.Học_viên
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var hv = db.Accounts.Where(p=>p.ID == mshv).FirstOrDefault(); 
-                hv.Account_Info.Name = txtHT.Text;
-                hv.Account_Info.Gender = (txtGT.Text == "Nam")? true : false;
-                hv.Account_Info.Birthday = dtpNS.Value;
-                hv.Account_Info.Phone = txtSDT.Text;
-                hv.Account_Info.Email = txtEmail.Text;  
-                hv.Account_Info.Address = txtDC.Text;
+                var hv = db.Accounts.Where(p=>p.Id == mshv).FirstOrDefault(); 
+                hv.AccountInfo.Name = txtHT.Text;
+                hv.AccountInfo.Gender = (txtGT.Text == "Nam")? true : false;
+                hv.AccountInfo.Birthday = dtpNS.Value;
+                hv.AccountInfo.Phone = txtSDT.Text;
+                hv.AccountInfo.Email = txtEmail.Text;  
+                hv.AccountInfo.Address = txtDC.Text;
                 db.Accounts.AddOrUpdate(hv);
                 db.SaveChanges();   
             }
@@ -86,14 +86,14 @@ namespace PBL3.View.Học_viên
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var account = db.Accounts.Where(p => p.ID == mshv).FirstOrDefault();
+                var account = db.Accounts.Where(p => p.Id == mshv).FirstOrDefault();
                 bool temp = true;
-                if (account.username != txtDN.Text)
+                if (account.UserName != txtDN.Text)
                 {
                     MessageBox.Show("Mật khẩu / Tên đăng nhập không trùng khớp!");
                     temp = false;
                 }
-                else if (account.password != txtMKC.Text)
+                else if (account.PassWord != txtMKC.Text)
                 {
                     MessageBox.Show("Mật khẩu / Tên đăng nhập không trùng khớp!");
                     temp = false; 
@@ -105,7 +105,7 @@ namespace PBL3.View.Học_viên
                 }
                 if (temp)
                 {
-                    account.password = txtMKM.Text;
+                    account.PassWord = txtMKM.Text;
                     db.Accounts.AddOrUpdate(account); 
                     db.SaveChanges();
                     MessageBox.Show("Thay đổi mật khẩu thành công!");

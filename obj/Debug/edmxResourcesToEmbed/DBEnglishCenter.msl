@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="WebSiteEnglishCenter_7ModelStoreContainer" CdmEntityContainer="DBEnglishCenterEntities">
+  <EntityContainerMapping StorageEntityContainer="DBEnglishCenterStoreContainer" CdmEntityContainer="DBEnglishCenterEntities">
     <EntitySetMapping Name="Accounts">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Account">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Account">
         <MappingFragment StoreEntitySet="Account">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Account_Info">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Account_Info">
-        <MappingFragment StoreEntitySet="Account_Info">
-          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+    <EntitySetMapping Name="AccountInfoes">
+      <EntityTypeMapping TypeName="DBEnglishCenter.AccountInfo">
+        <MappingFragment StoreEntitySet="AccountInfo">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -25,62 +25,87 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Bills">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Bill">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Bill">
         <MappingFragment StoreEntitySet="Bill">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="IdBill" ColumnName="IdBill" />
+          <ScalarProperty Name="LearningResultId" ColumnName="LearningResultId" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calendars">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Calendar">
+        <MappingFragment StoreEntitySet="Calendar">
+          <ScalarProperty Name="IdCalendar" ColumnName="IdCalendar" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="FromLesson" ColumnName="FromLesson" />
+          <ScalarProperty Name="ToLesson" ColumnName="ToLesson" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Classes">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Class">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Class">
         <MappingFragment StoreEntitySet="Class">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Course_ID" ColumnName="Course_ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="NameClass" ColumnName="NameClass" />
           <ScalarProperty Name="MaxStudent" ColumnName="MaxStudent" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Courses">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Course">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Course">
         <MappingFragment StoreEntitySet="Course">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Start_date" ColumnName="Start_date" />
-          <ScalarProperty Name="End_date" ColumnName="End_date" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
+          <ScalarProperty Name="NameCourse" ColumnName="NameCourse" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Price" ColumnName="Price" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Documents">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Document">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Document">
         <MappingFragment StoreEntitySet="Document">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IdDocument" ColumnName="IdDocument" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileData" ColumnName="FileData" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LearningResults">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.LearningResult">
+      <EntityTypeMapping TypeName="DBEnglishCenter.LearningResult">
         <MappingFragment StoreEntitySet="LearningResult">
-          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
-          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
-          <ScalarProperty Name="Assignment_Point" ColumnName="Assignment_Point" />
-          <ScalarProperty Name="MidTermExam_Point" ColumnName="MidTermExam_Point" />
-          <ScalarProperty Name="FinalExam_Point" ColumnName="FinalExam_Point" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="AssignmentPoint" ColumnName="AssignmentPoint" />
+          <ScalarProperty Name="MidTermExamPoint" ColumnName="MidTermExamPoint" />
+          <ScalarProperty Name="FinalExamPoint" ColumnName="FinalExamPoint" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="WebSiteEnglishCenter_7Model.Role">
+      <EntityTypeMapping TypeName="DBEnglishCenter.Role">
         <MappingFragment StoreEntitySet="Role">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Role_name" ColumnName="Role_name" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBEnglishCenter.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

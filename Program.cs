@@ -1,4 +1,6 @@
-﻿using PBL3.View.Admin;
+﻿using PBL3.View;
+using PBL3.View.Admin;
+using PBL3.View.Giảng_viên;
 using PBL3.View.Học_viên;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace PBL3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new fManager());
         }
     }
 }
