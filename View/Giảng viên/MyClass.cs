@@ -36,7 +36,7 @@ namespace PBL3.View.Giảng_viên
         {
             Class cl = bllClass.GetClassFromId(IdClass);
             tbxIdClass.Text = cl.Id.ToString();
-            tbxNameClass.Text = cl.NameClass.ToString();    
+            tbxNameClass.Text = cl.ClassName.ToString();    
             tbxMaxStudent.Text = cl.MaxStudent.ToString();  
         }
         void LoadListSudentInClass(int id)
@@ -97,6 +97,7 @@ namespace PBL3.View.Giảng_viên
             
             bllClass = new BLL_Class();
             dtgvListStudentInClass.DataSource = null;
+            
             bllClass.GetListStudent(IdClass, dtgvListStudentInClass);
         }
 

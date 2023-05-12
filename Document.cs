@@ -14,7 +14,7 @@ namespace PBL3
     
     public partial class Document
     {
-        public int IdDocument { get; set; }
+        public int Id { get; set; }
         public int ClassId { get; set; }
         public string FileName { get; set; }
         public byte[] FileData { get; set; }

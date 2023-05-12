@@ -27,7 +27,7 @@ namespace PBL3.DAL
             {
                 ListClass.Add(db.Classes.Where(s => s.Id == lrResult.ClassId).FirstOrDefault());
             }
-            var ds = ListClass.Select(s => new { s.Id, s.NameClass, s.MaxStudent, s.Course.NameCourse }).ToList();
+            var ds = ListClass.Where(s => s.ClassActive == true).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
             return ds;
         }
         public List<CbbCourse> GetAllCourse()
@@ -38,7 +38,7 @@ namespace PBL3.DAL
             listC = db.Courses.ToList();
             foreach(Course item in listC)
             {
-                listCourse.Add(new CbbCourse() { Id = item.IdCourse, Name = item.NameCourse });
+                listCourse.Add(new CbbCourse() { Id = item.Id , Name = item.CourseName });
             }
 
 
@@ -55,13 +55,13 @@ namespace PBL3.DAL
             }
             if (idCourse == 0)
             {
-                var ds = ListClass.Where(s => s.NameClass.Contains(nameClass) ).Select(s => new { s.Id, s.NameClass, s.MaxStudent, s.Course.NameCourse }).ToList();
+                var ds = ListClass.Where(s => s.ClassName.Contains(nameClass) ).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
                 return ds;
             }
             else
             {
                 
-                var ds = ListClass.Where(s => s.NameClass.Contains(nameClass) && s.CourseId == idCourse ).Select(s => new { s.Id, s.NameClass, s.MaxStudent, s.Course.NameCourse }).ToList();
+                var ds = ListClass.Where(s => s.ClassName.Contains(nameClass) && s.CourseId == idCourse ).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
                 return ds;
 
             }
@@ -114,7 +114,7 @@ namespace PBL3.DAL
                 
             }
 
-            var ds = cal.Where(s => s.Day == JobDay.DayOfWeek.ToString()).Select(s => new { s.Class.NameClass, s.Day, s.FromLesson, s.ToLesson }).ToList();
+            var ds = cal.Where(s => s.DayLesson == JobDay.DayOfWeek.ToString()).Select(s => new { s.Class.ClassName, s.DayLesson, s.FromLesson, s.ToLesson }).ToList();
             return ds;
         }
         public Class GetClassFromId(int id)
@@ -126,7 +126,7 @@ namespace PBL3.DAL
         {
             List<LearningResult> lr = new List<LearningResult>();   
             lr = db.LearningResults.Where(s => s.ClassId == idClass && s.Account.RoleId == 3).ToList();
-            var ds = lr.Select(s => new { s.Account.Id, s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint}).ToList();
+           var ds = lr.Select(s => new {s.Account.Id , s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday,s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint}).ToList();
 
             return ds;
         }

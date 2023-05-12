@@ -24,7 +24,7 @@ namespace PBL3
     
         public int Id { get; set; }
         public int CourseId { get; set; }
-        public string NameClass { get; set; }
+        public string ClassName { get; set; }
         public Nullable<int> MaxStudent { get; set; }
         public Nullable<bool> ClassActive { get; set; }
     

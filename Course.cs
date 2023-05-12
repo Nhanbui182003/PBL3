@@ -20,8 +20,8 @@ namespace PBL3
             this.Classes = new HashSet<Class>();
         }
     
-        public int IdCourse { get; set; }
-        public string NameCourse { get; set; }
+        public int Id { get; set; }
+        public string CourseName { get; set; }
         public System.DateTime StartDate { get; set; }
         public System.DateTime EndDate { get; set; }
         public string Description { get; set; }

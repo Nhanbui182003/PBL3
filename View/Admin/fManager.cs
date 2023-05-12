@@ -16,12 +16,14 @@ namespace PBL3.View
     public partial class fManager : Form
     {
         private int ID;
+        private BLL_Account bllAccount;
         public fManager(int id)
         {
             InitializeComponent();
             SetCBB();
             ID = id;
             ManagerBLL bll = new ManagerBLL();
+            bllAccount = new BLL_Account();
 
             bll.LoadDataGridViewCourse(dgvCourse);
             dgvCourse.Columns[0].HeaderText = "Mã khóa học";

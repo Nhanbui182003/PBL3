@@ -14,7 +14,7 @@ namespace PBL3
     
     public partial class Bill
     {
-        public int IdBill { get; set; }
+        public int Id { get; set; }
         public int LearningResultId { get; set; }
         public bool Status { get; set; }
         public int Price { get; set; }

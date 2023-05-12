@@ -14,7 +14,7 @@ namespace PBL3
     
     public partial class Calendar
     {
-        public int IdCalendar { get; set; }
+        public int Id { get; set; }
         public int ClassId { get; set; }
         public string DayLesson { get; set; }
         public int FromLesson { get; set; }

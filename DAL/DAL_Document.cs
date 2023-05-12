@@ -18,7 +18,7 @@ namespace PBL3.DAL
         }
         public dynamic GetAllDocument(int idClass)
         {
-            var ds = db.Documents.Where(s => s.ClassId == idClass ).Select(s => new {s.IdDocument, s.FileName}).ToList();   
+            var ds = db.Documents.Where(s => s.ClassId == idClass ).Select(s => new {s.Id, s.FileName}).ToList();   
             return ds;  
         }
         public void AddDocument(string filePath, int IdClass)
@@ -47,7 +47,7 @@ namespace PBL3.DAL
         {
             foreach(int i in list)
             {
-                Document file = db.Documents.Where(s => s.IdDocument == i).FirstOrDefault();
+                Document file = db.Documents.Where(s => s.Id == i).FirstOrDefault();
                 db.Documents.Remove(file);
             }
             db.SaveChanges();

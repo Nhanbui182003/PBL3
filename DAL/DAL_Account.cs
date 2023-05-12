@@ -21,7 +21,7 @@ namespace PBL3.DAL
         public dynamic GetAllAccount()
         {
             db = new DBEnglishCenterEntities();
-            var dsAccount = db.Accounts.Select(s => new {s.Id, s.UserName, s.Role.RoleName, s.AccountInfo.Name, s.AccountInfo.Address, s.AccountInfo.Gender, s.AccountInfo.Birthday}).ToList();
+            var dsAccount = db.Accounts.Where(s => s.AccountActive == true).Select(s => new {s.Id, s.UserName, s.Role.RoleName, s.AccountInfo.Name, s.AccountInfo.Address, s.AccountInfo.Gender, s.AccountInfo.Birthday}).ToList();
             return dsAccount;
         }
         public List<CBBRole> GetAllRoleData()
@@ -31,7 +31,7 @@ namespace PBL3.DAL
             List<Role> listRole = new List<Role>();
             listRole = db.Roles.ToList();   
             foreach(Role item in listRole) {
-                list.Add(new CBBRole() { Id = item.IdRole, NameRole = item.RoleName });
+                list.Add(new CBBRole() { Id = item.Id, NameRole = item.RoleName });
             }
             return list;
         }
@@ -43,7 +43,7 @@ namespace PBL3.DAL
             listRole = db.Roles.ToList();
             foreach (Role item in listRole)
             {
-                list.Add(new CBBRole() { Id = item.IdRole, NameRole = item.RoleName });
+                list.Add(new CBBRole() { Id = item.Id, NameRole = item.RoleName });
             }
             return list;
         }
@@ -52,11 +52,11 @@ namespace PBL3.DAL
             List<Account> list = new List<Account>();
             if(idRole == 0)
             {
-                list = db.Accounts.Where(s => s.UserName.Contains(UserName)).ToList();
+                list = db.Accounts.Where(s => s.UserName.Contains(UserName) && s.AccountActive == true).ToList();
             }
             else
             {
-                list = db.Accounts.Where(s => s.UserName.Contains(UserName)  && s.RoleId == idRole ).ToList();   
+                list = db.Accounts.Where(s => s.UserName.Contains(UserName)  && s.RoleId == idRole && s.AccountActive == true ).ToList();   
             }
             var ds = list.Select(s => new { s.Id, s.UserName, s.Role.RoleName, s.AccountInfo.Name, s.AccountInfo.Address, s.AccountInfo.Gender, s.AccountInfo.Birthday }).ToList();
             return ds;
@@ -93,7 +93,7 @@ namespace PBL3.DAL
         }
         public Account GetAccountFromId(int id)
         {
-            return db.Accounts.Where(s => s.Id == id).FirstOrDefault(); 
+            return db.Accounts.Where(s => s.Id == id && s.AccountActive == true ).FirstOrDefault(); 
         }
         public AccountInfo GetAccountInfoFromId(int id)
         {
@@ -101,7 +101,7 @@ namespace PBL3.DAL
         }
         public void EditAccount(int id,AccountInfo info)
         {
-            Account ac = db.Accounts.Find(id);
+            Account ac = db.Accounts.Where(s => s.Id == id).FirstOrDefault();
             AccountInfo acif = db.AccountInfoes.Find(id);
 
             if (info.Name == "" || (info.Gender != true && info.Gender != false))
@@ -139,7 +139,7 @@ namespace PBL3.DAL
         {
             if(username != "")
             {
-                List<Account> list = db.Accounts.ToList();
+                List<Account> list = db.Accounts.Where(s => s.AccountActive == true).ToList();
 
                 foreach (Account account in list)
                 {

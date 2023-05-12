@@ -78,35 +78,35 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(37, 35);
+            this.panel4.Location = new System.Drawing.Point(26, 24);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(541, 540);
+            this.panel4.Size = new System.Drawing.Size(553, 647);
             this.panel4.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 531);
+            this.label3.Location = new System.Drawing.Point(52, 458);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 25);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 24;
             this.label3.Text = "Loại tài khoản";
             // 
             // cbxRoleType
             // 
             this.cbxRoleType.FormattingEnabled = true;
-            this.cbxRoleType.Location = new System.Drawing.Point(194, 528);
+            this.cbxRoleType.Location = new System.Drawing.Point(197, 458);
             this.cbxRoleType.Name = "cbxRoleType";
-            this.cbxRoleType.Size = new System.Drawing.Size(589, 33);
+            this.cbxRoleType.Size = new System.Drawing.Size(255, 24);
             this.cbxRoleType.TabIndex = 23;
             // 
             // rdoFemale
             // 
             this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Location = new System.Drawing.Point(548, 461);
+            this.rdoFemale.Location = new System.Drawing.Point(370, 386);
             this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(70, 29);
+            this.rdoFemale.Size = new System.Drawing.Size(45, 20);
             this.rdoFemale.TabIndex = 22;
             this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "Nữ";
@@ -115,9 +115,9 @@
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
-            this.rdoMale.Location = new System.Drawing.Point(256, 465);
+            this.rdoMale.Location = new System.Drawing.Point(197, 384);
             this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(87, 29);
+            this.rdoMale.Size = new System.Drawing.Size(57, 20);
             this.rdoMale.TabIndex = 21;
             this.rdoMale.TabStop = true;
             this.rdoMale.Text = "Nam";
@@ -125,81 +125,81 @@
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(191, 320);
+            this.tbxEmail.Location = new System.Drawing.Point(194, 260);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(592, 31);
+            this.tbxEmail.Size = new System.Drawing.Size(258, 22);
             this.tbxEmail.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 323);
+            this.label2.Location = new System.Drawing.Point(51, 260);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 25);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Email";
             // 
             // dtpkBirthday
             // 
-            this.dtpkBirthday.Location = new System.Drawing.Point(191, 149);
+            this.dtpkBirthday.Location = new System.Drawing.Point(191, 124);
             this.dtpkBirthday.Name = "dtpkBirthday";
-            this.dtpkBirthday.Size = new System.Drawing.Size(592, 31);
+            this.dtpkBirthday.Size = new System.Drawing.Size(258, 22);
             this.dtpkBirthday.TabIndex = 18;
             // 
             // tbxId
             // 
             this.tbxId.Location = new System.Drawing.Point(191, 10);
             this.tbxId.Name = "tbxId";
-            this.tbxId.Size = new System.Drawing.Size(592, 31);
+            this.tbxId.Size = new System.Drawing.Size(258, 22);
             this.tbxId.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 13);
+            this.label1.Location = new System.Drawing.Point(44, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 25);
+            this.label1.Size = new System.Drawing.Size(18, 16);
             this.label1.TabIndex = 16;
             this.label1.Text = "Id";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(647, 680);
+            this.btnCancel.Location = new System.Drawing.Point(370, 583);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(139, 52);
+            this.btnCancel.Size = new System.Drawing.Size(97, 41);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(469, 680);
+            this.btnOk.Location = new System.Drawing.Point(249, 583);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(139, 52);
+            this.btnOk.Size = new System.Drawing.Size(96, 41);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             // 
             // tbxUsername
             // 
-            this.tbxUsername.Location = new System.Drawing.Point(194, 602);
+            this.tbxUsername.Location = new System.Drawing.Point(191, 533);
             this.tbxUsername.Name = "tbxUsername";
-            this.tbxUsername.Size = new System.Drawing.Size(592, 31);
+            this.tbxUsername.Size = new System.Drawing.Size(273, 22);
             this.tbxUsername.TabIndex = 13;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(31, 602);
+            this.label11.Location = new System.Drawing.Point(52, 539);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(157, 25);
+            this.label11.Size = new System.Drawing.Size(98, 16);
             this.label11.TabIndex = 11;
             this.label11.Text = "Tên đăng nhập";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 465);
+            this.label10.Location = new System.Drawing.Point(52, 386);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 16);
             this.label10.TabIndex = 10;
@@ -207,29 +207,29 @@
             // 
             // tbxPhone
             // 
-            this.tbxPhone.Location = new System.Drawing.Point(194, 394);
+            this.tbxPhone.Location = new System.Drawing.Point(197, 311);
             this.tbxPhone.Name = "tbxPhone";
-            this.tbxPhone.Size = new System.Drawing.Size(592, 31);
+            this.tbxPhone.Size = new System.Drawing.Size(255, 22);
             this.tbxPhone.TabIndex = 8;
             // 
             // tbxAddress
             // 
-            this.tbxAddress.Location = new System.Drawing.Point(191, 234);
+            this.tbxAddress.Location = new System.Drawing.Point(194, 190);
             this.tbxAddress.Name = "tbxAddress";
-            this.tbxAddress.Size = new System.Drawing.Size(592, 31);
+            this.tbxAddress.Size = new System.Drawing.Size(258, 22);
             this.tbxAddress.TabIndex = 7;
             // 
             // tbxName
             // 
             this.tbxName.Location = new System.Drawing.Point(191, 65);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(592, 31);
+            this.tbxName.Size = new System.Drawing.Size(258, 22);
             this.tbxName.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 394);
+            this.label5.Location = new System.Drawing.Point(52, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 16);
             this.label5.TabIndex = 4;
@@ -238,7 +238,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 167);
+            this.label6.Location = new System.Drawing.Point(51, 190);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 16);
@@ -248,7 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 119);
+            this.label7.Location = new System.Drawing.Point(47, 124);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
@@ -267,10 +267,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 71);
+            this.label9.Location = new System.Drawing.Point(47, 65);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 25);
+            this.label9.Size = new System.Drawing.Size(64, 16);
             this.label9.TabIndex = 0;
             this.label9.Text = "Họ và tên";
             // 
@@ -278,7 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 593);
+            this.ClientSize = new System.Drawing.Size(602, 688);
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAccount";

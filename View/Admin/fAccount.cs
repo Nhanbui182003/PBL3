@@ -30,7 +30,7 @@ namespace PBL3.View.Admin
         }
         void LoadData()
         {
-            bllAccount.LoadRole(cbxRoleAccount);
+            bllAccount.LoadRole(cbxRoleType);
             if(IdAccount == 0)
             {
                 tbxId.Enabled = false;
@@ -43,12 +43,12 @@ namespace PBL3.View.Admin
                 tbxId.Text = a.Id.ToString();
                 tbxUsername.Text = a.UserName;
                 
-                cbxRoleAccount.SelectedValue = a.RoleId;
-                tbxNameAccount.Text = info.Name;
+                cbxRoleType.SelectedValue = a.RoleId;
+                tbxName.Text = info.Name;
                 dtpkBirthday.Value = (DateTime)info.Birthday;
-                tbxAddressAccount.Text = info.Address;
-                tbxPhoneAccount.Text = info.Phone;
-                tbxEmailAccount.Text = info.Email;
+                tbxAddress.Text = info.Address;
+                tbxPhone.Text = info.Phone;
+                tbxEmail.Text = info.Email;
                 if(info.Gender == true)
                 {
                     rdoMale.Checked = true;
@@ -58,7 +58,7 @@ namespace PBL3.View.Admin
                     rdoFemale.Checked = false;
                 }
                 tbxId.Enabled = false;
-                cbxRoleAccount.Enabled = false;
+                cbxRoleType.Enabled = false;
                 tbxUsername.Enabled = false;
 
 
@@ -78,8 +78,8 @@ namespace PBL3.View.Admin
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            Account a = new Account() { UserName = tbxUsername.Text, PassWord = "123", RoleId = Int32.Parse(cbxRoleAccount.SelectedValue.ToString()) };
-            AccountInfo info = new AccountInfo() { Name = tbxNameAccount.Text, Birthday = (DateTime)dtpkBirthday.Value, Email = tbxEmailAccount.Text, Address = tbxAddressAccount.Text, Phone = tbxPhoneAccount.Text, Gender = rdoMale.Checked };
+            Account a = new Account() { UserName = tbxUsername.Text, PassWord = "123", RoleId = Int32.Parse(cbxRoleType.SelectedValue.ToString()) };
+            AccountInfo info = new AccountInfo() { Name = tbxName.Text, Birthday = (DateTime)dtpkBirthday.Value, Email = tbxEmail.Text, Address = tbxAddress.Text, Phone = tbxPhone.Text, Gender = rdoMale.Checked };
             if (IdAccount == 0)
             {
                 if(bllAccount.AddAccount(a, info))

@@ -322,7 +322,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DBEnglishCenter.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

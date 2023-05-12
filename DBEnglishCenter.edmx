@@ -29,9 +29,9 @@
         </EntityType>
         <EntityType Name="Bill">
           <Key>
-            <PropertyRef Name="IdBill" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdBill" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LearningResultId" Type="int" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
@@ -39,9 +39,9 @@
         </EntityType>
         <EntityType Name="Calendar">
           <Key>
-            <PropertyRef Name="IdCalendar" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCalendar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClassId" Type="int" Nullable="false" />
           <Property Name="DayLesson" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="FromLesson" Type="int" Nullable="false" />
@@ -53,16 +53,16 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CourseId" Type="int" Nullable="false" />
-          <Property Name="NameClass" Type="nvarchar" MaxLength="250" />
+          <Property Name="ClassName" Type="nvarchar" MaxLength="250" />
           <Property Name="MaxStudent" Type="int" />
           <Property Name="ClassActive" Type="bit" />
         </EntityType>
         <EntityType Name="Course">
           <Key>
-            <PropertyRef Name="IdCourse" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCourse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameCourse" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="StartDate" Type="datetime" Nullable="false" />
           <Property Name="EndDate" Type="datetime" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="4000" />
@@ -71,9 +71,9 @@
         </EntityType>
         <EntityType Name="Document">
           <Key>
-            <PropertyRef Name="IdDocument" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdDocument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClassId" Type="int" Nullable="false" />
           <Property Name="FileName" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="FileData" Type="varbinary(max)" />
@@ -93,9 +93,9 @@
         </EntityType>
         <EntityType Name="Role">
           <Key>
-            <PropertyRef Name="IdRole" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="Account_RoleID">
@@ -103,7 +103,7 @@
           <End Role="Account" Type="Self.Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
-              <PropertyRef Name="IdRole" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Account">
               <PropertyRef Name="RoleId" />
@@ -151,7 +151,7 @@
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Course">
-              <PropertyRef Name="IdCourse" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Class">
               <PropertyRef Name="CourseId" />
@@ -270,9 +270,9 @@
         </EntityType>
         <EntityType Name="Bill">
           <Key>
-            <PropertyRef Name="IdBill" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdBill" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LearningResultId" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="Price" Type="Int32" Nullable="false" />
@@ -281,9 +281,9 @@
         </EntityType>
         <EntityType Name="Calendar">
           <Key>
-            <PropertyRef Name="IdCalendar" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCalendar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClassId" Type="Int32" Nullable="false" />
           <Property Name="DayLesson" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FromLesson" Type="Int32" Nullable="false" />
@@ -296,7 +296,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CourseId" Type="Int32" Nullable="false" />
-          <Property Name="NameClass" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ClassName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="MaxStudent" Type="Int32" />
           <Property Name="ClassActive" Type="Boolean" />
           <NavigationProperty Name="Calendars" Relationship="Self.Calendar_ClassID" FromRole="Class" ToRole="Calendar" />
@@ -306,10 +306,10 @@
         </EntityType>
         <EntityType Name="Course">
           <Key>
-            <PropertyRef Name="IdCourse" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdCourse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameCourse" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CourseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
@@ -319,9 +319,9 @@
         </EntityType>
         <EntityType Name="Document">
           <Key>
-            <PropertyRef Name="IdDocument" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdDocument" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClassId" Type="Int32" Nullable="false" />
           <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
@@ -345,9 +345,9 @@
         </EntityType>
         <EntityType Name="Role">
           <Key>
-            <PropertyRef Name="IdRole" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Accounts" Relationship="Self.Account_RoleID" FromRole="Role" ToRole="Account" />
         </EntityType>
@@ -356,7 +356,7 @@
           <End Role="Account" Type="Self.Account" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
-              <PropertyRef Name="IdRole" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Account">
               <PropertyRef Name="RoleId" />
@@ -416,7 +416,7 @@
           <End Role="Class" Type="Self.Class" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Course">
-              <PropertyRef Name="IdCourse" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Class">
               <PropertyRef Name="CourseId" />
@@ -523,7 +523,7 @@
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="DBEnglishCenterModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
-                <ScalarProperty Name="IdBill" ColumnName="IdBill" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="LearningResultId" ColumnName="LearningResultId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -534,7 +534,7 @@
           <EntitySetMapping Name="Calendars">
             <EntityTypeMapping TypeName="DBEnglishCenterModel.Calendar">
               <MappingFragment StoreEntitySet="Calendar">
-                <ScalarProperty Name="IdCalendar" ColumnName="IdCalendar" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClassId" ColumnName="ClassId" />
                 <ScalarProperty Name="DayLesson" ColumnName="DayLesson" />
                 <ScalarProperty Name="FromLesson" ColumnName="FromLesson" />
@@ -547,7 +547,7 @@
               <MappingFragment StoreEntitySet="Class">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-                <ScalarProperty Name="NameClass" ColumnName="NameClass" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
                 <ScalarProperty Name="MaxStudent" ColumnName="MaxStudent" />
                 <ScalarProperty Name="ClassActive" ColumnName="ClassActive" />
               </MappingFragment>
@@ -556,8 +556,8 @@
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="DBEnglishCenterModel.Course">
               <MappingFragment StoreEntitySet="Course">
-                <ScalarProperty Name="IdCourse" ColumnName="IdCourse" />
-                <ScalarProperty Name="NameCourse" ColumnName="NameCourse" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -569,7 +569,7 @@
           <EntitySetMapping Name="Documents">
             <EntityTypeMapping TypeName="DBEnglishCenterModel.Document">
               <MappingFragment StoreEntitySet="Document">
-                <ScalarProperty Name="IdDocument" ColumnName="IdDocument" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ClassId" ColumnName="ClassId" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="FileData" ColumnName="FileData" />
@@ -593,7 +593,7 @@
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="DBEnglishCenterModel.Role">
               <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
               </MappingFragment>
             </EntityTypeMapping>

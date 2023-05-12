@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DBEnglishCenter" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DBEnglishCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Account">
     <Key>
       <PropertyRef Name="Id" />
@@ -8,6 +8,7 @@
     <Property Name="RoleId" Type="Int32" Nullable="false" />
     <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PassWord" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountActive" Type="Boolean" />
     <NavigationProperty Name="Role" Relationship="Self.Account_RoleID" FromRole="Account" ToRole="Role" />
     <NavigationProperty Name="AccountInfo" Relationship="Self.AccountInfo_Account" FromRole="Account" ToRole="AccountInfo" />
     <NavigationProperty Name="LearningResults" Relationship="Self.Result_AccountID" FromRole="Account" ToRole="LearningResult" />
@@ -27,22 +28,22 @@
   </EntityType>
   <EntityType Name="Bill">
     <Key>
-      <PropertyRef Name="IdBill" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdBill" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LearningResultId" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
-    <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Time" Type="DateTime" Precision="3" />
     <NavigationProperty Name="LearningResult" Relationship="Self.Bill_AccountID" FromRole="Bill" ToRole="LearningResult" />
   </EntityType>
   <EntityType Name="Calendar">
     <Key>
-      <PropertyRef Name="IdCalendar" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdCalendar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ClassId" Type="Int32" Nullable="false" />
-    <Property Name="Day" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DayLesson" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FromLesson" Type="Int32" Nullable="false" />
     <Property Name="ToLesson" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Class" Relationship="Self.Calendar_ClassID" FromRole="Calendar" ToRole="Class" />
@@ -53,8 +54,9 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CourseId" Type="Int32" Nullable="false" />
-    <Property Name="NameClass" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ClassName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="MaxStudent" Type="Int32" />
+    <Property Name="ClassActive" Type="Boolean" />
     <NavigationProperty Name="Calendars" Relationship="Self.Calendar_ClassID" FromRole="Class" ToRole="Calendar" />
     <NavigationProperty Name="Course" Relationship="Self.Class_CourseID" FromRole="Class" ToRole="Course" />
     <NavigationProperty Name="Documents" Relationship="Self.Document_ClassID" FromRole="Class" ToRole="Document" />
@@ -62,24 +64,27 @@
   </EntityType>
   <EntityType Name="Course">
     <Key>
-      <PropertyRef Name="IdCourse" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdCourse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NameCourse" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CourseActive" Type="Boolean" />
     <Property Name="Price" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Classes" Relationship="Self.Class_CourseID" FromRole="Course" ToRole="Class" />
   </EntityType>
   <EntityType Name="Document">
     <Key>
-      <PropertyRef Name="IdDocument" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdDocument" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ClassId" Type="Int32" Nullable="false" />
     <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileActive" Type="Boolean" />
+    <Property Name="Filedate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Class" Relationship="Self.Document_ClassID" FromRole="Document" ToRole="Class" />
   </EntityType>
   <EntityType Name="LearningResult">
@@ -98,28 +103,18 @@
   </EntityType>
   <EntityType Name="Role">
     <Key>
-      <PropertyRef Name="IdRole" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdRole" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Accounts" Relationship="Self.Account_RoleID" FromRole="Role" ToRole="Account" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="Account_RoleID">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Role">
-        <PropertyRef Name="IdRole" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Account">
         <PropertyRef Name="RoleId" />
@@ -179,7 +174,7 @@
     <End Role="Class" Type="Self.Class" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Course">
-        <PropertyRef Name="IdCourse" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Class">
         <PropertyRef Name="CourseId" />
@@ -220,7 +215,6 @@
     <EntitySet Name="Documents" EntityType="Self.Document" />
     <EntitySet Name="LearningResults" EntityType="Self.LearningResult" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="Account_RoleID" Association="Self.Account_RoleID">
       <End Role="Role" EntitySet="Roles" />
       <End Role="Account" EntitySet="Accounts" />
