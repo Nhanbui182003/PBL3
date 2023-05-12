@@ -56,11 +56,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountInfo.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="BLL\BLL_Account.cs" />
     <Compile Include="BLL\BLL_Calendar.cs" />
     <Compile Include="BLL\BLL_Class.cs" />
     <Compile Include="BLL\BLL_Document.cs" />
     <Compile Include="BLL\BLL_Student.cs" />
+    <Compile Include="Calendar.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DAL_Account.cs" />
     <Compile Include="DAL\DAL_Class.cs" />
     <Compile Include="DAL\DAL_Document.cs" />
@@ -70,16 +88,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBEnglishCenter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBEnglishCenter.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CbbCourse.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBRole.cs" />
     <Compile Include="DTO\Cons.cs" />
     <Compile Include="BLL\ManagerBLL.cs" />
+    <Compile Include="LearningResult.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,13 +321,17 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DBEnglishCenter.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DBEnglishCenter.Context.cs</LastGenOutput>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBEnglishCenter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+      <LastGenOutput>DBEnglishCenter.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
