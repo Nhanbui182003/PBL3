@@ -69,17 +69,36 @@
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBRole.cs" />
     <Compile Include="DTO\Cons.cs" />
+    <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="View\Admin\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Admin\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\fAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fAddClass.Designer.cs">
+      <DependentUpon>fAddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\fAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Admin\fAddCourse.Designer.cs">
       <DependentUpon>fAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fAddStudentToClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fAddStudentToClass.Designer.cs">
+      <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fChoiceTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fChoiceTeacher.Designer.cs">
+      <DependentUpon>fChoiceTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fManageClass.cs">
       <SubType>Form</SubType>
@@ -170,8 +189,17 @@
     <EmbeddedResource Include="View\Admin\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fAddClass.resx">
+      <DependentUpon>fAddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fAddCourse.resx">
       <DependentUpon>fAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fAddStudentToClass.resx">
+      <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fChoiceTeacher.resx">
+      <DependentUpon>fChoiceTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fManageClass.resx">
       <DependentUpon>fManageClass.cs</DependentUpon>
@@ -241,6 +269,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

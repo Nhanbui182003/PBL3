@@ -1,4 +1,5 @@
-﻿using PBL3.View;
+﻿using PBL3.BLL;
+using PBL3.View;
 using PBL3.View.Giảng_viên;
 using PBL3.View.Học_viên;
 using System;
@@ -23,16 +24,15 @@ namespace PBL3
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            DBEnglishCenterEntities db = new DBEnglishCenterEntities();
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            var account = db.Accounts.Where(p=>p.UserName == username).FirstOrDefault();
+            var account = new ManagerBLL().GetAccountByUsernamePassword(username, password);    
             if (account != null && account.PassWord==password)
             {
-                if (account.RoleId ==1)
+                if (account.RoleId==1)
                 {
                     this.Hide();
-                    fManager f = new fManager();
+                    fManager f = new fManager(account.Id);
                     f.ShowDialog();
                 } else
                 if (account.RoleId == 2)
