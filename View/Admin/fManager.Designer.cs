@@ -73,7 +73,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.btnResetAccount = new System.Windows.Forms.Button();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.btnEditInfoAccount = new System.Windows.Forms.Button();
+            this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.tbxDisplayName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbxRole = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnSearchAccount = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dtgvListAccounts = new System.Windows.Forms.DataGridView();
@@ -101,14 +109,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cbxRole = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.tbxDisplayName = new System.Windows.Forms.TextBox();
-            this.btnAddAccount = new System.Windows.Forms.Button();
-            this.btnEditInfoAccount = new System.Windows.Forms.Button();
-            this.btnDeleteAccount = new System.Windows.Forms.Button();
-            this.btnResetAccount = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -566,6 +566,42 @@
             this.panel12.Size = new System.Drawing.Size(851, 193);
             this.panel12.TabIndex = 2;
             // 
+            // btnResetAccount
+            // 
+            this.btnResetAccount.Location = new System.Drawing.Point(582, 26);
+            this.btnResetAccount.Name = "btnResetAccount";
+            this.btnResetAccount.Size = new System.Drawing.Size(258, 52);
+            this.btnResetAccount.TabIndex = 15;
+            this.btnResetAccount.Text = "Reset mật khẩu";
+            this.btnResetAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteAccount
+            // 
+            this.btnDeleteAccount.Location = new System.Drawing.Point(381, 26);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(178, 52);
+            this.btnDeleteAccount.TabIndex = 14;
+            this.btnDeleteAccount.Text = "Xóa tài khoản";
+            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnEditInfoAccount
+            // 
+            this.btnEditInfoAccount.Location = new System.Drawing.Point(226, 26);
+            this.btnEditInfoAccount.Name = "btnEditInfoAccount";
+            this.btnEditInfoAccount.Size = new System.Drawing.Size(139, 52);
+            this.btnEditInfoAccount.TabIndex = 13;
+            this.btnEditInfoAccount.Text = "Cập nhật";
+            this.btnEditInfoAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnAddAccount
+            // 
+            this.btnAddAccount.Location = new System.Drawing.Point(3, 23);
+            this.btnAddAccount.Name = "btnAddAccount";
+            this.btnAddAccount.Size = new System.Drawing.Size(206, 52);
+            this.btnAddAccount.TabIndex = 12;
+            this.btnAddAccount.Text = "Thêm tài khoản";
+            this.btnAddAccount.UseVisualStyleBackColor = true;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.tbxDisplayName);
@@ -578,9 +614,42 @@
             this.panel11.Size = new System.Drawing.Size(595, 193);
             this.panel11.TabIndex = 1;
             // 
+            // tbxDisplayName
+            // 
+            this.tbxDisplayName.Location = new System.Drawing.Point(157, 109);
+            this.tbxDisplayName.Name = "tbxDisplayName";
+            this.tbxDisplayName.Size = new System.Drawing.Size(267, 31);
+            this.tbxDisplayName.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(4, 109);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(125, 25);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Tên hiển thị";
+            // 
+            // cbxRole
+            // 
+            this.cbxRole.FormattingEnabled = true;
+            this.cbxRole.Location = new System.Drawing.Point(157, 23);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.Size = new System.Drawing.Size(267, 33);
+            this.cbxRole.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(4, 26);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(147, 25);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Loại tài khoản";
+            // 
             // btnSearchAccount
             // 
-            this.btnSearchAccount.Location = new System.Drawing.Point(446, 23);
+            this.btnSearchAccount.Location = new System.Drawing.Point(453, 12);
             this.btnSearchAccount.Name = "btnSearchAccount";
             this.btnSearchAccount.Size = new System.Drawing.Size(139, 52);
             this.btnSearchAccount.TabIndex = 4;
@@ -843,75 +912,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1480, 926);
             this.tabControl1.TabIndex = 0;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 26);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(147, 25);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Loại tài khoản";
-            // 
-            // cbxRole
-            // 
-            this.cbxRole.FormattingEnabled = true;
-            this.cbxRole.Location = new System.Drawing.Point(157, 23);
-            this.cbxRole.Name = "cbxRole";
-            this.cbxRole.Size = new System.Drawing.Size(267, 33);
-            this.cbxRole.TabIndex = 6;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 109);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 25);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Tên hiển thị";
-            // 
-            // tbxDisplayName
-            // 
-            this.tbxDisplayName.Location = new System.Drawing.Point(157, 109);
-            this.tbxDisplayName.Name = "tbxDisplayName";
-            this.tbxDisplayName.Size = new System.Drawing.Size(267, 31);
-            this.tbxDisplayName.TabIndex = 11;
-            // 
-            // btnAddAccount
-            // 
-            this.btnAddAccount.Location = new System.Drawing.Point(3, 23);
-            this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(206, 52);
-            this.btnAddAccount.TabIndex = 12;
-            this.btnAddAccount.Text = "Thêm tài khoản";
-            this.btnAddAccount.UseVisualStyleBackColor = true;
-            // 
-            // btnEditInfoAccount
-            // 
-            this.btnEditInfoAccount.Location = new System.Drawing.Point(226, 26);
-            this.btnEditInfoAccount.Name = "btnEditInfoAccount";
-            this.btnEditInfoAccount.Size = new System.Drawing.Size(139, 52);
-            this.btnEditInfoAccount.TabIndex = 13;
-            this.btnEditInfoAccount.Text = "Cập nhật";
-            this.btnEditInfoAccount.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteAccount
-            // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(381, 26);
-            this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(178, 52);
-            this.btnDeleteAccount.TabIndex = 14;
-            this.btnDeleteAccount.Text = "Xóa tài khoản";
-            this.btnDeleteAccount.UseVisualStyleBackColor = true;
-            // 
-            // btnResetAccount
-            // 
-            this.btnResetAccount.Location = new System.Drawing.Point(582, 26);
-            this.btnResetAccount.Name = "btnResetAccount";
-            this.btnResetAccount.Size = new System.Drawing.Size(258, 52);
-            this.btnResetAccount.TabIndex = 15;
-            this.btnResetAccount.Text = "Reset mật khẩu";
-            this.btnResetAccount.UseVisualStyleBackColor = true;
             // 
             // fManager
             // 
