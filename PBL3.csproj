@@ -56,63 +56,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccountInfo.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Bill.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BLL\CBBItem.cs" />
-    <Compile Include="BLL\ManagerBLL.cs" />
-    <Compile Include="Calendar.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Class.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Course.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\ManagerDAL.cs" />
-    <Compile Include="DBEnglishCenter.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBEnglishCenter.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBEnglishCenter.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Document.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\CBBItem.cs" />
-    <Compile Include="LearningResult.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Role.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
+    <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="View\Admin\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Admin\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\fAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fAddClass.Designer.cs">
+      <DependentUpon>fAddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\fAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Admin\fAddCourse.Designer.cs">
       <DependentUpon>fAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fAddStudentToClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fAddStudentToClass.Designer.cs">
+      <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fChoiceTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fChoiceTeacher.Designer.cs">
+      <DependentUpon>fChoiceTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fManageClass.cs">
       <SubType>Form</SubType>
@@ -176,8 +150,17 @@
     <Compile Include="View\Học viên\fKQ.Designer.cs">
       <DependentUpon>fKQ.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Admin\fAddClass.resx">
+      <DependentUpon>fAddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fAddCourse.resx">
       <DependentUpon>fAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fAddStudentToClass.resx">
+      <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fChoiceTeacher.resx">
+      <DependentUpon>fChoiceTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fManageClass.resx">
       <DependentUpon>fManageClass.cs</DependentUpon>
@@ -219,15 +202,6 @@
     <EmbeddedResource Include="View\Học viên\fKQ.resx">
       <DependentUpon>fKQ.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DBEnglishCenter.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBEnglishCenter.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="App.Config" />
-    <None Include="DBEnglishCenter.edmx.diagram">
-      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -246,16 +220,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBEnglishCenter.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBEnglishCenter.Context.cs</LastGenOutput>
-      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
-    </Content>
-    <Content Include="DBEnglishCenter.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
-      <LastGenOutput>DBEnglishCenter.cs</LastGenOutput>
-    </Content>
+    <Folder Include="DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

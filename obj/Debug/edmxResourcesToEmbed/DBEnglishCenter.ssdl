@@ -37,7 +37,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClassId" Type="int" Nullable="false" />
-    <Property Name="Day" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DayLesson" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="FromLesson" Type="int" Nullable="false" />
     <Property Name="ToLesson" Type="int" Nullable="false" />
   </EntityType>

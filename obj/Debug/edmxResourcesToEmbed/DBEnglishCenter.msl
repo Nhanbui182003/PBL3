@@ -40,7 +40,7 @@
         <MappingFragment StoreEntitySet="Calendar">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ClassId" ColumnName="ClassId" />
-          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="DayLesson" ColumnName="DayLesson" />
           <ScalarProperty Name="FromLesson" ColumnName="FromLesson" />
           <ScalarProperty Name="ToLesson" ColumnName="ToLesson" />
         </MappingFragment>

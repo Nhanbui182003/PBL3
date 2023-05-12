@@ -14,14 +14,26 @@ namespace PBL3.View
 {
     public partial class fManager : Form
     {
-        public int ID { get; set; }
+        private int ID;
         public fManager(int id)
         {
             InitializeComponent();
             SetCBB();
             ID = id;
-            dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p=> new {p.Id,p.CourseName,p.StartDate,p.EndDate,p.Price}).ToList();
-            dgvClass.DataSource = new ManagerBLL().GetAllClassBLL().Select(p=>new {p.Id,p.ClassName,p.Course.CourseName,p.MaxStudent}).ToList();
+            ManagerBLL bll = new ManagerBLL();
+
+            bll.LoadDataGridViewCourse(dgvCourse);
+            dgvCourse.Columns[0].HeaderText = "Mã khóa học";
+            dgvCourse.Columns[1].HeaderText = "Tên khóa học";
+            dgvCourse.Columns[2].HeaderText = "Ngày bắt đầu";
+            dgvCourse.Columns[3].HeaderText = "Ngày kết thục";
+            dgvCourse.Columns[4].HeaderText = "Giá";
+
+            bll.LoadDataGridViewClass(dgvClass);
+            dgvClass.Columns[0].HeaderText = "Mã lớp học";
+            dgvClass.Columns[1].HeaderText = "Tên lớp học";
+            dgvClass.Columns[2].HeaderText = "Tên khóa học";
+            dgvClass.Columns[3].HeaderText = "Số học sinh tối đa";
         }
         public void SetCBB()
         {
@@ -41,31 +53,45 @@ namespace PBL3.View
         {
             fAddCourse fadd = new fAddCourse();
             fadd.ShowDialog();
-            dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.Id, p.CourseName, p.StartDate, p.EndDate, p.Price }).ToList();
+
+            new ManagerBLL().LoadDataGridViewCourse(dgvCourse);
+            cbbListCourse.Items.Clear();
+            SetCBB();
         }
 
         private void btnDelCourse_Click(object sender, EventArgs e)
         {
+            ManagerBLL bll = new ManagerBLL();
+
             if (dgvCourse.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow i in dgvCourse.SelectedRows)
                 {
                     int id = Convert.ToInt32(i.Cells[0].Value);
-                    new ManagerBLL().DeleteCourseBLL(id);
-                    dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.Id, p.CourseName, p.StartDate, p.EndDate, p.Price }).ToList();
+                    bll.DeleteCourseBLL(id);
                 }
+                MessageBox.Show("Xóa thành công!!!");
             }
+            bll.LoadDataGridViewCourse(dgvCourse);
+
+            cbbListCourse.Items.Clear();
+            SetCBB();
+
+            bll.LoadDataGridViewClass(dgvClass);
         }
 
         private void btnUpdateCourse_Click(object sender, EventArgs e)
         {
             if (dgvCourse.SelectedRows.Count>0)
             {
-                int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells["ID"].Value.ToString());
+                int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells[0].Value.ToString());
                 fAddCourse f = new fAddCourse(id);
                 f.ShowDialog();
-                dgvCourse.DataSource = new ManagerBLL().GetALlCourseBLL().Select(p => new { p.Id, p.CourseName, p.StartDate, p.EndDate, p.Price }).ToList();
+                new ManagerBLL().LoadDataGridViewCourse(dgvCourse);
             }
+
+            cbbListCourse.Items.Clear();
+            SetCBB();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -95,15 +121,55 @@ namespace PBL3.View
 
         private void cbbListCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ManagerBLL bll = new ManagerBLL();
             int courseID = ((CBBItem)cbbListCourse.SelectedItem).Value;
             if (courseID == 0)
             {
-                dgvClass.DataSource = new ManagerBLL().GetAllClassBLL().Select(p => new { p.Id, p.ClassName, p.Course.CourseName, p.MaxStudent }).ToList();
+                bll.LoadDataGridViewClass(dgvClass);
             }
             else
             {
                 dgvClass.DataSource = new ManagerBLL().GetAllClassByCourseIDBLL(courseID).Select(p => new { p.Id, p.ClassName, p.Course.CourseName, p.MaxStudent }).ToList();
             }
+        }
+
+        private void btnAddClass_Click(object sender, EventArgs e)
+        {
+            fAddClass f = new fAddClass();
+            f.ShowDialog();
+            f.Dispose();
+            new ManagerBLL().LoadDataGridViewClass(dgvClass);
+        }
+
+        private void btnManageClass_Click(object sender, EventArgs e)
+        {
+            if (dgvClass.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvClass.SelectedRows[0].Cells[0].Value);
+                fManageClass f = new fManageClass(id);
+                f.ShowDialog();
+                f.Dispose();
+            }
+            new ManagerBLL().LoadDataGridViewClass(dgvClass);
+        }
+        private void btnDeleteClass_Click(object sender, EventArgs e)
+        {
+            ManagerBLL bll  = new ManagerBLL(); 
+            if (dgvClass.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow i in dgvClass.SelectedRows)
+                {
+                    int id = Convert.ToInt32(i.Cells[0].Value);
+                    bll.DeleteClassByClassIDBLL(id);
+                }
+                MessageBox.Show("Xóa thành công!");
+                bll.LoadDataGridViewClass(dgvClass);
+            }
+        }
+
+        private void btnSearchClass_Click(object sender, EventArgs e)
+        {
+            dgvClass.DataSource = new ManagerBLL().GetClassByNameBLL(txtSearchClass.Text).Select(p => new { p.Id, p.ClassName, p.Course.CourseName,p.MaxStudent }).ToList();
         }
     }
 }

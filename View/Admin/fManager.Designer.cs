@@ -31,13 +31,13 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.txtSearchClass = new System.Windows.Forms.TextBox();
+            this.btnSearchClass = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDeleteClass = new System.Windows.Forms.Button();
+            this.btnManageClass = new System.Windows.Forms.Button();
+            this.btnAddClass = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvClass = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -46,22 +46,22 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnFemale = new System.Windows.Forms.RadioButton();
+            this.rbtnMale = new System.Windows.Forms.RadioButton();
             this.dtDate = new System.Windows.Forms.DateTimePicker();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -165,29 +165,30 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox2);
-            this.panel9.Controls.Add(this.button8);
+            this.panel9.Controls.Add(this.txtSearchClass);
+            this.panel9.Controls.Add(this.btnSearchClass);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Location = new System.Drawing.Point(1055, 7);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(400, 100);
             this.panel9.TabIndex = 2;
             // 
-            // textBox2
+            // txtSearchClass
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 31);
-            this.textBox2.TabIndex = 5;
+            this.txtSearchClass.Location = new System.Drawing.Point(126, 39);
+            this.txtSearchClass.Name = "txtSearchClass";
+            this.txtSearchClass.Size = new System.Drawing.Size(257, 31);
+            this.txtSearchClass.TabIndex = 5;
             // 
-            // button8
+            // btnSearchClass
             // 
-            this.button8.Location = new System.Drawing.Point(17, 33);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 42);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Tìm";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnSearchClass.Location = new System.Drawing.Point(17, 33);
+            this.btnSearchClass.Name = "btnSearchClass";
+            this.btnSearchClass.Size = new System.Drawing.Size(103, 42);
+            this.btnSearchClass.TabIndex = 4;
+            this.btnSearchClass.Text = "Tìm";
+            this.btnSearchClass.UseVisualStyleBackColor = true;
+            this.btnSearchClass.Click += new System.EventHandler(this.btnSearchClass_Click);
             // 
             // label4
             // 
@@ -199,40 +200,43 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.button9);
-            this.panel8.Controls.Add(this.button7);
-            this.panel8.Controls.Add(this.button5);
+            this.panel8.Controls.Add(this.btnDeleteClass);
+            this.panel8.Controls.Add(this.btnManageClass);
+            this.panel8.Controls.Add(this.btnAddClass);
             this.panel8.Location = new System.Drawing.Point(477, 6);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(572, 100);
             this.panel8.TabIndex = 1;
             // 
-            // button9
+            // btnDeleteClass
             // 
-            this.button9.Location = new System.Drawing.Point(390, 23);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(172, 56);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "Xóa lớp học";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnDeleteClass.Location = new System.Drawing.Point(390, 23);
+            this.btnDeleteClass.Name = "btnDeleteClass";
+            this.btnDeleteClass.Size = new System.Drawing.Size(172, 56);
+            this.btnDeleteClass.TabIndex = 3;
+            this.btnDeleteClass.Text = "Xóa lớp học";
+            this.btnDeleteClass.UseVisualStyleBackColor = true;
+            this.btnDeleteClass.Click += new System.EventHandler(this.btnDeleteClass_Click);
             // 
-            // button7
+            // btnManageClass
             // 
-            this.button7.Location = new System.Drawing.Point(201, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(172, 56);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Quản lý lớp học";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnManageClass.Location = new System.Drawing.Point(201, 23);
+            this.btnManageClass.Name = "btnManageClass";
+            this.btnManageClass.Size = new System.Drawing.Size(172, 56);
+            this.btnManageClass.TabIndex = 1;
+            this.btnManageClass.Text = "Quản lý lớp";
+            this.btnManageClass.UseVisualStyleBackColor = true;
+            this.btnManageClass.Click += new System.EventHandler(this.btnManageClass_Click);
             // 
-            // button5
+            // btnAddClass
             // 
-            this.button5.Location = new System.Drawing.Point(14, 23);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 56);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Thêm lớp học";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAddClass.Location = new System.Drawing.Point(14, 23);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(172, 56);
+            this.btnAddClass.TabIndex = 0;
+            this.btnAddClass.Text = "Thêm lớp học";
+            this.btnAddClass.UseVisualStyleBackColor = true;
+            this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
             // 
             // panel7
             // 
@@ -298,8 +302,8 @@
             // panel20
             // 
             this.panel20.Controls.Add(this.button2);
-            this.panel20.Controls.Add(this.textBox3);
-            this.panel20.Controls.Add(this.textBox1);
+            this.panel20.Controls.Add(this.txtPassword);
+            this.panel20.Controls.Add(this.txtUsername);
             this.panel20.Controls.Add(this.label14);
             this.panel20.Controls.Add(this.label13);
             this.panel20.Controls.Add(this.label12);
@@ -317,19 +321,21 @@
             this.button2.Text = "Đổi mật khẩu";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(52, 453);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(499, 31);
-            this.textBox3.TabIndex = 21;
+            this.txtPassword.Location = new System.Drawing.Point(52, 453);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(499, 31);
+            this.txtPassword.TabIndex = 21;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(52, 254);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(499, 31);
-            this.textBox1.TabIndex = 20;
+            this.txtUsername.Location = new System.Drawing.Point(52, 254);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(499, 31);
+            this.txtUsername.TabIndex = 20;
             // 
             // label14
             // 
@@ -361,46 +367,46 @@
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.button20);
+            this.panel19.Controls.Add(this.btnLogOut);
             this.panel19.Location = new System.Drawing.Point(887, 4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(571, 99);
             this.panel19.TabIndex = 6;
             // 
-            // button20
+            // btnLogOut
             // 
-            this.button20.Location = new System.Drawing.Point(382, 21);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(172, 56);
-            this.button20.TabIndex = 2;
-            this.button20.Text = "Đăng xuất";
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnLogOut.Location = new System.Drawing.Point(382, 21);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(172, 56);
+            this.btnLogOut.TabIndex = 2;
+            this.btnLogOut.Text = "Đăng xuất";
+            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.button22);
+            this.panel16.Controls.Add(this.btnUpdateInfo);
             this.panel16.Location = new System.Drawing.Point(6, 3);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(874, 100);
             this.panel16.TabIndex = 5;
             // 
-            // button22
+            // btnUpdateInfo
             // 
-            this.button22.Location = new System.Drawing.Point(15, 22);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(172, 56);
-            this.button22.TabIndex = 0;
-            this.button22.Text = "Câp nhật";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnUpdateInfo.Location = new System.Drawing.Point(15, 22);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(172, 56);
+            this.btnUpdateInfo.TabIndex = 0;
+            this.btnUpdateInfo.Text = "Câp nhật";
+            this.btnUpdateInfo.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.radioButton2);
-            this.panel4.Controls.Add(this.radioButton1);
+            this.panel4.Controls.Add(this.rbtnFemale);
+            this.panel4.Controls.Add(this.rbtnMale);
             this.panel4.Controls.Add(this.dtDate);
-            this.panel4.Controls.Add(this.button17);
-            this.panel4.Controls.Add(this.button18);
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.btnOK);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.txtPhone);
             this.panel4.Controls.Add(this.txtAddress);
@@ -425,27 +431,27 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Thông tin tài khoản";
             // 
-            // radioButton2
+            // rbtnFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(422, 496);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 29);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.Location = new System.Drawing.Point(422, 496);
+            this.rbtnFemale.Name = "rbtnFemale";
+            this.rbtnFemale.Size = new System.Drawing.Size(70, 29);
+            this.rbtnFemale.TabIndex = 18;
+            this.rbtnFemale.TabStop = true;
+            this.rbtnFemale.Text = "Nữ";
+            this.rbtnFemale.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(191, 496);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(87, 29);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnMale.AutoSize = true;
+            this.rbtnMale.Location = new System.Drawing.Point(191, 496);
+            this.rbtnMale.Name = "rbtnMale";
+            this.rbtnMale.Size = new System.Drawing.Size(87, 29);
+            this.rbtnMale.TabIndex = 17;
+            this.rbtnMale.TabStop = true;
+            this.rbtnMale.Text = "Nam";
+            this.rbtnMale.UseVisualStyleBackColor = true;
             // 
             // dtDate
             // 
@@ -455,23 +461,23 @@
             this.dtDate.Size = new System.Drawing.Size(373, 31);
             this.dtDate.TabIndex = 16;
             // 
-            // button17
+            // btnCancel
             // 
-            this.button17.Location = new System.Drawing.Point(99, 569);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(139, 52);
-            this.button17.TabIndex = 15;
-            this.button17.Text = "Cancel";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(99, 569);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(139, 52);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnOK
             // 
-            this.button18.Location = new System.Drawing.Point(644, 569);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(139, 52);
-            this.button18.TabIndex = 5;
-            this.button18.Text = "OK";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(644, 569);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(139, 52);
+            this.btnOK.TabIndex = 5;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -1032,13 +1038,13 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox txtSearchClass;
+        private System.Windows.Forms.Button btnSearchClass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDeleteClass;
+        private System.Windows.Forms.Button btnManageClass;
+        private System.Windows.Forms.Button btnAddClass;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView dgvClass;
         private System.Windows.Forms.Panel panel6;
@@ -1087,11 +1093,11 @@
         private System.Windows.Forms.Button btnUpdateCourse;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
@@ -1105,12 +1111,12 @@
         private System.Windows.Forms.ComboBox cbSortCourse;
         private System.Windows.Forms.Button btnSortCourse;
         private System.Windows.Forms.DateTimePicker dtDate;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnFemale;
+        private System.Windows.Forms.RadioButton rbtnMale;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

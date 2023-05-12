@@ -42,7 +42,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ClassId" Type="Int32" Nullable="false" />
-    <Property Name="Day" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DayLesson" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FromLesson" Type="Int32" Nullable="false" />
     <Property Name="ToLesson" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Class" Relationship="Self.Calendar_ClassID" FromRole="Calendar" ToRole="Class" />
