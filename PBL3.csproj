@@ -150,6 +150,9 @@
     <Compile Include="View\Học viên\fKQ.Designer.cs">
       <DependentUpon>fKQ.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Admin\fAccount.resx">
+      <DependentUpon>fAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fAddClass.resx">
       <DependentUpon>fAddClass.cs</DependentUpon>
     </EmbeddedResource>
