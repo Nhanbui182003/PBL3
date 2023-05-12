@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="972dc866714c4ae3b93635ac08604f59" Name="Diagram1">
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Account" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.AccountInfo" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Bill" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Calendar" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Class" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Course" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Document" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.LearningResult" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEnglishCenterModel.Role" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="DBEnglishCenterModel.Account_RoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.AccountInfo_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Result_AccountID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Bill_AccountID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Calendar_ClassID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Class_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Document_ClassID" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEnglishCenterModel.Result_ClassID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

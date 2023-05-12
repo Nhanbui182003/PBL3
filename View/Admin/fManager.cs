@@ -176,5 +176,7 @@ namespace PBL3.View
         {
             dgvClass.DataSource = new ManagerBLL().GetClassByNameBLL(txtSearchClass.Text).Select(p => new { p.Id, p.ClassName, p.Course.CourseName,p.MaxStudent }).ToList();
         }
+
+
     }
 }

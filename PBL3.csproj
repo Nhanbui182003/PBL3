@@ -65,6 +65,16 @@
     <Compile Include="DAL\DAL_Class.cs" />
     <Compile Include="DAL\DAL_Document.cs" />
     <Compile Include="DAL\DAL_Student.cs" />
+    <Compile Include="DBEnglishCenter.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DTO\CbbCourse.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBRole.cs" />
@@ -253,6 +263,15 @@
     <EmbeddedResource Include="View\Học viên\fKQ.resx">
       <DependentUpon>fKQ.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DBEnglishCenter.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBEnglishCenter.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="DBEnglishCenter.edmx.diagram">
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -272,6 +291,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBEnglishCenter.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBEnglishCenter.Context.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
