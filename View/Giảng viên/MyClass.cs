@@ -14,15 +14,20 @@ namespace PBL3.View.Giảng_viên
 {
     public partial class MyClass : Form
     {
+        #region Properties
+
         private int IdClass;
         private BLL_Class bllClass;
         private BLL_Document bllDocument;
+        private BLL_Calendar bllCalendar;
+        #endregion
         public MyClass(int idClass)
         {
             InitializeComponent();
             IdClass = idClass;
             bllClass= new BLL_Class();
             bllDocument = new BLL_Document();   
+            bllCalendar = new BLL_Calendar();   
             
         }
 
@@ -46,17 +51,23 @@ namespace PBL3.View.Giảng_viên
         }
         private void LoadAllDocument()
         {
-            bllDocument = new BLL_Document();
+            
             bllDocument.LoadListDocument(dtgvListDocument, IdClass);  
             
         }
+        private void LoadLessonInWeakOfClass()
+        {
+            bllCalendar.LoadLessonOfClass(IdClass, dtgvListLesson);
+        }
+
         private void MyClass_Load(object sender, EventArgs e)
         {
             DisPlayInfoClass();
             cbxSortStudent.SelectedIndex = 0;
             cbxSortDocument.SelectedIndex = 0;
             LoadListSudentInClass(IdClass);
-            LoadAllDocument();  
+            LoadAllDocument();
+            LoadLessonInWeakOfClass();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -98,7 +109,7 @@ namespace PBL3.View.Giảng_viên
         {
             
             
-            bllClass = new BLL_Class();
+            
             dtgvListStudentInClass.DataSource = null;
             
             bllClass.GetListStudent(IdClass, dtgvListStudentInClass);
@@ -113,7 +124,7 @@ namespace PBL3.View.Giảng_viên
 
         private void F_LoadData1(object sender, EventArgs e)
         {
-            bllDocument = new BLL_Document();
+            
             bllDocument.LoadListDocument(dtgvListDocument, IdClass);
         
         }

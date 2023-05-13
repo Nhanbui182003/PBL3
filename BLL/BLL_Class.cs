@@ -98,6 +98,10 @@ namespace PBL3.BLL
                 MessageBox.Show(ex.Message);
                 return false;
 
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
             }
         }
         public Class GetClassFromId(int idClass)

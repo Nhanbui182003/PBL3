@@ -96,13 +96,21 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 AccountInfo InfoTeacher = db.AccountInfoes.Find(idTeacher);
-                InfoTeacher.Name = info.Name;
-                InfoTeacher.Phone = info.Phone;
-                InfoTeacher.Email = info.Email;
-                InfoTeacher.Birthday = info.Birthday;
-                InfoTeacher.Gender = InfoTeacher.Gender;
-                InfoTeacher.Address = info.Address;
-                db.SaveChanges();
+                if(info.Name == "")
+                {
+                    throw new Exception("Mục họ và tên không được để trống");
+                }
+                else
+                {
+                    InfoTeacher.Name = info.Name;
+                    InfoTeacher.Phone = info.Phone;
+                    InfoTeacher.Email = info.Email;
+                    InfoTeacher.Birthday = info.Birthday;
+                    InfoTeacher.Gender = InfoTeacher.Gender;
+                    InfoTeacher.Address = info.Address;
+                    db.SaveChanges();
+                }
+                
             }
                
 
@@ -232,6 +240,17 @@ namespace PBL3.DAL
                 }
             }
             
+        }
+        public dynamic LoadLessonOfClass( int IdClass)
+        {
+            using (db = new DBEnglishCenterEntities())
+            {
+
+                List<Calendar> list = db.Calendars.Where(s => s.Id == IdClass).ToList();
+                var ds = list.Select(s => new { s.Class.ClassName, s.Class.Course.CourseName, s.DayLesson, s.FromLesson, s.ToLesson }).ToList();
+                return ds;
+                
+            }
         }
 
     }
