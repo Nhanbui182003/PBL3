@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace PBL3.DAO
+namespace PBL3.DAL
 {
     class ManagerDAL
     {
@@ -101,6 +102,18 @@ namespace PBL3.DAO
             {
                 return db.Classes.Include(p => p.Course).Where(p => p.CourseId == id).ToList();
             }
+        }
+        public string getMD5DAL(string password)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasPass = "";
+            foreach (byte b in hasData)
+            {
+                hasPass += b;
+            }
+            return hasPass;
         }
         public Account GetAccountByUsernamePassword(string username, string password)
         {

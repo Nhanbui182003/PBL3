@@ -253,17 +253,26 @@ namespace PBL3.View
                         list.Add(item);
 
                     }
-                    if (bllAccount.DeleteAccount(list))
+                    if (list.Contains(ID))
                     {
-                        MessageBox.Show("Xóa tài khoản thành công !!!");
-
-                        LoadAllAccount();
-
+                        MessageBox.Show("Bạn không thể xóa tài khoản này ");
                     }
                     else
                     {
-                        MessageBox.Show("Xóa tài khoản thất bại !!! ");
+                        if (bllAccount.DeleteAccount(list))
+                        {
+                            MessageBox.Show("Xóa tài khoản thành công !!!");
+
+                            LoadAllAccount();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa tài khoản thất bại !!! ");
+                        }
                     }
+
+                    
 
                 }
 
