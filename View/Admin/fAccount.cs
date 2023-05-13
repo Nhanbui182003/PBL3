@@ -45,7 +45,7 @@ namespace PBL3.View.Admin
                 
                 cbxRoleType.SelectedValue = a.RoleId;
                 tbxName.Text = info.Name;
-                dtpkBirthday.Value = (DateTime)info.Birthday;
+                dtpkBirthday.Value = (DateTime)info.Birthday; 
                 tbxAddress.Text = info.Address;
                 tbxPhone.Text = info.Phone;
                 tbxEmail.Text = info.Email;
@@ -71,18 +71,15 @@ namespace PBL3.View.Admin
             LoadData();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void btnOk_Click_1(object sender, EventArgs e)
         {
-            Account a = new Account() { UserName = tbxUsername.Text, PassWord = "123", RoleId = Int32.Parse(cbxRoleType.SelectedValue.ToString()) };
+            Account a = new Account() { UserName = tbxUsername.Text, PassWord = "123", RoleId = Int32.Parse(cbxRoleType.SelectedValue.ToString()), AccountActive = true };
             AccountInfo info = new AccountInfo() { Name = tbxName.Text, Birthday = (DateTime)dtpkBirthday.Value, Email = tbxEmail.Text, Address = tbxAddress.Text, Phone = tbxPhone.Text, Gender = rdoMale.Checked };
             if (IdAccount == 0)
             {
-                if(bllAccount.AddAccount(a, info))
+                if (bllAccount.AddAccount(a, info))
                 {
                     MessageBox.Show("Thêm thành công tài khoản");
 
@@ -93,9 +90,10 @@ namespace PBL3.View.Admin
 
                 }
             }
-            else{
-                
-                if(bllAccount.EditAccount(IdAccount, info))
+            else
+            {
+
+                if (bllAccount.EditAccount(IdAccount, info))
                 {
                     MessageBox.Show("Cập nhật  thông tin tài khoản thành công");
 
@@ -106,11 +104,16 @@ namespace PBL3.View.Admin
                 }
 
             }
-            if(lData != null)
+            if (lData != null)
             {
                 lData(this, new EventArgs());
             }
-            this.Close ();  
+            this.Close();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

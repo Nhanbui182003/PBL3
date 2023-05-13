@@ -27,7 +27,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Mã lớp";
                 }
-                else if (column.Name == "NameClass")
+                else if (column.Name == "ClassName")
                 {
                     column.HeaderText = "Tên lớp";
                 }
@@ -35,7 +35,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Số Học viên tối đa";
                 }
-                else if (column.Name == "NameCourse")
+                else if (column.Name == "Coursename")
                 {
                     column.HeaderText = "Tên khóa học";
                 }
@@ -57,7 +57,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Mã lớp";
                 }
-                else if (column.Name == "NameClass")
+                else if (column.Name == "ClassName")
                 {
                     column.HeaderText = "Tên lớp";
                 }
@@ -65,7 +65,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Số Học viên tối đa";
                 }
-                else if (column.Name == "NameCourse")
+                else if (column.Name == "CourseName")
                 {
                     column.HeaderText = "Tên khóa học";
                 }

@@ -20,11 +20,11 @@ namespace PBL3.BLL
             dg.DataSource = dalClass.GetCalendarOfTeacher(idTeacher, jobDay);
             foreach (DataGridViewColumn column in dg.Columns)
             {
-                if (column.Name == "NameClass")
+                if (column.Name == "ClassName")
                 {
                     column.HeaderText = "Mã lớp học ";
                 }
-                else if (column.Name == "Day")
+                else if (column.Name == "DayLesson")
                 {
                     column.HeaderText = "Ngày dạy";
                 }

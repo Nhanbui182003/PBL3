@@ -19,12 +19,12 @@ namespace PBL3.View.Giảng_viên
         private BLL_Account bllAccount;
 
         #endregion
-        public fTeacher()
+        public fTeacher(int idTeacher)
         {
             InitializeComponent();
             BllClass = new BLL_Class();
             bllAccount = new BLL_Account(); 
-            IdTeacher = 2;
+            IdTeacher = idTeacher;
             
         }
 
@@ -154,6 +154,14 @@ namespace PBL3.View.Giảng_viên
                 }
 
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin f = new FormLogin();
+            f.ShowDialog();
+            
         }
     }
 }

@@ -15,44 +15,55 @@ namespace PBL3.DAL
         }    
         public AccountInfo GetAccountInfoFromIdAccount(int id)
         {
-            return db.AccountInfoes.Where(s => s.AccountId== id).FirstOrDefault();  
+            using(db = new DBEnglishCenterEntities()) {
+                return db.AccountInfoes.Where(s => s.AccountId == id).FirstOrDefault();
+            }
+            
         }
         public LearningResult GetReslultOfStudent(int idStudent, int idClass)
         {
-            LearningResult lr = new LearningResult();
-            lr = db.LearningResults.Where( s=> s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();
-            return lr;
+            using(db = new DBEnglishCenterEntities())
+            {
+                LearningResult lr = new LearningResult();
+                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();
+                return lr;
+            }   
+            
 
         }
         public void RatingStudent(int idStudent , int idClass, string assignment, string midtern, string final)
         {
-            LearningResult lr = new LearningResult();
-            lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();  
-            if(assignment != "")
+            using(db = new DBEnglishCenterEntities())
             {
-                lr.AssignmentPoint = Convert.ToDouble(assignment);
+                LearningResult lr = new LearningResult();
+                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();
+                if (assignment != "")
+                {
+                    lr.AssignmentPoint = Convert.ToDouble(assignment);
+                }
+                else
+                {
+                    lr.AssignmentPoint = null;
+                }
+                if (midtern != "")
+                {
+                    lr.MidTermExamPoint = Convert.ToDouble(midtern);
+                }
+                else
+                {
+                    lr.MidTermExamPoint = null;
+                }
+                if (final != "")
+                {
+                    lr.FinalExamPoint = Convert.ToDouble(final);
+                }
+                else
+                {
+                    lr.FinalExamPoint = null;
+                }
+                db.SaveChanges();
             }
-            else
-            {
-                lr.AssignmentPoint = null;
-            }
-            if (midtern != "")
-            {
-                lr.MidTermExamPoint = Convert.ToDouble(midtern);
-            }
-            else
-            {
-                lr.MidTermExamPoint = null;
-            }
-            if (final != "")
-            {
-                lr.FinalExamPoint = Convert.ToDouble(final);
-            }
-            else
-            {
-                lr.FinalExamPoint = null;
-            }
-            db.SaveChanges();   
+              
         }
         
     }

@@ -22,16 +22,23 @@ namespace PBL3.BLL
 
             foreach (DataGridViewColumn column in dg.Columns)
             {
-                if (column.Name == "IdDocument")
+                if (column.Name == "Id")
                 {
                     column.HeaderText = "Mã tài liệu";
                 }
                 else if (column.Name == "FileName")
                 {
                     column.HeaderText = "Tên tài liệu";
+                }else if(column.Name == "Filedate")
+                {
+                    column.HeaderText = "Ngày đăng tài liệu ";
                 }
                 
             }
+            dg.Columns[0].Width = (int)(dg.Width * 0.2);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.4);
+            
         }
         public bool AddDocument(string filePath, int IdClass)
         {
@@ -71,6 +78,34 @@ namespace PBL3.BLL
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+        public void SortDocument(DataGridView dg,int  IdClass,int type)
+        {
+            
+            dg.DataSource = dalDocument.SortDocumentWithType(IdClass, type);
+
+
+            foreach (DataGridViewColumn column in dg.Columns)
+            {
+                if (column.Name == "Id")
+                {
+                    column.HeaderText = "Mã tài liệu";
+                }
+                else if (column.Name == "FileName")
+                {
+                    column.HeaderText = "Tên tài liệu";
+                }
+                else if (column.Name == "Filedate")
+                {
+                    column.HeaderText = "Ngày đăng tài liệu ";
+                }
+
+            }
+
+            
+            dg.Columns[0].Width = (int)(dg.Width * 0.2);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.4);
         }
     }
 }

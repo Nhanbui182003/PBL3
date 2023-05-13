@@ -104,9 +104,9 @@
             // 
             // btnAddFile
             // 
-            this.btnAddFile.Location = new System.Drawing.Point(668, 7);
+            this.btnAddFile.Location = new System.Drawing.Point(633, 7);
             this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(99, 42);
+            this.btnAddFile.Size = new System.Drawing.Size(134, 42);
             this.btnAddFile.TabIndex = 1;
             this.btnAddFile.Text = "Thêm tài liệu";
             this.btnAddFile.UseVisualStyleBackColor = true;
@@ -125,9 +125,12 @@
             // cbxSortDocument
             // 
             this.cbxSortDocument.FormattingEnabled = true;
+            this.cbxSortDocument.Items.AddRange(new object[] {
+            "Mã tài liệu",
+            "Ngày đăng tải"});
             this.cbxSortDocument.Location = new System.Drawing.Point(110, 14);
             this.cbxSortDocument.Name = "cbxSortDocument";
-            this.cbxSortDocument.Size = new System.Drawing.Size(151, 24);
+            this.cbxSortDocument.Size = new System.Drawing.Size(200, 24);
             this.cbxSortDocument.TabIndex = 4;
             // 
             // dtgvListDocument
@@ -148,6 +151,7 @@
             this.btnSortDocument.TabIndex = 3;
             this.btnSortDocument.Text = "Sắp xếp ";
             this.btnSortDocument.UseVisualStyleBackColor = true;
+            this.btnSortDocument.Click += new System.EventHandler(this.btnSortDocument_Click);
             // 
             // tabPage1
             // 
@@ -202,7 +206,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sắp xếp theo";
             // 
@@ -259,7 +263,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(38, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "Tên học viên";
             // 
@@ -298,7 +302,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(5, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Mã lớp học";
             // 
@@ -314,7 +318,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp học ";
             // 
@@ -337,7 +341,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
+            this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Số lượng học viên";
             // 
@@ -345,7 +349,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;

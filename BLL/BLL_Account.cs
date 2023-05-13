@@ -22,6 +22,45 @@ namespace PBL3.BLL
         public void LoadDataOfAccount(DataGridView dg)
         {
             dg.DataSource = dalAccount.GetAllAccount();
+            dg.Columns[0].Width = (int)(dg.Width * 0.2);
+            dg.Columns[1].Width = (int)(dg.Width * 0.2);
+            dg.Columns[2].Width = (int)(dg.Width * 0.2);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
+            dg.Columns[4].Width = (int)(dg.Width * 0.2);
+            dg.Columns[5].Width = (int)(dg.Width * 0.1);
+            dg.Columns[6].Width = (int)(dg.Width * 0.1);
+            foreach (DataGridViewColumn column in dg.Columns)
+            {
+                if (column.Name == "Id")
+                {
+                    column.HeaderText = "Mã học viên";
+                }
+                else if (column.Name == "UserName")
+                {
+                    column.HeaderText = "Tên hiển thị";
+                }
+                else if (column.Name == "RoleName")
+                {
+                    column.HeaderText = "Loại tài khoản";
+                }
+                else if (column.Name == "Name")
+                {
+                    column.HeaderText = "Họ và tên";
+                }
+                else if (column.Name == "Address")
+                {
+                    column.HeaderText = "Địa chỉ";
+                }
+                else if (column.Name == "Gender")
+                {
+                    column.HeaderText = "Giới tính";
+                }
+                else if (column.Name == "Birthday")
+                {
+                    column.HeaderText = "Ngày sinh";
+                }
+
+            }
         }
         public void LoadAllRole(ComboBox cb)
         {
@@ -96,6 +135,32 @@ namespace PBL3.BLL
                 return false;
             }
         }
+        public bool DeleteAccount(List<int> list)
+        {
+            try
+            {
+                dalAccount.DeleteListAccounts(list);
+
+                return true;
+            }catch(DbUpdateException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public bool ResetAccountPassWords( int id)
+        {
+            try
+            {
+                dalAccount.ResetPassWord(id);
+                return true;
+            }catch(DbUpdateException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
 
     }
 }
