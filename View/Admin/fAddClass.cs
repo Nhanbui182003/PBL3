@@ -93,6 +93,7 @@ namespace PBL3.View.Admin
                                     CourseId = courseId,
                                     ClassName = txtClassName.Text,
                                     MaxStudent = Convert.ToInt32(txtMaxStudent.Text),
+                                    ClassActive = true
                                 };
                                 if (bll.isExistingClassBLL(c) == false)
                                 {
@@ -134,6 +135,7 @@ namespace PBL3.View.Admin
                                 newClass.ClassName = txtClassName.Text;
                                 newClass.CourseId = courseId;
                                 newClass.MaxStudent = Convert.ToInt32(txtMaxStudent.Text);
+                                newClass.ClassActive = true;
 
                                 LearningResult newTeacher = bll.GetLearningResultOfTeacherByClassIDBLL(ClassID);
                                 newTeacher.AccountId = Convert.ToInt32(txtTeacherID.Text);

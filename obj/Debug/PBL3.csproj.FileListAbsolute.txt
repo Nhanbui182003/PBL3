@@ -157,3 +157,11 @@ C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.exe
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.pdb
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAccount.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddClass.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources

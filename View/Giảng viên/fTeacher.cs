@@ -33,7 +33,6 @@ namespace PBL3.View.Giảng_viên
             IdTeacher = 2;
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
-            
         }
         void DisPlayAllCourse()
         {

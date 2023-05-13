@@ -46,6 +46,7 @@ namespace PBL3.View.Admin
                     EndDate = dtEndDate.Value.Date,
                     Description = txtDescription.Text,
                     Price = Convert.ToInt32(txtPrice.Text),
+                    CourseActive = true
                 };
                 if (bll.isExistingCourseBLL(newCourse)==false)
                 {
