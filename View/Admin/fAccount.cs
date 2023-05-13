@@ -14,6 +14,7 @@ namespace PBL3.View.Admin
 {
     public partial class fAccount : Form
     {
+        #region properties
         private int IdAccount;
         private BLL_Account bllAccount;
         private event EventHandler lData;
@@ -22,6 +23,7 @@ namespace PBL3.View.Admin
             add { lData += value; }
             remove { lData -= value; }
         }
+        #endregion
         public fAccount(int idAccount)
         {
             InitializeComponent();

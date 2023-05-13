@@ -30,7 +30,7 @@ namespace PBL3.View.Giảng_viên
 
         void DisplayDataOfAllClasses()
         {
-            IdTeacher = 2;
+            
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
             
@@ -41,6 +41,7 @@ namespace PBL3.View.Giảng_viên
         }
         void DisplayInfoTeacher()
         {
+
             AccountInfo info = new AccountInfo();
             info = BllClass.GetInfo(IdTeacher);
             tbxName.Text = info.Name;   
@@ -48,6 +49,7 @@ namespace PBL3.View.Giảng_viên
             tbxEmail.Text = info.Email;
             tbxPhone.Text = info.Phone;
             dtpkBirthday.Value = (DateTime)info.Birthday;
+
             if(info.Gender == true)
             {
                 rdoMale.Checked = true;
@@ -115,12 +117,14 @@ namespace PBL3.View.Giảng_viên
             if(BllClass.EditInfo(IdTeacher,info))
             {
                 MessageBox.Show("Sửa thông tin thành công!!!");
-                DisplayInfoTeacher();
+                
             }
             else
             {
                 MessageBox.Show("Sửa thông tin không thành công !!!");
+
             }
+            DisplayInfoTeacher();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

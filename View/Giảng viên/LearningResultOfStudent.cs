@@ -19,9 +19,6 @@ namespace PBL3.View.Giảng_viên
         private int IdStudent;
         private int IdClass;
         private BLL_Student bllStudent;
-        private double aPoint;
-        private double mPoint;
-        private double fPoint;
         private event EventHandler loadData;
         public event EventHandler LoadData
         {

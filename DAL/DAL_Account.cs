@@ -133,7 +133,7 @@ namespace PBL3.DAL
         {
             using(db = new DBEnglishCenterEntities())
             {
-                Account ac = db.Accounts.Where(s => s.Id == id && s.AccountActive == true).FirstOrDefault();
+                
                 AccountInfo acif = db.AccountInfoes.Find(id);
 
                 if (info.Name == "" || (info.Gender != true && info.Gender != false))

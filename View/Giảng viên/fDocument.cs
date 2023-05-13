@@ -14,6 +14,7 @@ namespace PBL3.View.Giảng_viên
 {
     public partial class fDocument : Form
     {
+        #region properties
         public int IdClass { get; set; }
         public int IdDocument { get; set; } 
         private BLL_Document bllDocument;
@@ -23,7 +24,7 @@ namespace PBL3.View.Giảng_viên
             add { loadData += value; }
             remove { loadData -= value; }
         }
-
+        #endregion
         public fDocument(int idClass, int idDocument)
         {
             InitializeComponent();
