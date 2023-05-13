@@ -8,6 +8,7 @@
     <Property Name="RoleId" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="150" Nullable="false" />
     <Property Name="PassWord" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="AccountActive" Type="bit" />
   </EntityType>
   <EntityType Name="AccountInfo">
     <Key>
@@ -25,11 +26,11 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LearningResultId" Type="int" Nullable="false" />
     <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="Price" Type="int" Nullable="false" />
-    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="Time" Type="datetime" />
   </EntityType>
   <EntityType Name="Calendar">
     <Key>
@@ -49,6 +50,7 @@
     <Property Name="CourseId" Type="int" Nullable="false" />
     <Property Name="ClassName" Type="nvarchar" MaxLength="250" />
     <Property Name="MaxStudent" Type="int" />
+    <Property Name="ClassActive" Type="bit" />
   </EntityType>
   <EntityType Name="Course">
     <Key>
@@ -58,7 +60,8 @@
     <Property Name="CourseName" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="StartDate" Type="datetime" Nullable="false" />
     <Property Name="EndDate" Type="datetime" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="CourseActive" Type="bit" />
     <Property Name="Price" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Document">
@@ -69,6 +72,8 @@
     <Property Name="ClassId" Type="int" Nullable="false" />
     <Property Name="FileName" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="FileData" Type="varbinary(max)" />
+    <Property Name="FileActive" Type="bit" />
+    <Property Name="Filedate" Type="datetime" />
   </EntityType>
   <EntityType Name="LearningResult">
     <Key>

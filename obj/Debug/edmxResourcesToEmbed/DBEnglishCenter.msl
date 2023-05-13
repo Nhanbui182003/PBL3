@@ -8,6 +8,7 @@
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="AccountActive" ColumnName="AccountActive" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -53,6 +54,7 @@
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="ClassName" ColumnName="ClassName" />
           <ScalarProperty Name="MaxStudent" ColumnName="MaxStudent" />
+          <ScalarProperty Name="ClassActive" ColumnName="ClassActive" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,6 +66,7 @@
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CourseActive" ColumnName="CourseActive" />
           <ScalarProperty Name="Price" ColumnName="Price" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -75,6 +78,8 @@
           <ScalarProperty Name="ClassId" ColumnName="ClassId" />
           <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="FileData" ColumnName="FileData" />
+          <ScalarProperty Name="FileActive" ColumnName="FileActive" />
+          <ScalarProperty Name="Filedate" ColumnName="Filedate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
