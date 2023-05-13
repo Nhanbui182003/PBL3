@@ -33,6 +33,7 @@ namespace PBL3.DAL
         }
         public void RatingStudent(int idStudent , int idClass, string assignment, string midtern, string final)
         {
+            bool check = true;
             using(db = new DBEnglishCenterEntities())
             {
                 LearningResult lr = new LearningResult();
@@ -40,6 +41,10 @@ namespace PBL3.DAL
                 if (assignment != "")
                 {
                     lr.AssignmentPoint = Convert.ToDouble(assignment);
+                    if(lr.AssignmentPoint < 0 || lr.AssignmentPoint > 10)
+                    {
+                        check = false;
+                    }
                 }
                 else
                 {
@@ -48,6 +53,10 @@ namespace PBL3.DAL
                 if (midtern != "")
                 {
                     lr.MidTermExamPoint = Convert.ToDouble(midtern);
+                    if(lr.MidTermExamPoint <0 || lr.MidTermExamPoint > 10)
+                    {
+                        check = false;
+                    }
                 }
                 else
                 {
@@ -56,12 +65,25 @@ namespace PBL3.DAL
                 if (final != "")
                 {
                     lr.FinalExamPoint = Convert.ToDouble(final);
+                    if(lr.FinalExamPoint < 0 || lr.FinalExamPoint > 10)
+                    {
+                        check = false;
+                    }
                 }
                 else
                 {
                     lr.FinalExamPoint = null;
                 }
-                db.SaveChanges();
+
+                if(check)
+                {
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Giá trị nằm trong khoảng từ 0 - 10");
+                }
+               
             }
               
         }

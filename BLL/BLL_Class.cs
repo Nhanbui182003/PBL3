@@ -19,6 +19,10 @@ namespace PBL3.BLL
         public void LoadDataClass(DataGridView dg, int id)
         {
             dg.DataSource = DalClass.GetClassOfTeacher(id);
+            dg.Columns[0].Width = (int)(dg.Width * 0.1);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.3);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
 
             // đặt tên cho các header
             foreach (DataGridViewColumn column in dg.Columns)
@@ -51,6 +55,10 @@ namespace PBL3.BLL
         public void SearchClass(int idTeacher,int idCourse, string nameClass, DataGridView dg)
         {
             dg.DataSource = DalClass.SearchClass(idTeacher, idCourse, nameClass);
+            dg.Columns[0].Width = (int)(dg.Width * 0.1);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.3);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
             foreach (DataGridViewColumn column in dg.Columns)
             {
                 if (column.Name == "Id")

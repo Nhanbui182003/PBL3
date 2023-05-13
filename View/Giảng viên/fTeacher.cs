@@ -33,10 +33,7 @@ namespace PBL3.View.Giảng_viên
             IdTeacher = 2;
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
-            dtgvClassOfTeacher.Columns[0].Width = (int)(dtgvClassOfTeacher.Width * 0.1);
-            dtgvClassOfTeacher.Columns[1].Width = (int)(dtgvClassOfTeacher.Width * 0.4);
-            dtgvClassOfTeacher.Columns[2].Width = (int)(dtgvClassOfTeacher.Width * 0.3);
-            dtgvClassOfTeacher.Columns[3].Width = (int)(dtgvClassOfTeacher.Width * 0.2);
+            
         }
         void DisPlayAllCourse()
         {

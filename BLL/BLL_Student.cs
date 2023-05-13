@@ -32,6 +32,9 @@ namespace PBL3.BLL
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
 

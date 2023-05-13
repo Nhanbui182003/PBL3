@@ -302,7 +302,7 @@ namespace PBL3.View
             }
             else
             {
-                MessageBox.Show("Hãy chọn 1 tài khoản để xóa ");
+                MessageBox.Show("Hãy chọn 1 tài khoản  ");
             }
 
         }
