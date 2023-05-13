@@ -25,12 +25,10 @@ namespace PBL3.View.Giảng_viên
             BllClass = new BLL_Class();
             bllAccount = new BLL_Account(); 
             IdTeacher = idTeacher;
-            
         }
 
         void DisplayDataOfAllClasses()
         {
-            IdTeacher = 2;
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
         }

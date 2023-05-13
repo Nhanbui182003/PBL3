@@ -92,7 +92,7 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Include(p => p.Course).ToList();
+                return db.Classes.Include(p => p.Course).Where(p=>p.ClassActive==true).ToList();
             }
         }
         public List<Class> GetAllClassByCourseIDDAL(int id)
@@ -250,14 +250,17 @@ namespace PBL3.DAO
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var learningResult = db.LearningResults.Where(p => p.ClassId == classID);
-                db.LearningResults.RemoveRange(learningResult);
+                //var learningResult = db.LearningResults.Where(p => p.ClassId == classID);
+                //db.LearningResults.RemoveRange(learningResult);
 
-                var calendars = db.Calendars.Where(p => p.ClassId == classID);
-                db.Calendars.RemoveRange(calendars);
+                //var calendars = db.Calendars.Where(p => p.ClassId == classID);
+                //db.Calendars.RemoveRange(calendars);
 
-                var c = db.Classes.Where(p => p.Id == classID).FirstOrDefault();
-                db.Classes.Remove(c);
+                //var c = db.Classes.Where(p => p.Id == classID).FirstOrDefault();
+                //db.Classes.Remove(c);
+
+                var c = db.Classes.Where(p => p.Id!= classID).FirstOrDefault();
+                c.ClassActive= false;
 
                 db.SaveChanges();
             }
