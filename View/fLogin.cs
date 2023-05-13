@@ -29,7 +29,7 @@ namespace PBL3
             var account = new ManagerBLL().GetAccountByUsernamePassword(username, password);    
             if (account != null && account.PassWord==password)
             {
-                if (account.RoleId==1)
+                if (account.RoleId == 1)
                 {
                     this.Hide();
                     fManager f = new fManager(account.Id);
@@ -38,7 +38,7 @@ namespace PBL3
                 if (account.RoleId == 2)
                 {
                     this.Hide();
-                    fTeacher f = new fTeacher();
+                    fTeacher f = new fTeacher(account.Id);
                     f.ShowDialog();
                 } else
                 {

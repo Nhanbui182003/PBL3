@@ -1,5 +1,6 @@
 ﻿using PBL3.BLL;
 using PBL3.View.Admin;
+using PBL3.View.Giảng_viên;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,18 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace PBL3.View
 {
     public partial class fManager : Form
     {
         private int ID;
+        private BLL_Account bllAccount;
         public fManager(int id)
         {
             InitializeComponent();
             SetCBB();
             ID = id;
             ManagerBLL bll = new ManagerBLL();
+            bllAccount = new BLL_Account();
 
             bll.LoadDataGridViewCourse(dgvCourse);
             dgvCourse.Columns[0].HeaderText = "Mã khóa học";
@@ -35,6 +39,23 @@ namespace PBL3.View
             dgvClass.Columns[2].HeaderText = "Tên khóa học";
             dgvClass.Columns[3].HeaderText = "Số học sinh tối đa";
         }
+        // tải dữ liệu của accout
+        void LoadAllAccount()
+        {
+
+            bllAccount.LoadDataOfAccount(dtgvListAccounts);
+            
+
+        }
+
+        void LoadAllRole()
+        {
+            bllAccount.LoadAllRole(cbxRole);
+        }
+
+
+
+        // 
         public void SetCBB()
         {
             var listCourse = new ManagerBLL().GetALlCourseBLL();
@@ -58,6 +79,7 @@ namespace PBL3.View
             cbbListCourse.Items.Clear();
             SetCBB();
         }
+        
 
         private void btnDelCourse_Click(object sender, EventArgs e)
         {
@@ -170,6 +192,119 @@ namespace PBL3.View
         private void btnSearchClass_Click(object sender, EventArgs e)
         {
             dgvClass.DataSource = new ManagerBLL().GetClassByNameBLL(txtSearchClass.Text).Select(p => new { p.Id, p.ClassName, p.Course.CourseName,p.MaxStudent }).ToList();
+        }
+
+        private void fManager_Load(object sender, EventArgs e)
+        {
+            LoadAllAccount();
+            LoadAllRole();
+        }
+
+        private void btnSearchAccount_Click(object sender, EventArgs e)
+        {
+            string Username = tbxDisplayName.Text;
+            int idRole = Int32.Parse(cbxRole.SelectedValue.ToString());
+            bllAccount.SearchAccount(Username, idRole, dtgvListAccounts);
+        }
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            fAccount f = new fAccount(0);
+            f.LData += F_LData;
+            f.Show();
+        }
+
+        private void F_LData(object sender, EventArgs e)
+        {
+            LoadAllAccount();
+        }
+
+        private void btnEditInfoAccount_Click(object sender, EventArgs e)
+        {
+            if (dtgvListAccounts.SelectedRows.Count == 1)
+            {
+                DataGridViewRow row = dtgvListAccounts.SelectedRows[0];
+                int id = Convert.ToInt32(row.Cells["Id"].Value.ToString());
+                fAccount f = new fAccount(id);
+                f.LData += F_LData;
+                f.ShowDialog();
+
+            }
+            else if (dtgvListAccounts.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Để thay đổi thông tin bạn hãy chọn duy nhất 1 học viên ");
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 tài khoản để thay đổi thông tin");
+            }
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            if (dtgvListAccounts.SelectedRows.Count >= 1)
+            {
+                if (MessageBox.Show("Bạn có thực sự muốn xóa các tài khoản này không ???", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    List<int> list = new List<int>();
+                    foreach (DataGridViewRow row in dtgvListAccounts.SelectedRows)
+                    {
+                        int item = Int32.Parse(dtgvListAccounts.SelectedRows[0].Cells["Id"].Value.ToString());
+                        list.Add(item);
+
+                    }
+                    if (bllAccount.DeleteAccount(list))
+                    {
+                        MessageBox.Show("Xóa tài khoản thành công !!!");
+
+                        LoadAllAccount();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa tài khoản thất bại !!! ");
+                    }
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 tài khoản để xóa ");
+            }
+        }
+
+        private void btnResetAccount_Click(object sender, EventArgs e)
+        {
+            if (dtgvListAccounts.SelectedRows.Count == 1)
+            {
+                if (MessageBox.Show("Bạn có thực sự muốn reset lại mật khẩu của tài khoản này ???", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    int id = Int32.Parse(dtgvListAccounts.SelectedRows[0].Cells["Id"].Value.ToString());
+                                           
+                    if (bllAccount.ResetAccountPassWords(id))
+                    {
+                        MessageBox.Show("Reset mật khẩu thành công !!!");
+
+                        LoadAllAccount();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Reset mật khẩu thất bại !!! ");
+                    }
+
+                }
+
+            } else if(dtgvListAccounts.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Chỉ chọn một tài khoản để reset mật khẩu ");
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 tài khoản  ");
+            }
+
         }
     }
 }

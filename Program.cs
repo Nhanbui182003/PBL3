@@ -1,4 +1,6 @@
-﻿using PBL3.View.Admin;
+﻿using PBL3.View;
+using PBL3.View.Admin;
+using PBL3.View.Giảng_viên;
 using PBL3.View.Học_viên;
 using System;
 using System.Collections.Generic;

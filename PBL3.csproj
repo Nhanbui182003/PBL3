@@ -74,6 +74,52 @@
     <Compile Include="Course.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
+    <Compile Include="Account.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccountInfo.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\BLL_Account.cs" />
+    <Compile Include="BLL\BLL_Calendar.cs" />
+    <Compile Include="BLL\BLL_Class.cs" />
+    <Compile Include="BLL\BLL_Document.cs" />
+    <Compile Include="BLL\BLL_Student.cs" />
+    <Compile Include="Calendar.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Course.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DAL_Account.cs" />
+    <Compile Include="DAL\DAL_Class.cs" />
+    <Compile Include="DAL\DAL_Document.cs" />
+    <Compile Include="DAL\DAL_Student.cs" />
+    <Compile Include="DBEnglishCenter.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBEnglishCenter.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Document.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\CbbCourse.cs" />
     <Compile Include="DAL\ManagerDAL.cs" />
     <Compile Include="DBEnglishCenter.Context.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +140,8 @@
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CBBItem.cs" />
+    <Compile Include="DTO\CBBRole.cs" />
+    <Compile Include="DTO\Cons.cs" />
     <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="LearningResult.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
@@ -151,11 +199,35 @@
     <Compile Include="View\Admin\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Giảng viên\fCalendarInDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fCalendarInDay.Designer.cs">
+      <DependentUpon>fCalendarInDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Giảng viên\fDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fDocument.Designer.cs">
+      <DependentUpon>fDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Giảng viên\fTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Giảng viên\fTeacher.Designer.cs">
       <DependentUpon>fTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Giảng viên\fTeacherCalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fTeacherCalendar.Designer.cs">
+      <DependentUpon>fTeacherCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Giảng viên\LearningResultOfStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\LearningResultOfStudent.Designer.cs">
+      <DependentUpon>LearningResultOfStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Giảng viên\MyClass.cs">
       <SubType>Form</SubType>
@@ -227,8 +299,20 @@
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fCalendarInDay.resx">
+      <DependentUpon>fCalendarInDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fDocument.resx">
+      <DependentUpon>fDocument.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Giảng viên\fTeacher.resx">
       <DependentUpon>fTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fTeacherCalendar.resx">
+      <DependentUpon>fTeacherCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\LearningResultOfStudent.resx">
+      <DependentUpon>LearningResultOfStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Giảng viên\MyClass.resx">
       <DependentUpon>MyClass.cs</DependentUpon>
