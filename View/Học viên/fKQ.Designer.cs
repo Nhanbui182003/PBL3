@@ -30,20 +30,23 @@
         {
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvKQ = new System.Windows.Forms.DataGridView();
+            this.DGVKetQua = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignmentPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MidTermExamPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinalExamPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.họcPhíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kếtQuảHọcTậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đềNghịTrungTâmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKQ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVKetQua)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,27 +63,68 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvKQ);
+            this.panel1.Controls.Add(this.DGVKetQua);
             this.panel1.Location = new System.Drawing.Point(13, 140);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(775, 298);
             this.panel1.TabIndex = 7;
             // 
-            // dgvKQ
+            // DGVKetQua
             // 
-            this.dgvKQ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKQ.Location = new System.Drawing.Point(-1, 3);
-            this.dgvKQ.Name = "dgvKQ";
-            this.dgvKQ.RowHeadersWidth = 51;
-            this.dgvKQ.RowTemplate.Height = 24;
-            this.dgvKQ.Size = new System.Drawing.Size(776, 282);
-            this.dgvKQ.TabIndex = 0;
+            this.DGVKetQua.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVKetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVKetQua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.ClassName,
+            this.AssignmentPoint,
+            this.MidTermExamPoint,
+            this.FinalExamPoint});
+            this.DGVKetQua.Location = new System.Drawing.Point(3, 0);
+            this.DGVKetQua.Name = "DGVKetQua";
+            this.DGVKetQua.RowHeadersWidth = 51;
+            this.DGVKetQua.RowTemplate.Height = 24;
+            this.DGVKetQua.Size = new System.Drawing.Size(773, 282);
+            this.DGVKetQua.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
+            // 
+            // ClassName
+            // 
+            this.ClassName.HeaderText = "ClassName";
+            this.ClassName.MinimumWidth = 6;
+            this.ClassName.Name = "ClassName";
+            this.ClassName.Width = 150;
+            // 
+            // AssignmentPoint
+            // 
+            this.AssignmentPoint.HeaderText = "AssignmentPoint";
+            this.AssignmentPoint.MinimumWidth = 6;
+            this.AssignmentPoint.Name = "AssignmentPoint";
+            this.AssignmentPoint.Width = 150;
+            // 
+            // MidTermExamPoint
+            // 
+            this.MidTermExamPoint.HeaderText = "MidTermExamPoint";
+            this.MidTermExamPoint.MinimumWidth = 6;
+            this.MidTermExamPoint.Name = "MidTermExamPoint";
+            this.MidTermExamPoint.Width = 150;
+            // 
+            // FinalExamPoint
+            // 
+            this.FinalExamPoint.HeaderText = "FinalExamPoint";
+            this.FinalExamPoint.MinimumWidth = 6;
+            this.FinalExamPoint.Name = "FinalExamPoint";
+            this.FinalExamPoint.Width = 150;
             // 
             // cáNhânToolStripMenuItem
             // 
             this.cáNhânToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
-            this.lịchToolStripMenuItem,
             this.họcPhíToolStripMenuItem,
             this.kếtQuảHọcTậpToolStripMenuItem});
             this.cáNhânToolStripMenuItem.Name = "cáNhânToolStripMenuItem";
@@ -92,18 +136,14 @@
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
             this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
-            // 
-            // lịchToolStripMenuItem
-            // 
-            this.lịchToolStripMenuItem.Name = "lịchToolStripMenuItem";
-            this.lịchToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.lịchToolStripMenuItem.Text = "Lịch học";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // họcPhíToolStripMenuItem
             // 
             this.họcPhíToolStripMenuItem.Name = "họcPhíToolStripMenuItem";
             this.họcPhíToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.họcPhíToolStripMenuItem.Text = "Học phí";
+            this.họcPhíToolStripMenuItem.Click += new System.EventHandler(this.họcPhíToolStripMenuItem_Click);
             // 
             // kếtQuảHọcTậpToolStripMenuItem
             // 
@@ -116,18 +156,14 @@
             this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
             this.lớpToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.lớpToolStripMenuItem.Text = "Lớp học";
-            // 
-            // đềNghịTrungTâmToolStripMenuItem
-            // 
-            this.đềNghịTrungTâmToolStripMenuItem.Name = "đềNghịTrungTâmToolStripMenuItem";
-            this.đềNghịTrungTâmToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
-            this.đềNghịTrungTâmToolStripMenuItem.Text = "Đề nghị trung tâm";
+            this.lớpToolStripMenuItem.Click += new System.EventHandler(this.lớpToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -135,7 +171,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cáNhânToolStripMenuItem,
             this.lớpToolStripMenuItem,
-            this.đềNghịTrungTâmToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -170,9 +205,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "fKQ";
-            this.Text = "fKQcs";
+            this.Text = "KẾT QUẢ HỌC TẬP";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKQ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVKetQua)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -186,17 +221,20 @@
 
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvKQ;
+        private System.Windows.Forms.DataGridView DGVKetQua;
         private System.Windows.Forms.ToolStripMenuItem cáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lịchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem họcPhíToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kếtQuảHọcTậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lớpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đềNghịTrungTâmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignmentPoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MidTermExamPoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinalExamPoint;
     }
 }

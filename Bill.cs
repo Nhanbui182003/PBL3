@@ -14,10 +14,10 @@ namespace PBL3
     
     public partial class Bill
     {
-        public int ID { get; set; }
-        public int LearningResult_ID { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<int> Price { get; set; }
+        public int Id { get; set; }
+        public int LearningResultId { get; set; }
+        public bool Status { get; set; }
+        public int Price { get; set; }
         public Nullable<System.DateTime> Time { get; set; }
     
         public virtual LearningResult LearningResult { get; set; }

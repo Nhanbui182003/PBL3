@@ -40,50 +40,45 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 138);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 37);
+            this.label1.Size = new System.Drawing.Size(180, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "TÊN ĐĂNG NHẬP:";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(306, 138);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(204, 88);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(774, 31);
+            this.txtUsername.Size = new System.Drawing.Size(517, 22);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "nhan123";
+            this.txtUsername.Text = "son";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(306, 269);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Location = new System.Drawing.Point(204, 172);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(774, 31);
+            this.txtPassword.Size = new System.Drawing.Size(517, 22);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "123";
+            this.txtPassword.Text = "1234";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 269);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(18, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 37);
+            this.label2.Size = new System.Drawing.Size(121, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "MẬT KHẨU:";
             // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(699, 370);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSignIn.Location = new System.Drawing.Point(466, 237);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(153, 73);
+            this.btnSignIn.Size = new System.Drawing.Size(102, 47);
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "Đăng nhập ";
             this.btnSignIn.UseVisualStyleBackColor = true;
@@ -91,10 +86,9 @@
             // 
             // bttExit
             // 
-            this.bttExit.Location = new System.Drawing.Point(928, 370);
-            this.bttExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bttExit.Location = new System.Drawing.Point(619, 237);
             this.bttExit.Name = "bttExit";
-            this.bttExit.Size = new System.Drawing.Size(153, 73);
+            this.bttExit.Size = new System.Drawing.Size(102, 47);
             this.bttExit.TabIndex = 5;
             this.bttExit.Text = "Thoát";
             this.bttExit.UseVisualStyleBackColor = true;
@@ -102,15 +96,16 @@
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 530);
+            this.ClientSize = new System.Drawing.Size(801, 339);
             this.Controls.Add(this.bttExit);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.Text = "Login";
             this.ResumeLayout(false);

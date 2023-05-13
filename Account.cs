@@ -20,13 +20,14 @@ namespace PBL3
             this.LearningResults = new HashSet<LearningResult>();
         }
     
-        public int ID { get; set; }
-        public int Role_ID { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
+        public int Id { get; set; }
+        public int RoleId { get; set; }
+        public string UserName { get; set; }
+        public string PassWord { get; set; }
+        public Nullable<bool> AccountActive { get; set; }
     
         public virtual Role Role { get; set; }
-        public virtual Account_Info Account_Info { get; set; }
+        public virtual AccountInfo AccountInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LearningResult> LearningResults { get; set; }
     }

@@ -14,10 +14,11 @@ namespace PBL3
     
     public partial class Calendar
     {
-        public int ID { get; set; }
-        public Nullable<int> Class_ID { get; set; }
-        public string Day { get; set; }
-        public Nullable<System.DateTime> Time { get; set; }
+        public int Id { get; set; }
+        public int ClassId { get; set; }
+        public string DayLesson { get; set; }
+        public int FromLesson { get; set; }
+        public int ToLesson { get; set; }
     
         public virtual Class Class { get; set; }
     }

@@ -27,11 +27,11 @@ namespace PBL3.View.Admin
             InitializeComponent();
             this.id = id;
             var course = new ManagerBLL().GetCourseByIDBLL(id);
-            txtName.Text = course.Name;
+            txtName.Text = course.CourseName;
             txtDescription.Text = course.Description;
             txtPrice.Text = course.Price.ToString();
-            dtStartDate.Value = course.Start_date.Value;
-            dtEndDate.Value = course.End_date.Value;
+            dtStartDate.Value = course.StartDate;
+            dtEndDate.Value = course.EndDate;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace PBL3.View.Admin
                 {
                     new ManagerBLL().AddCourseBLL(new Course()
                     {
-                        Name = txtName.Text,
-                        Start_date = dtStartDate.Value.Date,
-                        End_date = dtEndDate.Value.Date,
+                        CourseName = txtName.Text,
+                        StartDate = dtStartDate.Value.Date,
+                        EndDate = dtEndDate.Value.Date,
                         Description = txtDescription.Text,
                         Price = Convert.ToInt32(txtPrice.Text),
                     });
@@ -56,10 +56,10 @@ namespace PBL3.View.Admin
                 else
                 {
                     Course course = new Course();
-                    course.ID = id;
-                    course.Name = txtName.Text;
-                    course.Start_date = dtStartDate.Value.Date;
-                    course.End_date = dtEndDate.Value.Date;
+                    course.Id = id;
+                    course.CourseName = txtName.Text;
+                    course.StartDate = dtStartDate.Value.Date;
+                    course.EndDate = dtEndDate.Value.Date;
                     course.Description = txtDescription.Text;
                     course.Price = Convert.ToInt32(txtPrice.Text);
                     new ManagerBLL().UpdateCourseBLL(course);

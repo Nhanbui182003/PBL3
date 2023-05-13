@@ -20,8 +20,8 @@ namespace PBL3
             this.Accounts = new HashSet<Account>();
         }
     
-        public int ID { get; set; }
-        public string Role_name { get; set; }
+        public int Id { get; set; }
+        public string RoleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }

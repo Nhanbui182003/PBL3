@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    internal class CBBItem
+    public class CBBItem
     {
-        public CBBItem()
+        public int Value { get; set; }
+        public string Text { get; set; }
+        public override string ToString()
         {
-            //{
-            //    public int Value { get; set; }
-            //    public string Text { get; set; }   
-            //}
+            return Text;
         }
     }
 }

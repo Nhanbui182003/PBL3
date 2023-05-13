@@ -2,58 +2,61 @@
 <Schema Namespace="DBEnglishCenterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Account">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Role_ID" Type="Int32" Nullable="false" />
-    <Property Name="username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassWord" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountActive" Type="Boolean" />
     <NavigationProperty Name="Role" Relationship="Self.Account_RoleID" FromRole="Account" ToRole="Role" />
-    <NavigationProperty Name="Account_Info" Relationship="Self.AccountInfo_Account" FromRole="Account" ToRole="Account_Info" />
+    <NavigationProperty Name="AccountInfo" Relationship="Self.AccountInfo_Account" FromRole="Account" ToRole="AccountInfo" />
     <NavigationProperty Name="LearningResults" Relationship="Self.Result_AccountID" FromRole="Account" ToRole="LearningResult" />
   </EntityType>
-  <EntityType Name="Account_Info">
+  <EntityType Name="AccountInfo">
     <Key>
-      <PropertyRef Name="Account_ID" />
+      <PropertyRef Name="AccountId" />
     </Key>
-    <Property Name="Account_ID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Birthday" Type="DateTime" Precision="3" />
     <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="Gender" Type="Boolean" />
-    <NavigationProperty Name="Account" Relationship="Self.AccountInfo_Account" FromRole="Account_Info" ToRole="Account" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.AccountInfo_Account" FromRole="AccountInfo" ToRole="Account" />
   </EntityType>
   <EntityType Name="Bill">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="LearningResult_ID" Type="Int32" Nullable="false" />
-    <Property Name="Status" Type="Boolean" />
-    <Property Name="Price" Type="Int32" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LearningResultId" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
     <Property Name="Time" Type="DateTime" Precision="3" />
     <NavigationProperty Name="LearningResult" Relationship="Self.Bill_AccountID" FromRole="Bill" ToRole="LearningResult" />
   </EntityType>
   <EntityType Name="Calendar">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Class_ID" Type="Int32" />
-    <Property Name="Day" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-    <Property Name="Time" Type="DateTime" Precision="3" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassId" Type="Int32" Nullable="false" />
+    <Property Name="DayLesson" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FromLesson" Type="Int32" Nullable="false" />
+    <Property Name="ToLesson" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Class" Relationship="Self.Calendar_ClassID" FromRole="Calendar" ToRole="Class" />
   </EntityType>
   <EntityType Name="Class">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Course_ID" Type="Int32" />
-    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="MaxStudent" Type="Int32" />
+    <Property Name="ClassActive" Type="Boolean" />
     <NavigationProperty Name="Calendars" Relationship="Self.Calendar_ClassID" FromRole="Class" ToRole="Calendar" />
     <NavigationProperty Name="Course" Relationship="Self.Class_CourseID" FromRole="Class" ToRole="Course" />
     <NavigationProperty Name="Documents" Relationship="Self.Document_ClassID" FromRole="Class" ToRole="Document" />
@@ -61,91 +64,84 @@
   </EntityType>
   <EntityType Name="Course">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Start_date" Type="DateTime" Precision="3" />
-    <Property Name="End_date" Type="DateTime" Precision="3" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
-    <Property Name="Price" Type="Int32" />
+    <Property Name="CourseActive" Type="Boolean" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Classes" Relationship="Self.Class_CourseID" FromRole="Course" ToRole="Class" />
   </EntityType>
   <EntityType Name="Document">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Class_ID" Type="Int32" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassId" Type="Int32" Nullable="false" />
     <Property Name="FileName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="FileData" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FileActive" Type="Boolean" />
+    <Property Name="Filedate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Class" Relationship="Self.Document_ClassID" FromRole="Document" ToRole="Class" />
   </EntityType>
   <EntityType Name="LearningResult">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Account_ID" Type="Int32" />
-    <Property Name="Class_ID" Type="Int32" />
-    <Property Name="Assignment_Point" Type="Double" />
-    <Property Name="MidTermExam_Point" Type="Double" />
-    <Property Name="FinalExam_Point" Type="Double" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="ClassId" Type="Int32" Nullable="false" />
+    <Property Name="AssignmentPoint" Type="Double" />
+    <Property Name="MidTermExamPoint" Type="Double" />
+    <Property Name="FinalExamPoint" Type="Double" />
     <NavigationProperty Name="Account" Relationship="Self.Result_AccountID" FromRole="LearningResult" ToRole="Account" />
     <NavigationProperty Name="Bills" Relationship="Self.Bill_AccountID" FromRole="LearningResult" ToRole="Bill" />
     <NavigationProperty Name="Class" Relationship="Self.Result_ClassID" FromRole="LearningResult" ToRole="Class" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Accounts" Relationship="Self.Account_RoleID" FromRole="Role" ToRole="Account" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="Account_RoleID">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Role">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Account">
-        <PropertyRef Name="Role_ID" />
+        <PropertyRef Name="RoleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="AccountInfo_Account">
     <End Role="Account" Type="Self.Account" Multiplicity="1" />
-    <End Role="Account_Info" Type="Self.Account_Info" Multiplicity="0..1" />
+    <End Role="AccountInfo" Type="Self.AccountInfo" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Account">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Account_Info">
-        <PropertyRef Name="Account_ID" />
+      <Dependent Role="AccountInfo">
+        <PropertyRef Name="AccountId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="Result_AccountID">
-    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
     <End Role="LearningResult" Type="Self.LearningResult" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Account">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="LearningResult">
-        <PropertyRef Name="Account_ID" />
+        <PropertyRef Name="AccountId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -154,64 +150,64 @@
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="LearningResult">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Bill">
-        <PropertyRef Name="LearningResult_ID" />
+        <PropertyRef Name="LearningResultId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="Calendar_ClassID">
-    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="1" />
     <End Role="Calendar" Type="Self.Calendar" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Class">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Calendar">
-        <PropertyRef Name="Class_ID" />
+        <PropertyRef Name="ClassId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="Class_CourseID">
-    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
     <End Role="Class" Type="Self.Class" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Course">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Class">
-        <PropertyRef Name="Course_ID" />
+        <PropertyRef Name="CourseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="Document_ClassID">
-    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="1" />
     <End Role="Document" Type="Self.Document" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Class">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Document">
-        <PropertyRef Name="Class_ID" />
+        <PropertyRef Name="ClassId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="Result_ClassID">
-    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="1" />
     <End Role="LearningResult" Type="Self.LearningResult" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Class">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="LearningResult">
-        <PropertyRef Name="Class_ID" />
+        <PropertyRef Name="ClassId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DBEnglishCenterEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
-    <EntitySet Name="Account_Info" EntityType="Self.Account_Info" />
+    <EntitySet Name="AccountInfoes" EntityType="Self.AccountInfo" />
     <EntitySet Name="Bills" EntityType="Self.Bill" />
     <EntitySet Name="Calendars" EntityType="Self.Calendar" />
     <EntitySet Name="Classes" EntityType="Self.Class" />
@@ -219,14 +215,13 @@
     <EntitySet Name="Documents" EntityType="Self.Document" />
     <EntitySet Name="LearningResults" EntityType="Self.LearningResult" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="Account_RoleID" Association="Self.Account_RoleID">
       <End Role="Role" EntitySet="Roles" />
       <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
     <AssociationSet Name="AccountInfo_Account" Association="Self.AccountInfo_Account">
       <End Role="Account" EntitySet="Accounts" />
-      <End Role="Account_Info" EntitySet="Account_Info" />
+      <End Role="AccountInfo" EntitySet="AccountInfoes" />
     </AssociationSet>
     <AssociationSet Name="Result_AccountID" Association="Self.Result_AccountID">
       <End Role="Account" EntitySet="Accounts" />

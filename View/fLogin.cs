@@ -23,19 +23,19 @@ namespace PBL3
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            DBEnglishCenterEntities db = new DBEnglishCenterEntities();
+            DBEnglishCenterEntities  db = new DBEnglishCenterEntities();
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            var account = db.Accounts.Where(p=>p.username== username).FirstOrDefault();
-            if (account != null && account.password==password)
+            var account = db.Accounts.Where(p=>p.UserName== username).FirstOrDefault();
+            if (account != null && account.PassWord==password)
             {
-                if (account.Role_ID==1)
+                if (account.RoleId==1)
                 {
                     this.Hide();
-                    fManager f = new fManager(account.ID);
+                    fManager f = new fManager(account.Id);
                     f.ShowDialog();
                 } else
-                if (account.Role_ID == 2)
+                if (account.RoleId == 2)
                 {
                     this.Hide();
                     fTeacher f = new fTeacher();
@@ -43,8 +43,8 @@ namespace PBL3
                 } else
                 {
                     this.Hide();
-                    var id = account.ID;
-                    fHV f = new fHV(id);
+                    var id = account.Id;
+                    HV f = new HV(id);
                     f.ShowDialog();
                 }
                 

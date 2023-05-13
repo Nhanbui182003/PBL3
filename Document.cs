@@ -14,10 +14,12 @@ namespace PBL3
     
     public partial class Document
     {
-        public int ID { get; set; }
-        public Nullable<int> Class_ID { get; set; }
+        public int Id { get; set; }
+        public int ClassId { get; set; }
         public string FileName { get; set; }
         public byte[] FileData { get; set; }
+        public Nullable<bool> FileActive { get; set; }
+        public Nullable<System.DateTime> Filedate { get; set; }
     
         public virtual Class Class { get; set; }
     }
