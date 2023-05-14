@@ -316,42 +316,41 @@ namespace PBL3.View
             }
 
         }
-    }
-}
-private void btnTK_Click(object sender, EventArgs e)
-{
-    DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0);
-}
-private void btnChart_Click(object sender, EventArgs e)
-{
-    if (cbbYear.SelectedIndex == -1)
-    {
-        MessageBox.Show("Vui lòng chọn năm thống kê!");
-    }
-    else
-    {
-        Chart ch = new Chart(cbbYear.Text);
-        ch.ShowDialog();
-    }
-}
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0);
+        }
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            if (cbbYear.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn năm thống kê!");
+            }
+            else
+            {
+                Chart ch = new Chart(cbbYear.Text);
+                ch.ShowDialog();
+            }
+        }
 
-private void btnSort_Click(object sender, EventArgs e)
-{
-    if (cbbSort.SelectedIndex == -1)
-    {
-        MessageBox.Show("Vui lòng chọn phương thức sắp xếp");
-    }
-    else if (cbbSort.SelectedIndex == 0)
-    {
-        DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1);
-    }
-    else if (cbbSort.SelectedIndex == 1)
-    {
-        DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2);
-    }
-    else if (cbbSort.SelectedIndex == 2)
-    {
-        DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3);
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            if (cbbSort.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn phương thức sắp xếp");
+            }
+            else if (cbbSort.SelectedIndex == 0)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1);
+            }
+            else if (cbbSort.SelectedIndex == 1)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2);
+            }
+            else if (cbbSort.SelectedIndex == 2)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3);
+            }
+        }
     }
 }
-    }

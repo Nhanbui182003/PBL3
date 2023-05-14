@@ -287,7 +287,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var doc = db.Documents.Where(p => p.ClassId == classId).Select(p => new { p.Id, p.FileName}).ToList();
+                var doc = db.Documents.Where(p => p.ClassId == classId && p.FileActive == false).Select(p => new { p.Id, p.FileName, p.Filedate}).ToList();
                 return doc;
             }
         }

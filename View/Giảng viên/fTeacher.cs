@@ -21,7 +21,7 @@ namespace PBL3.View.Giảng_viên
         #endregion
         public fTeacher(int idTeacher)
         {
-            IdTeacher = teacherId;
+            IdTeacher = idTeacher;
             InitializeComponent();
             BllClass = new BLL_Class();
             bllAccount = new BLL_Account(); 
