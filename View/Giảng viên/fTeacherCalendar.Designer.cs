@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dtpkDateSelection = new System.Windows.Forms.DateTimePicker();
             this.btnToday = new System.Windows.Forms.Button();
-            this.btnPreMonth = new System.Windows.Forms.Button();
+            this.dtpkDateSelection = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlMatrix = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.btnSunday = new System.Windows.Forms.Button();
             this.btnSaturday = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.btnWednesday = new System.Windows.Forms.Button();
             this.btnTuesday = new System.Windows.Forms.Button();
             this.btnMonday = new System.Windows.Forms.Button();
-            this.pnlMatrix = new System.Windows.Forms.Panel();
+            this.btnPreMonth = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -57,6 +57,24 @@
             this.panel1.Size = new System.Drawing.Size(1303, 100);
             this.panel1.TabIndex = 0;
             // 
+            // btnToday
+            // 
+            this.btnToday.Location = new System.Drawing.Point(760, 32);
+            this.btnToday.Name = "btnToday";
+            this.btnToday.Size = new System.Drawing.Size(92, 23);
+            this.btnToday.TabIndex = 3;
+            this.btnToday.Text = "Hôm nay";
+            this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
+            // 
+            // dtpkDateSelection
+            // 
+            this.dtpkDateSelection.Location = new System.Drawing.Point(463, 33);
+            this.dtpkDateSelection.Name = "dtpkDateSelection";
+            this.dtpkDateSelection.Size = new System.Drawing.Size(255, 22);
+            this.dtpkDateSelection.TabIndex = 0;
+            this.dtpkDateSelection.ValueChanged += new System.EventHandler(this.dtpkDateSelection_ValueChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pnlMatrix);
@@ -65,6 +83,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1299, 601);
             this.panel2.TabIndex = 1;
+            // 
+            // pnlMatrix
+            // 
+            this.pnlMatrix.Location = new System.Drawing.Point(273, 115);
+            this.pnlMatrix.Name = "pnlMatrix";
+            this.pnlMatrix.Size = new System.Drawing.Size(812, 448);
+            this.pnlMatrix.TabIndex = 1;
             // 
             // panel3
             // 
@@ -81,34 +106,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1293, 76);
             this.panel3.TabIndex = 0;
-            // 
-            // dtpkDateSelection
-            // 
-            this.dtpkDateSelection.Location = new System.Drawing.Point(463, 33);
-            this.dtpkDateSelection.Name = "dtpkDateSelection";
-            this.dtpkDateSelection.Size = new System.Drawing.Size(255, 22);
-            this.dtpkDateSelection.TabIndex = 0;
-            this.dtpkDateSelection.ValueChanged += new System.EventHandler(this.dtpkDateSelection_ValueChanged);
-            // 
-            // btnToday
-            // 
-            this.btnToday.Location = new System.Drawing.Point(760, 32);
-            this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(92, 23);
-            this.btnToday.TabIndex = 3;
-            this.btnToday.Text = "Hôm nay";
-            this.btnToday.UseVisualStyleBackColor = true;
-            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
-            // 
-            // btnPreMonth
-            // 
-            this.btnPreMonth.Location = new System.Drawing.Point(5, 16);
-            this.btnPreMonth.Name = "btnPreMonth";
-            this.btnPreMonth.Size = new System.Drawing.Size(90, 57);
-            this.btnPreMonth.TabIndex = 8;
-            this.btnPreMonth.Text = "Tháng trước";
-            this.btnPreMonth.UseVisualStyleBackColor = true;
-            this.btnPreMonth.Click += new System.EventHandler(this.btnPreMonth_Click);
             // 
             // btnNextMonth
             // 
@@ -183,12 +180,15 @@
             this.btnMonday.Text = "Thứ 2";
             this.btnMonday.UseVisualStyleBackColor = true;
             // 
-            // pnlMatrix
+            // btnPreMonth
             // 
-            this.pnlMatrix.Location = new System.Drawing.Point(273, 115);
-            this.pnlMatrix.Name = "pnlMatrix";
-            this.pnlMatrix.Size = new System.Drawing.Size(812, 448);
-            this.pnlMatrix.TabIndex = 1;
+            this.btnPreMonth.Location = new System.Drawing.Point(5, 16);
+            this.btnPreMonth.Name = "btnPreMonth";
+            this.btnPreMonth.Size = new System.Drawing.Size(90, 57);
+            this.btnPreMonth.TabIndex = 8;
+            this.btnPreMonth.Text = "Tháng trước";
+            this.btnPreMonth.UseVisualStyleBackColor = true;
+            this.btnPreMonth.Click += new System.EventHandler(this.btnPreMonth_Click);
             // 
             // fTeacherCalendar
             // 
