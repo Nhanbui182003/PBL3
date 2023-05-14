@@ -90,6 +90,7 @@
           <Property Name="AssignmentPoint" Type="float" />
           <Property Name="MidTermExamPoint" Type="float" />
           <Property Name="FinalExamPoint" Type="float" />
+          <Property Name="LearningResultActive" Type="bit" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -97,6 +98,16 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="Account_RoleID">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
@@ -204,6 +215,7 @@
           <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LearningResult" EntityType="Self.LearningResult" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="Account_RoleID" Association="Self.Account_RoleID">
             <End Role="Role" EntitySet="Role" />
             <End Role="Account" EntitySet="Account" />
@@ -339,6 +351,7 @@
           <Property Name="AssignmentPoint" Type="Double" />
           <Property Name="MidTermExamPoint" Type="Double" />
           <Property Name="FinalExamPoint" Type="Double" />
+          <Property Name="LearningResultActive" Type="Boolean" />
           <NavigationProperty Name="Account" Relationship="Self.Result_AccountID" FromRole="LearningResult" ToRole="Account" />
           <NavigationProperty Name="Bills" Relationship="Self.Bill_AccountID" FromRole="LearningResult" ToRole="Bill" />
           <NavigationProperty Name="Class" Relationship="Self.Result_ClassID" FromRole="LearningResult" ToRole="Class" />
@@ -350,6 +363,16 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Accounts" Relationship="Self.Account_RoleID" FromRole="Role" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="Account_RoleID">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
@@ -457,6 +480,7 @@
           <EntitySet Name="Documents" EntityType="Self.Document" />
           <EntitySet Name="LearningResults" EntityType="Self.LearningResult" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="Account_RoleID" Association="Self.Account_RoleID">
             <End Role="Role" EntitySet="Roles" />
             <End Role="Account" EntitySet="Accounts" />
@@ -587,6 +611,7 @@
                 <ScalarProperty Name="AssignmentPoint" ColumnName="AssignmentPoint" />
                 <ScalarProperty Name="MidTermExamPoint" ColumnName="MidTermExamPoint" />
                 <ScalarProperty Name="FinalExamPoint" ColumnName="FinalExamPoint" />
+                <ScalarProperty Name="LearningResultActive" ColumnName="LearningResultActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -595,6 +620,17 @@
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBEnglishCenterModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

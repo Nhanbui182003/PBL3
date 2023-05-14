@@ -65,24 +65,6 @@
     <Compile Include="Bill.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
-    <Compile Include="Calendar.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Class.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Course.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Account.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AccountInfo.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Bill.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
     <Compile Include="BLL\BLL_Account.cs" />
     <Compile Include="BLL\BLL_Calendar.cs" />
     <Compile Include="BLL\BLL_Class.cs" />
@@ -121,24 +103,6 @@
     </Compile>
     <Compile Include="DTO\CbbCourse.cs" />
     <Compile Include="DAL\ManagerDAL.cs" />
-    <Compile Include="DBEnglishCenter.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBEnglishCenter.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBEnglishCenter.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBEnglishCenter.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Document.cs">
-      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBRole.cs" />
     <Compile Include="DTO\Cons.cs" />
@@ -147,6 +111,9 @@
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fAccount.cs">
@@ -172,6 +139,12 @@
     </Compile>
     <Compile Include="View\Admin\fAddStudentToClass.Designer.cs">
       <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fChoiceTeacher.cs">
       <SubType>Form</SubType>
@@ -276,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fAddStudentToClass.resx">
       <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fChoiceTeacher.resx">
       <DependentUpon>fChoiceTeacher.cs</DependentUpon>

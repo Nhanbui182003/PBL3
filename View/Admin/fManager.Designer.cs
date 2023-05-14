@@ -54,14 +54,14 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnUpdateInfo = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.rbtnMale = new System.Windows.Forms.RadioButton();
             this.dtDate = new System.Windows.Forms.DateTimePicker();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -118,7 +118,6 @@
             this.tabPage7.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel19.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -309,9 +308,11 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Đổi mật khẩu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtPassword
             // 
+            this.txtPassword.Enabled = false;
             this.txtPassword.Location = new System.Drawing.Point(52, 453);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -321,6 +322,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Enabled = false;
             this.txtUsername.Location = new System.Drawing.Point(52, 254);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(499, 31);
@@ -370,32 +372,24 @@
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.btnUpdateInfo);
             this.panel16.Location = new System.Drawing.Point(6, 3);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(874, 100);
             this.panel16.TabIndex = 5;
             // 
-            // btnUpdateInfo
-            // 
-            this.btnUpdateInfo.Location = new System.Drawing.Point(15, 22);
-            this.btnUpdateInfo.Name = "btnUpdateInfo";
-            this.btnUpdateInfo.Size = new System.Drawing.Size(172, 56);
-            this.btnUpdateInfo.TabIndex = 0;
-            this.btnUpdateInfo.Text = "Câp nhật";
-            this.btnUpdateInfo.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtEmail);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.btnUpdateInfo);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.rbtnFemale);
             this.panel4.Controls.Add(this.rbtnMale);
             this.panel4.Controls.Add(this.dtDate);
-            this.panel4.Controls.Add(this.btnCancel);
-            this.panel4.Controls.Add(this.btnOK);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.txtPhone);
             this.panel4.Controls.Add(this.txtAddress);
@@ -410,20 +404,46 @@
             this.panel4.Size = new System.Drawing.Size(874, 761);
             this.panel4.TabIndex = 4;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(191, 494);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(592, 31);
+            this.txtEmail.TabIndex = 21;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(34, 500);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 25);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Email";
+            // 
+            // btnUpdateInfo
+            // 
+            this.btnUpdateInfo.Location = new System.Drawing.Point(611, 659);
+            this.btnUpdateInfo.Name = "btnUpdateInfo";
+            this.btnUpdateInfo.Size = new System.Drawing.Size(172, 56);
+            this.btnUpdateInfo.TabIndex = 0;
+            this.btnUpdateInfo.Text = "Câp nhật";
+            this.btnUpdateInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateInfo.Click += new System.EventHandler(this.btnUpdateInfo_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(32, 18);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(311, 37);
+            this.label11.Size = new System.Drawing.Size(293, 37);
             this.label11.TabIndex = 19;
-            this.label11.Text = "Thông tin tài khoản";
+            this.label11.Text = "Thông tin cá nhân";
             // 
             // rbtnFemale
             // 
             this.rbtnFemale.AutoSize = true;
-            this.rbtnFemale.Location = new System.Drawing.Point(422, 496);
+            this.rbtnFemale.Location = new System.Drawing.Point(416, 598);
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(70, 29);
             this.rbtnFemale.TabIndex = 18;
@@ -434,7 +454,7 @@
             // rbtnMale
             // 
             this.rbtnMale.AutoSize = true;
-            this.rbtnMale.Location = new System.Drawing.Point(191, 496);
+            this.rbtnMale.Location = new System.Drawing.Point(191, 594);
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(87, 29);
             this.rbtnMale.TabIndex = 17;
@@ -450,28 +470,10 @@
             this.dtDate.Size = new System.Drawing.Size(373, 31);
             this.dtDate.TabIndex = 16;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(99, 569);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(139, 52);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(644, 569);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(139, 52);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 498);
+            this.label10.Location = new System.Drawing.Point(27, 598);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 25);
             this.label10.TabIndex = 10;
@@ -601,6 +603,7 @@
             this.btnAddAccount.TabIndex = 12;
             this.btnAddAccount.Text = "Thêm tài khoản";
             this.btnAddAccount.UseVisualStyleBackColor = true;
+//            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click_1);
             // 
             // panel11
             // 
@@ -935,7 +938,6 @@
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel19.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
@@ -1010,8 +1012,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnUpdateInfo;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
@@ -1044,5 +1044,7 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnEditInfoAccount;
         private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label17;
     }
 }

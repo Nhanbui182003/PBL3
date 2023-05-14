@@ -165,3 +165,4 @@ D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChangePassword.resources

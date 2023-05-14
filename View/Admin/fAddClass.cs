@@ -95,6 +95,7 @@ namespace PBL3.View.Admin
                                     MaxStudent = Convert.ToInt32(txtMaxStudent.Text),
                                     ClassActive = true
                                 };
+                           
                                 if (bll.isExistingClassBLL(c) == false)
                                 {
                                     bll.AddClassBLL(c);
@@ -102,8 +103,9 @@ namespace PBL3.View.Admin
                                     {
                                         AccountId = teacher.Id,
                                         ClassId = c.Id,
+                                        LearningResultActive = true
                                     };
-                                    bll.AddLearningResult(t);
+                                    
                                     Calendar t1 = new Calendar()
                                     {
                                         ClassId = c.Id,
@@ -111,7 +113,7 @@ namespace PBL3.View.Admin
                                         FromLesson = startLesson1,
                                         ToLesson = endLesson1,
                                     };
-                                    bll.AddCalendarBLL(t1);
+                                    
                                     Calendar t2 = new Calendar()
                                     {
                                         ClassId = c.Id,
@@ -119,9 +121,21 @@ namespace PBL3.View.Admin
                                         FromLesson = startLesson2,
                                         ToLesson = endLesson2,
                                     };
-                                    bll.AddCalendarBLL(t2);
-                                    MessageBox.Show("Lớp học đã được thêm!!!");
-                                    Dispose();
+                                    if (bll.isExistingCalendarByAccountIDBLL(t.AccountId,t1)==true|| bll.isExistingCalendarByAccountIDBLL(t.AccountId, t1) == true)
+                                    {
+                                        bll.DeleteClassByClassIDBLL(c.Id);
+                                        MessageBox.Show("Giảng viên trên đã tồn tại lịch học");
+                                    }
+                                    else
+                                    {
+                                        
+                                        bll.AddLearningResult(t);
+                                        bll.AddCalendarBLL(t1);
+                                        bll.AddCalendarBLL(t2);
+                                        MessageBox.Show("Lớp học đã được thêm!!!");
+                                        Dispose();
+                                    }
+                                    
                                 }
                                 else
                                 {
@@ -148,9 +162,16 @@ namespace PBL3.View.Admin
                                 calendas[1].DayLesson= cbbDay2.SelectedItem.ToString();
                                 calendas[1].FromLesson = startLesson2;
                                 calendas[1].ToLesson = endLesson2;
-                                bll.UpdateClassBLL(newClass, newTeacher, calendas);
-                                MessageBox.Show("Cập nhật thành công!");
-                                Dispose();
+                                if (bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[0]) == true || bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[1]) == true)
+                                {
+                                    MessageBox.Show("Giảng viên trên đã tồn tại lịch học");
+                                }
+                                else
+                                {
+                                    bll.UpdateClassBLL(newClass, newTeacher, calendas);
+                                    MessageBox.Show("Cập nhật thành công!");
+                                    Dispose();
+                                }
                             }
                         }
                     }

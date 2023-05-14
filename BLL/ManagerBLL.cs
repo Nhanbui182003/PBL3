@@ -152,6 +152,10 @@ namespace PBL3.BLL
         {
             new ManagerDAL().ConfirmPaymentDAL(oldBill);
         }
+        public bool isExistingCalendarByAccountIDBLL(int accountId, Calendar CheckedCalendar)
+        {
+            return new ManagerDAL().isExistingCalendarByAccountIDDAL(accountId, CheckedCalendar);
+        }
 
     }
 }
