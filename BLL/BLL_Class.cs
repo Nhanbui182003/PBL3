@@ -19,6 +19,10 @@ namespace PBL3.BLL
         public void LoadDataClass(DataGridView dg, int id)
         {
             dg.DataSource = DalClass.GetClassOfTeacher(id);
+            dg.Columns[0].Width = (int)(dg.Width * 0.1);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.3);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
 
             // đặt tên cho các header
             foreach (DataGridViewColumn column in dg.Columns)
@@ -27,7 +31,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Mã lớp";
                 }
-                else if (column.Name == "NameClass")
+                else if (column.Name == "ClassName")
                 {
                     column.HeaderText = "Tên lớp";
                 }
@@ -35,7 +39,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Số Học viên tối đa";
                 }
-                else if (column.Name == "NameCourse")
+                else if (column.Name == "Coursename")
                 {
                     column.HeaderText = "Tên khóa học";
                 }
@@ -51,13 +55,17 @@ namespace PBL3.BLL
         public void SearchClass(int idTeacher,int idCourse, string nameClass, DataGridView dg)
         {
             dg.DataSource = DalClass.SearchClass(idTeacher, idCourse, nameClass);
+            dg.Columns[0].Width = (int)(dg.Width * 0.1);
+            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[2].Width = (int)(dg.Width * 0.3);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
             foreach (DataGridViewColumn column in dg.Columns)
             {
                 if (column.Name == "Id")
                 {
                     column.HeaderText = "Mã lớp";
                 }
-                else if (column.Name == "NameClass")
+                else if (column.Name == "ClassName")
                 {
                     column.HeaderText = "Tên lớp";
                 }
@@ -65,7 +73,7 @@ namespace PBL3.BLL
                 {
                     column.HeaderText = "Số Học viên tối đa";
                 }
-                else if (column.Name == "NameCourse")
+                else if (column.Name == "CourseName")
                 {
                     column.HeaderText = "Tên khóa học";
                 }
@@ -90,6 +98,10 @@ namespace PBL3.BLL
                 MessageBox.Show(ex.Message);
                 return false;
 
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
             }
         }
         public Class GetClassFromId(int idClass)

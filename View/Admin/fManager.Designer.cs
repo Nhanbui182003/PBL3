@@ -1240,16 +1240,18 @@ namespace PBL3.View
             // 
             // txtSearchClass
             // 
-            this.txtSearchClass.Location = new System.Drawing.Point(126, 39);
+            this.txtSearchClass.Location = new System.Drawing.Point(84, 25);
+            this.txtSearchClass.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchClass.Name = "txtSearchClass";
-            this.txtSearchClass.Size = new System.Drawing.Size(257, 22);
+            this.txtSearchClass.Size = new System.Drawing.Size(173, 22);
             this.txtSearchClass.TabIndex = 5;
             // 
             // btnSearchClass
             // 
-            this.btnSearchClass.Location = new System.Drawing.Point(17, 33);
+            this.btnSearchClass.Location = new System.Drawing.Point(11, 21);
+            this.btnSearchClass.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchClass.Name = "btnSearchClass";
-            this.btnSearchClass.Size = new System.Drawing.Size(103, 42);
+            this.btnSearchClass.Size = new System.Drawing.Size(69, 27);
             this.btnSearchClass.TabIndex = 4;
             this.btnSearchClass.Text = "Tìm";
             this.btnSearchClass.UseVisualStyleBackColor = true;
@@ -1269,16 +1271,18 @@ namespace PBL3.View
             this.panel8.Controls.Add(this.btnDeleteClass);
             this.panel8.Controls.Add(this.btnManageClass);
             this.panel8.Controls.Add(this.btnAddClass);
-            this.panel8.Location = new System.Drawing.Point(477, 6);
+            this.panel8.Location = new System.Drawing.Point(318, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(381, 64);
             this.panel8.TabIndex = 1;
             // 
             // btnDeleteClass
             // 
-            this.btnDeleteClass.Location = new System.Drawing.Point(390, 23);
+            this.btnDeleteClass.Location = new System.Drawing.Point(260, 15);
+            this.btnDeleteClass.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteClass.Name = "btnDeleteClass";
-            this.btnDeleteClass.Size = new System.Drawing.Size(172, 56);
+            this.btnDeleteClass.Size = new System.Drawing.Size(115, 36);
             this.btnDeleteClass.TabIndex = 3;
             this.btnDeleteClass.Text = "Xóa lớp học";
             this.btnDeleteClass.UseVisualStyleBackColor = true;
@@ -1286,9 +1290,10 @@ namespace PBL3.View
             // 
             // btnManageClass
             // 
-            this.btnManageClass.Location = new System.Drawing.Point(201, 23);
+            this.btnManageClass.Location = new System.Drawing.Point(134, 15);
+            this.btnManageClass.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageClass.Name = "btnManageClass";
-            this.btnManageClass.Size = new System.Drawing.Size(172, 56);
+            this.btnManageClass.Size = new System.Drawing.Size(115, 36);
             this.btnManageClass.TabIndex = 1;
             this.btnManageClass.Text = "Quản lý lớp";
             this.btnManageClass.UseVisualStyleBackColor = true;
@@ -1296,9 +1301,10 @@ namespace PBL3.View
             // 
             // btnAddClass
             // 
-            this.btnAddClass.Location = new System.Drawing.Point(14, 23);
+            this.btnAddClass.Location = new System.Drawing.Point(9, 15);
+            this.btnAddClass.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddClass.Name = "btnAddClass";
-            this.btnAddClass.Size = new System.Drawing.Size(172, 56);
+            this.btnAddClass.Size = new System.Drawing.Size(115, 36);
             this.btnAddClass.TabIndex = 0;
             this.btnAddClass.Text = "Thêm lớp học";
             this.btnAddClass.UseVisualStyleBackColor = true;
@@ -1397,18 +1403,20 @@ namespace PBL3.View
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(52, 453);
+            this.txtPassword.Location = new System.Drawing.Point(35, 290);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(499, 22);
+            this.txtPassword.Size = new System.Drawing.Size(334, 22);
             this.txtPassword.TabIndex = 21;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(52, 254);
+            this.txtUsername.Location = new System.Drawing.Point(35, 163);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(499, 22);
+            this.txtUsername.Size = new System.Drawing.Size(334, 22);
             this.txtUsername.TabIndex = 20;
             // 
             // label14
@@ -1445,16 +1453,18 @@ namespace PBL3.View
             // panel19
             // 
             this.panel19.Controls.Add(this.btnLogOut);
-            this.panel19.Location = new System.Drawing.Point(887, 4);
+            this.panel19.Location = new System.Drawing.Point(591, 3);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(381, 63);
             this.panel19.TabIndex = 6;
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(382, 21);
+            this.btnLogOut.Location = new System.Drawing.Point(255, 13);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(172, 56);
+            this.btnLogOut.Size = new System.Drawing.Size(115, 36);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -1462,16 +1472,18 @@ namespace PBL3.View
             // panel16
             // 
             this.panel16.Controls.Add(this.btnUpdateInfo);
-            this.panel16.Location = new System.Drawing.Point(6, 3);
+            this.panel16.Location = new System.Drawing.Point(4, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(583, 64);
             this.panel16.TabIndex = 5;
             // 
             // btnUpdateInfo
             // 
-            this.btnUpdateInfo.Location = new System.Drawing.Point(15, 22);
+            this.btnUpdateInfo.Location = new System.Drawing.Point(10, 14);
+            this.btnUpdateInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateInfo.Name = "btnUpdateInfo";
-            this.btnUpdateInfo.Size = new System.Drawing.Size(172, 56);
+            this.btnUpdateInfo.Size = new System.Drawing.Size(115, 36);
             this.btnUpdateInfo.TabIndex = 0;
             this.btnUpdateInfo.Text = "Câp nhật";
             this.btnUpdateInfo.UseVisualStyleBackColor = true;
@@ -1513,7 +1525,8 @@ namespace PBL3.View
             // rbtnFemale
             // 
             this.rbtnFemale.AutoSize = true;
-            this.rbtnFemale.Location = new System.Drawing.Point(422, 496);
+            this.rbtnFemale.Location = new System.Drawing.Point(281, 317);
+            this.rbtnFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(45, 20);
             this.rbtnFemale.TabIndex = 18;
@@ -1524,7 +1537,8 @@ namespace PBL3.View
             // rbtnMale
             // 
             this.rbtnMale.AutoSize = true;
-            this.rbtnMale.Location = new System.Drawing.Point(191, 496);
+            this.rbtnMale.Location = new System.Drawing.Point(127, 317);
+            this.rbtnMale.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(57, 20);
             this.rbtnMale.TabIndex = 17;
@@ -1543,18 +1557,20 @@ namespace PBL3.View
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(99, 569);
+            this.btnCancel.Location = new System.Drawing.Point(66, 364);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(139, 52);
+            this.btnCancel.Size = new System.Drawing.Size(93, 33);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(644, 569);
+            this.btnOK.Location = new System.Drawing.Point(429, 364);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(139, 52);
+            this.btnOK.Size = new System.Drawing.Size(93, 33);
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -1662,46 +1678,55 @@ namespace PBL3.View
             this.panel12.Controls.Add(this.btnDeleteAccount);
             this.panel12.Controls.Add(this.btnEditInfoAccount);
             this.panel12.Controls.Add(this.btnAddAccount);
-            this.panel12.Location = new System.Drawing.Point(607, 6);
+            this.panel12.Location = new System.Drawing.Point(405, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(851, 193);
+            this.panel12.Size = new System.Drawing.Size(567, 124);
             this.panel12.TabIndex = 2;
             // 
             // btnResetAccount
             // 
-            this.btnResetAccount.Location = new System.Drawing.Point(582, 26);
+            this.btnResetAccount.Location = new System.Drawing.Point(388, 17);
+            this.btnResetAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetAccount.Name = "btnResetAccount";
-            this.btnResetAccount.Size = new System.Drawing.Size(258, 52);
+            this.btnResetAccount.Size = new System.Drawing.Size(172, 33);
             this.btnResetAccount.TabIndex = 15;
             this.btnResetAccount.Text = "Reset mật khẩu";
             this.btnResetAccount.UseVisualStyleBackColor = true;
+            this.btnResetAccount.Click += new System.EventHandler(this.btnResetAccount_Click);
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(381, 26);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(254, 17);
+            this.btnDeleteAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(178, 52);
+            this.btnDeleteAccount.Size = new System.Drawing.Size(119, 33);
             this.btnDeleteAccount.TabIndex = 14;
             this.btnDeleteAccount.Text = "Xóa tài khoản";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnEditInfoAccount
             // 
-            this.btnEditInfoAccount.Location = new System.Drawing.Point(226, 26);
+            this.btnEditInfoAccount.Location = new System.Drawing.Point(151, 17);
+            this.btnEditInfoAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditInfoAccount.Name = "btnEditInfoAccount";
-            this.btnEditInfoAccount.Size = new System.Drawing.Size(139, 52);
+            this.btnEditInfoAccount.Size = new System.Drawing.Size(93, 33);
             this.btnEditInfoAccount.TabIndex = 13;
             this.btnEditInfoAccount.Text = "Cập nhật";
             this.btnEditInfoAccount.UseVisualStyleBackColor = true;
+            this.btnEditInfoAccount.Click += new System.EventHandler(this.btnEditInfoAccount_Click);
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Location = new System.Drawing.Point(3, 23);
+            this.btnAddAccount.Location = new System.Drawing.Point(2, 15);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(206, 52);
+            this.btnAddAccount.Size = new System.Drawing.Size(137, 33);
             this.btnAddAccount.TabIndex = 12;
             this.btnAddAccount.Text = "Thêm tài khoản";
             this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // panel11
             // 
@@ -1710,22 +1735,25 @@ namespace PBL3.View
             this.panel11.Controls.Add(this.cbxRole);
             this.panel11.Controls.Add(this.label15);
             this.panel11.Controls.Add(this.btnSearchAccount);
-            this.panel11.Location = new System.Drawing.Point(6, 6);
+            this.panel11.Location = new System.Drawing.Point(4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(595, 193);
+            this.panel11.Size = new System.Drawing.Size(397, 124);
             this.panel11.TabIndex = 1;
             // 
             // tbxDisplayName
             // 
-            this.tbxDisplayName.Location = new System.Drawing.Point(157, 109);
+            this.tbxDisplayName.Location = new System.Drawing.Point(105, 70);
+            this.tbxDisplayName.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDisplayName.Name = "tbxDisplayName";
-            this.tbxDisplayName.Size = new System.Drawing.Size(267, 22);
+            this.tbxDisplayName.Size = new System.Drawing.Size(179, 22);
             this.tbxDisplayName.TabIndex = 11;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 109);
+            this.label16.Location = new System.Drawing.Point(3, 70);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 16);
             this.label16.TabIndex = 7;
@@ -1734,15 +1762,17 @@ namespace PBL3.View
             // cbxRole
             // 
             this.cbxRole.FormattingEnabled = true;
-            this.cbxRole.Location = new System.Drawing.Point(157, 23);
+            this.cbxRole.Location = new System.Drawing.Point(105, 15);
+            this.cbxRole.Margin = new System.Windows.Forms.Padding(2);
             this.cbxRole.Name = "cbxRole";
-            this.cbxRole.Size = new System.Drawing.Size(267, 24);
+            this.cbxRole.Size = new System.Drawing.Size(179, 24);
             this.cbxRole.TabIndex = 6;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 26);
+            this.label15.Location = new System.Drawing.Point(3, 17);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(90, 16);
             this.label15.TabIndex = 5;
@@ -1750,29 +1780,33 @@ namespace PBL3.View
             // 
             // btnSearchAccount
             // 
-            this.btnSearchAccount.Location = new System.Drawing.Point(453, 12);
+            this.btnSearchAccount.Location = new System.Drawing.Point(302, 8);
+            this.btnSearchAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchAccount.Name = "btnSearchAccount";
-            this.btnSearchAccount.Size = new System.Drawing.Size(139, 52);
+            this.btnSearchAccount.Size = new System.Drawing.Size(93, 33);
             this.btnSearchAccount.TabIndex = 4;
             this.btnSearchAccount.Text = "Tìm kiếm";
             this.btnSearchAccount.UseVisualStyleBackColor = true;
+            this.btnSearchAccount.Click += new System.EventHandler(this.btnSearchAccount_Click);
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.dtgvListAccounts);
-            this.panel10.Location = new System.Drawing.Point(7, 205);
+            this.panel10.Location = new System.Drawing.Point(5, 131);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1451, 668);
+            this.panel10.Size = new System.Drawing.Size(967, 428);
             this.panel10.TabIndex = 0;
             // 
             // dtgvListAccounts
             // 
             this.dtgvListAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListAccounts.Location = new System.Drawing.Point(-4, 26);
+            this.dtgvListAccounts.Location = new System.Drawing.Point(-3, 17);
+            this.dtgvListAccounts.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvListAccounts.Name = "dtgvListAccounts";
             this.dtgvListAccounts.RowHeadersWidth = 82;
             this.dtgvListAccounts.RowTemplate.Height = 33;
-            this.dtgvListAccounts.Size = new System.Drawing.Size(1444, 631);
+            this.dtgvListAccounts.Size = new System.Drawing.Size(963, 404);
             this.dtgvListAccounts.TabIndex = 0;
             // 
             // tabPage3
@@ -2108,6 +2142,7 @@ namespace PBL3.View
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fManager";
             this.Text = "ADMIN";
+            this.Load += new System.EventHandler(this.fManager_Load);
             this.tabPage4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();

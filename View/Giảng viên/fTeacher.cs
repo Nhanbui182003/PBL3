@@ -19,22 +19,22 @@ namespace PBL3.View.Giảng_viên
         private BLL_Account bllAccount;
 
         #endregion
-        public fTeacher(int teacherId)
+        public fTeacher(int idTeacher)
         {
             IdTeacher = teacherId;
             InitializeComponent();
             BllClass = new BLL_Class();
-            bllAccount = new BLL_Account();
+            bllAccount = new BLL_Account(); 
+            IdTeacher = idTeacher;
+            
         }
 
         void DisplayDataOfAllClasses()
         {
+            
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
-            dtgvClassOfTeacher.Columns[0].Width = (int)(dtgvClassOfTeacher.Width * 0.1);
-            dtgvClassOfTeacher.Columns[1].Width = (int)(dtgvClassOfTeacher.Width * 0.4);
-            dtgvClassOfTeacher.Columns[2].Width = (int)(dtgvClassOfTeacher.Width * 0.3);
-            dtgvClassOfTeacher.Columns[3].Width = (int)(dtgvClassOfTeacher.Width * 0.2);
+            
         }
         void DisPlayAllCourse()
         {
@@ -42,6 +42,7 @@ namespace PBL3.View.Giảng_viên
         }
         void DisplayInfoTeacher()
         {
+
             AccountInfo info = new AccountInfo();
             info = BllClass.GetInfo(IdTeacher);
             tbxName.Text = info.Name;   
@@ -49,6 +50,7 @@ namespace PBL3.View.Giảng_viên
             tbxEmail.Text = info.Email;
             tbxPhone.Text = info.Phone;
             dtpkBirthday.Value = (DateTime)info.Birthday;
+
             if(info.Gender == true)
             {
                 rdoMale.Checked = true;
@@ -115,12 +117,14 @@ namespace PBL3.View.Giảng_viên
             if(BllClass.EditInfo(IdTeacher,info))
             {
                 MessageBox.Show("Sửa thông tin thành công!!!");
-                DisplayInfoTeacher();
+                
             }
             else
             {
                 MessageBox.Show("Sửa thông tin không thành công !!!");
+
             }
+            DisplayInfoTeacher();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -151,6 +155,14 @@ namespace PBL3.View.Giảng_viên
                 }
 
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin f = new FormLogin();
+            f.ShowDialog();
+            
         }
     }
 }

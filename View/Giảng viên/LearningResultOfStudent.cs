@@ -19,9 +19,6 @@ namespace PBL3.View.Giảng_viên
         private int IdStudent;
         private int IdClass;
         private BLL_Student bllStudent;
-        private double aPoint;
-        private double mPoint;
-        private double fPoint;
         private event EventHandler loadData;
         public event EventHandler LoadData
         {
@@ -80,22 +77,7 @@ namespace PBL3.View.Giảng_viên
         {
          
             
-            try
-            {
-                if(tbxAssignmentPoint.Text != "")
-                {
-                    aPoint = Convert.ToDouble(tbxAssignmentPoint.Text);
-                }
-                if(tbxMidTermPoint.Text != "")
-                {
-                    mPoint = Convert.ToDouble(tbxMidTermPoint.Text);
-                }
-                if(tbxFinalPoint.Text != "")
-                {
-                    fPoint = Convert.ToDouble(tbxFinalPoint.Text);
-                }
-                if((aPoint >= 0 && aPoint <= 10) && (mPoint >=0 && mPoint <= 10) &&(fPoint >=0 && fPoint <= 10))
-                {
+                
                     if (bllStudent.EditLearningResult(IdStudent, IdClass, tbxAssignmentPoint.Text, tbxMidTermPoint.Text, tbxFinalPoint.Text))
                     {
                         MessageBox.Show("Cập nhật điểm thành công");
@@ -110,21 +92,6 @@ namespace PBL3.View.Giảng_viên
                         loadData(this, new EventArgs());
                     }
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Giá trị điểm số nằm trong khoảng 0 - 10 ");
-                }
-
-
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Kiểu dữ liệu điểm số là kiểu số thực từ 0 -10 nếu chưa đánh giá có thể để trống ");
-            }
-           
-
             
         }
 

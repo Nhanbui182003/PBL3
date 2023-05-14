@@ -30,7 +30,7 @@ namespace PBL3
 
             if (account != null)
             {
-                if (account.RoleId==1)
+                if (account.RoleId == 1)
                 {
                     this.Hide();
                     fManager f = new fManager(account.Id);

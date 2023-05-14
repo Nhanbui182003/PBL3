@@ -13,9 +13,11 @@ namespace PBL3.View.Giảng_viên
 {
     public partial class fCalendarInDay : Form
     {
+        #region
         private DateTime JobDate;
         private int IdTeacher;
         private BLL_Calendar bllCalendar;
+        #endregion
         public fCalendarInDay(DateTime jobDate,int  idTeacher)
         {
             InitializeComponent();
