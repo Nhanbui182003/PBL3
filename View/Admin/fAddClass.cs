@@ -131,7 +131,6 @@ namespace PBL3.View.Admin
                                     }
                                     else
                                     {
-                                        
                                         bll.AddLearningResult(t);
                                         bll.AddCalendarBLL(t1);
                                         bll.AddCalendarBLL(t2);

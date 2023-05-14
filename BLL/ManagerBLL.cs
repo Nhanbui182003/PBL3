@@ -157,13 +157,30 @@ namespace PBL3.BLL
             return new ManagerDAL().isExistingCalendarByAccountIDDAL(accountId, CheckedCalendar);
         }
 
-        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index)
+        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index,String text)
         {
             return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index,text);
         }
         public dynamic getRevenueByMonthBLL(string year)
         {
             return new ManagerDAL().getRevenueByMonthDAL(year); 
+        }
+        public int saveMKBLL(string MKC, string MKM, string check, int adminId)
+        {
+            int i = new ManagerDAL().saveMKDAL( MKC, MKM, check, adminId);
+            if (i == 2)
+            {
+                return 2;
+            }
+            else if (i == 3)
+            {
+                return 3;
+            }
+            else if (i == 4)
+            {
+                return 4;
+            }
+            return 2;
         }
     }
 }

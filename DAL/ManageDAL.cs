@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -482,6 +483,47 @@ namespace PBL3.DAL
                 }
             }
             return li.ToArray();    
+        }
+        public int saveMKDAL(string MKC, string MKM, string check, int adminId)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                int index = 2;
+                bool temp = true;
+                Account acc = this.GetAccountByID(adminId);
+                string hasPass1 = new ManagerDAL().getMD5DAL(MKC);
+                try
+                {
+                    if (acc.PassWord != hasPass1)
+                    {
+                        temp = false;
+                        return 2;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    if (check != MKM)
+                    {
+                        temp = false;
+                        return 3;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    if (temp)
+                    {
+                        string hasPass = new ManagerDAL().getMD5DAL(MKM);
+                        acc.PassWord = hasPass;
+                        db.Accounts.AddOrUpdate(acc);
+                        db.SaveChanges();
+                        return 4;
+                    }
+                }
+                catch (Exception ex) { }
+                return index;
+            }
         }
     }
 }
