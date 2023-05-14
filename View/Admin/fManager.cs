@@ -17,13 +17,13 @@ namespace PBL3.View
 {
     public partial class fManager : Form
     {
-        private int ID;
+        private int AdminId;
         private BLL_Account bllAccount;
         public fManager(int id)
         {
             InitializeComponent();
             SetCBB();
-            ID = id;
+            AdminId = id;
             ManagerBLL bll = new ManagerBLL();
             bllAccount = new BLL_Account();
 
@@ -39,23 +39,33 @@ namespace PBL3.View
             dgvClass.Columns[1].HeaderText = "Tên lớp học";
             dgvClass.Columns[2].HeaderText = "Tên khóa học";
             dgvClass.Columns[3].HeaderText = "Số học sinh tối đa";
+
+            LoadAllAccount();
+            LoadAllRole();
+            LoadAdminInfo();
         }
-        // tải dữ liệu của accout
+        // tải dữ liệu của account
         void LoadAllAccount()
         {
-
             bllAccount.LoadDataOfAccount(dtgvListAccounts);
-            
-
         }
-
         void LoadAllRole()
         {
             bllAccount.LoadAllRole(cbxRole);
         }
-
-
-
+        void LoadAdminInfo()
+        {
+            ManagerBLL bll = new ManagerBLL();
+            var admin = bll.GetAccountByID(AdminId);
+            txtName.Text = admin.AccountInfo.Name;
+            dtDate.Value = admin.AccountInfo.Birthday.Value;
+            txtAddress.Text = admin.AccountInfo.Address;
+            txtPhone.Text = admin.AccountInfo.Phone;
+            //txtEmail.Text = admin.AccountInfo.Email;
+            if (admin.AccountInfo.Gender == true) rbtnMale.Checked = true; else rbtnFemale.Checked = true;
+            txtUsername.Text = admin.UserName;
+            txtPassword.Text = admin.PassWord;
+        }
         // 
         public void SetCBB()
         {
@@ -254,7 +264,7 @@ namespace PBL3.View
                         list.Add(item);
 
                     }
-                    if (list.Contains(ID))
+                    if (list.Contains(AdminId))
                     {
                         MessageBox.Show("Bạn không thể xóa tài khoản này ");
                     }
@@ -331,6 +341,19 @@ namespace PBL3.View
                 Chart ch = new Chart(cbbYear.Text);
                 ch.ShowDialog();
             }
+        }
+
+        private void btnUpdateInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            FormLogin f = new FormLogin();
+            f.ShowDialog();
         }
 
         private void btnSort_Click(object sender, EventArgs e)

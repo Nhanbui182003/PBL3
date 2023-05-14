@@ -26,7 +26,6 @@ namespace PBL3.View.Giảng_viên
             BllClass = new BLL_Class();
             bllAccount = new BLL_Account(); 
             IdTeacher = idTeacher;
-            
         }
 
         void DisplayDataOfAllClasses()
@@ -34,7 +33,6 @@ namespace PBL3.View.Giảng_viên
             
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
-            
         }
         void DisPlayAllCourse()
         {
@@ -84,9 +82,12 @@ namespace PBL3.View.Giảng_viên
                 DataGridViewRow row = dtgvClassOfTeacher.SelectedRows[0];
                 int idClass = Convert.ToInt32(row.Cells["Id"].Value.ToString());
                 
+                MyClass f = new MyClass(idClass, IdTeacher);
                 MyClass f = new MyClass(idClass);
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.Show();
+                this.Hide();
+                
             }
             else if(dtgvClassOfTeacher.SelectedRows.Count > 1)
             {

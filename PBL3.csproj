@@ -123,6 +123,9 @@
     <Compile Include="View\Admin\Chart.Designer.cs">
       <DependentUpon>Chart.cs</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DBEnglishCenter.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +149,12 @@
     </Compile>
     <Compile Include="View\Admin\fAddStudentToClass.Designer.cs">
       <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\fChoiceTeacher.cs">
       <SubType>Form</SubType>
@@ -265,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fAddStudentToClass.resx">
       <DependentUpon>fAddStudentToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fChoiceTeacher.resx">
       <DependentUpon>fChoiceTeacher.cs</DependentUpon>

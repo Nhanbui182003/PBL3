@@ -34,5 +34,6 @@ namespace PBL3
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<LearningResult> LearningResults { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PBL3.DAL
 {
@@ -14,7 +16,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Courses.ToList();
+                return db.Courses.Where(p=>p.CourseActive==true).ToList();
             }
         }
         public Course GetCourseByIDDAL(int id)
@@ -29,7 +31,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var course = db.Courses.Where(p => p.CourseName.Contains(name));
+                var course = db.Courses.Where(p => p.CourseName.Contains(name)&&p.CourseActive==true);
                 return course.ToList();
             }
         }
@@ -37,7 +39,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Courses.Any(p => p.CourseName == course.CourseName && p.StartDate.CompareTo(course.StartDate) == 0 && p.EndDate.CompareTo(course.EndDate) == 0);
+                return db.Courses.Any(p => p.CourseName == course.CourseName && p.StartDate.CompareTo(course.StartDate) == 0 && p.EndDate.CompareTo(course.EndDate) == 0 && p.CourseActive==true);
             }
         }
         public void AddCourseDAL(Course course)
@@ -59,12 +61,17 @@ namespace PBL3.DAL
                     foreach (var c in classes)
                     {
                         var learningResults = db.LearningResults.Where(p => p.ClassId == c.Id);
-                        db.LearningResults.RemoveRange(learningResults);
-                        var calendars = db.Calendars.Where(p => p.ClassId == c.Id);
-                        db.Calendars.RemoveRange(calendars);
+                        foreach (var learningResult in learningResults)
+                        {
+                            learningResult.LearningResultActive = false;
+                        }
+                        //var calendars = db.Calendars.Where(p => p.ClassId == c.Id);
+                        //db.Calendars.RemoveRange(calendars);
+                        c.ClassActive = false;
                     }
-                    db.Classes.RemoveRange(classes);
-                    db.Courses.Remove(course);
+                    //db.Classes.RemoveRange(classes);
+                    //db.Courses.Remove(course);
+                    course.CourseActive = false;
                     db.SaveChanges();
                 }
             }
@@ -81,6 +88,7 @@ namespace PBL3.DAL
                     course.StartDate = newcourse.StartDate;
                     course.EndDate = newcourse.EndDate;
                     course.Price = newcourse.Price;
+                    course.CourseActive = true;
                     db.SaveChanges();
                 }
             }
@@ -90,14 +98,14 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Include(p => p.Course).ToList();
+                return db.Classes.Include(p => p.Course).Where(p=>p.ClassActive==true).ToList();
             }
         }
         public List<Class> GetAllClassByCourseIDDAL(int id)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Include(p => p.Course).Where(p => p.CourseId == id).ToList();
+                return db.Classes.Include(p => p.Course).Where(p => p.CourseId == id && p.ClassActive==true).ToList();
             }
         }
         public string getMD5DAL(string password)
@@ -130,7 +138,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var account = db.Accounts.Where(p => p.Id == id).FirstOrDefault();
+                var account = db.Accounts.Include(p=>p.AccountInfo).Where(p => p.Id == id && p.AccountActive == true).FirstOrDefault();
                 if (account != null)
                 {
                     return account;
@@ -143,7 +151,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Any(p => p.ClassName == c.ClassName && p.CourseId == c.CourseId);
+                return db.Classes.Any(p => p.ClassName == c.ClassName && p.CourseId == c.CourseId && p.ClassActive==true);
             }
         }
         public void AddClassDAL(Class c)
@@ -174,12 +182,12 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                int[] ids = db.LearningResults.Where(p => p.ClassId == classID).Select(p => p.AccountId).ToArray();
+                int[] ids = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive==true).Select(p => p.AccountId).ToArray();
                 List<Account> students = new List<Account>();
                 for (int i = 0; i < ids.Length; i++)
                 {
                     int id = ids[i];
-                    var account = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3).FirstOrDefault();
+                    var account = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3 && p.AccountActive==true).FirstOrDefault();
                     if (account != null)
                     {
                         students.Add(account);
@@ -193,7 +201,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var learningResult = db.LearningResults.Where(p => p.AccountId == accountId && p.ClassId == classID).FirstOrDefault();
+                var learningResult = db.LearningResults.Where(p => p.AccountId == accountId && p.ClassId == classID && p.LearningResultActive == true).FirstOrDefault();
                 if (learningResult == null) return false; else return true;
             }
         }
@@ -204,11 +212,12 @@ namespace PBL3.DAL
                 LearningResult student = new LearningResult()
                 {
                     AccountId = accountId,
-                    ClassId = classID
+                    ClassId = classID,
+                    LearningResultActive = true
                 };
                 db.LearningResults.Add(student);
 
-                Class c = db.Classes.Include(p => p.Course).Where(p => p.Id == classID).FirstOrDefault();
+                Class c = db.Classes.Include(p => p.Course).Where(p => p.Id == classID && p.ClassActive==true).FirstOrDefault();
                 db.Bills.Add(new Bill()
                 {
                     LearningResultId = student.Id,
@@ -223,7 +232,8 @@ namespace PBL3.DAL
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
                 var l = db.LearningResults.Where(p => p.AccountId == accountId && p.ClassId == classId).FirstOrDefault();
-                db.LearningResults.Remove(l);
+                l.LearningResultActive = false;
+                
                 db.SaveChanges();
             }
         }
@@ -231,7 +241,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.Classes.Include(p => p.Course).Where(p => p.Id == classID).FirstOrDefault();
+                return db.Classes.Include(p => p.Course).Where(p => p.Id == classID && p.ClassActive==true).FirstOrDefault();
             }
         }
         public List<Calendar> GetListCalendarsByClassIDDAL(int ClassID)
@@ -245,10 +255,10 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var l = db.LearningResults.Where(p => p.ClassId == classID);
+                var l = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive == true);
                 foreach (var i in l)
                 {
-                    var account = db.Accounts.Where(p => p.Id == i.AccountId).FirstOrDefault();
+                    var account = db.Accounts.Where(p => p.Id == i.AccountId && p.AccountActive==true).FirstOrDefault();
                     if (account.RoleId == 2)
                     {
                         return db.AccountInfoes.Where(p => p.AccountId == account.Id).FirstOrDefault();
@@ -261,15 +271,23 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var learningResult = db.LearningResults.Where(p => p.ClassId == classID);
-                db.LearningResults.RemoveRange(learningResult);
+                //var learningResult = db.LearningResults.Where(p => p.ClassId == classID);
+                //db.LearningResults.RemoveRange(learningResult);
 
-                var calendars = db.Calendars.Where(p => p.ClassId == classID);
-                db.Calendars.RemoveRange(calendars);
+                //var calendars = db.Calendars.Where(p => p.ClassId == classID);
+                //db.Calendars.RemoveRange(calendars);
 
-                var c = db.Classes.Where(p => p.Id == classID).FirstOrDefault();
-                db.Classes.Remove(c);
+                //var c = db.Classes.Where(p => p.Id == classID).FirstOrDefault();
+                //db.Classes.Remove(c);
 
+                var l = db.LearningResults.Where(p => p.Id == classID).ToList();
+                foreach (var i in l)
+                {
+                    i.LearningResultActive = false;
+                }
+                var c = db.Classes.Where(p => p.Id== classID).FirstOrDefault();
+                c.ClassActive= false;
+                
                 db.SaveChanges();
             }
         }
@@ -277,7 +295,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var cs = db.Classes.Include(p => p.Course).Where(p => p.ClassName.Contains(name));
+                var cs = db.Classes.Include(p => p.Course).Where(p => p.ClassName.Contains(name) && p.ClassActive==true);
                 return cs.ToList();
             }
         }
@@ -286,7 +304,7 @@ namespace PBL3.DAL
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
                 List<Account> list = GetAllStudentByClassIdDAL(classId);
-                var students = list.Where(p => p.AccountInfo.Name.Contains(name));
+                var students = list.Where(p => p.AccountInfo.Name.Contains(name) && p.AccountActive==true);
                 return students.ToList();
             }
         }
@@ -294,10 +312,10 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var l = db.LearningResults.Where(p => p.ClassId == classID);
+                var l = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive==true);
                 foreach (var i in l)
                 {
-                    var account = db.Accounts.Where(p => p.Id == i.AccountId).FirstOrDefault();
+                    var account = db.Accounts.Where(p => p.Id == i.AccountId && p.AccountActive == true).FirstOrDefault();
                     if (account.RoleId == 2)
                     {
                         return i;
@@ -315,11 +333,11 @@ namespace PBL3.DAL
                 oldClass.CourseId = updatedClass.CourseId;
                 oldClass.MaxStudent = updatedClass.MaxStudent;
 
-                List<LearningResult> l = db.LearningResults.Where(p => p.ClassId == updatedClass.Id).ToList();
+                List<LearningResult> l = db.LearningResults.Where(p => p.ClassId == updatedClass.Id && p.LearningResultActive==true).ToList();
                 LearningResult oldTeacher = new LearningResult();
                 foreach (LearningResult i in l)
                 {
-                    var account = db.Accounts.Where(p => p.Id == i.AccountId).FirstOrDefault();
+                    var account = db.Accounts.Where(p => p.Id == i.AccountId && p.AccountActive == true ).FirstOrDefault();
                     if (account.RoleId == 2)
                     {
                         oldTeacher = i;
@@ -328,7 +346,7 @@ namespace PBL3.DAL
                 oldTeacher.AccountId = newTeacher.AccountId;
 
 
-                List<Calendar> oldCalendars = db.Calendars.Where(p => p.ClassId == updatedClass.Id).ToList();
+                List<Calendar> oldCalendars = db.Calendars.Where(p => p.ClassId == updatedClass.Id ).ToList();
                 oldCalendars[0].DayLesson = newCalendars[0].DayLesson;
                 oldCalendars[0].FromLesson = newCalendars[0].FromLesson;
                 oldCalendars[0].ToLesson = newCalendars[0].ToLesson;
@@ -344,7 +362,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                List<Account> listStudentAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 3).ToList();
+                List<Account> listStudentAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 3 && p.AccountActive == true ).ToList();
                 return listStudentAccounts;
             }
         }
@@ -352,7 +370,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                List<Account> listTeacherAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 2).ToList();
+                List<Account> listTeacherAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 2 && p.AccountActive == true ).ToList();
                 return listTeacherAccounts;
             }
         }
@@ -360,7 +378,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                return db.LearningResults.Where(p => p.ClassId == classId && p.AccountId == studentId).FirstOrDefault();
+                return db.LearningResults.Where(p => p.ClassId == classId && p.AccountId == studentId && p.LearningResultActive==true).FirstOrDefault();
             }
         }
         public Bill GetBillOfStudentDAL(int studentId, int classId)
@@ -377,35 +395,72 @@ namespace PBL3.DAL
             {
                 Bill updatedBill = db.Bills.Where(p => p.Id == oldBill.Id).FirstOrDefault();
                 updatedBill.Status = true;
+                updatedBill.Time = DateTime.Now;
                 db.SaveChanges();
             }
         }
-        public dynamic getRevenueDAL (DateTime checkIn, DateTime checkOut, int index)
+        public bool isExistingCalendarByAccountIDDAL(int accountId, Calendar CheckedCalendar)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                var learningResults = db.LearningResults.Where(p => p.AccountId == accountId && p.LearningResultActive==true);
+                foreach (var l in learningResults)
+                {
+                    var calendars = db.Calendars.Where(p=>p.ClassId== l.ClassId);
+                    foreach (var calendar in calendars)
+                    {
+                        if (CheckedCalendar.DayLesson == calendar.DayLesson)
+                        {
+                            if (CheckedCalendar.ToLesson < calendar.FromLesson || calendar.ToLesson < CheckedCalendar.FromLesson)
+                            {
+                                continue;
+                            } else
+                            {
+                                return true;
+                            }
+                        } 
+                    }
+                }
+            }
+            return false;
+        }
+        public dynamic getRevenueDAL (DateTime checkIn, DateTime checkOut, int index, string text)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
                 
                 if (index == 0)
                 {
-                    var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id,p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName,p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index== 1)
                 {
-                    var bill = db.Bills.OrderBy(p=>p.Id).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p=>p.Id).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index == 2)
                 {
-                    var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index == 3)
                 {
-                    var bill = db.Bills.OrderBy(p => p.Price).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p => p.Price).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
-                var b = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                else if (index == 4)
+                {
+                    var bill = db.Bills.OrderBy(p => p.Time).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    return bill;
+                }
+                var b = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                    .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                 return b;
             }
         }
@@ -428,6 +483,47 @@ namespace PBL3.DAL
                 }
             }
             return li.ToArray();    
+        }
+        public int saveMKDAL(string MKC, string MKM, string check, int adminId)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                int index = 2;
+                bool temp = true;
+                Account acc = this.GetAccountByID(adminId);
+                string hasPass1 = new ManagerDAL().getMD5DAL(MKC);
+                try
+                {
+                    if (acc.PassWord != hasPass1)
+                    {
+                        temp = false;
+                        return 2;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    if (check != MKM)
+                    {
+                        temp = false;
+                        return 3;
+                    }
+                }
+                catch (Exception ex) { }
+                try
+                {
+                    if (temp)
+                    {
+                        string hasPass = new ManagerDAL().getMD5DAL(MKM);
+                        acc.PassWord = hasPass;
+                        db.Accounts.AddOrUpdate(acc);
+                        db.SaveChanges();
+                        return 4;
+                    }
+                }
+                catch (Exception ex) { }
+                return index;
+            }
         }
     }
 }
