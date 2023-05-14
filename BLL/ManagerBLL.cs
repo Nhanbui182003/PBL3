@@ -152,9 +152,9 @@ namespace PBL3.BLL
         {
             new ManagerDAL().ConfirmPaymentDAL(oldBill);
         }
-        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index)
+        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index,string text)
         {
-            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index);
+            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index,text);
         }
         public dynamic getRevenueByMonthBLL(string year)
         {
