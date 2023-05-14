@@ -103,7 +103,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fCalendarInDay";
-            this.Text = "fCalendarInDay";
+            this.Text = "LỊCH DẠY TRONG NGÀY";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListJob)).EndInit();

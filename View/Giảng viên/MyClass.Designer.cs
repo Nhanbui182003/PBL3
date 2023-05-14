@@ -359,7 +359,7 @@
             this.ClientSize = new System.Drawing.Size(1025, 620);
             this.Controls.Add(this.tabControl1);
             this.Name = "MyClass";
-            this.Text = "Lớp học ";
+            this.Text = "LỚP HỌC";
             this.Load += new System.EventHandler(this.MyClass_Load);
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -116,3 +116,13 @@ C:\PBl3\code\Pbl3\bin\Debug\EntityFramework.SqlServer.dll
 C:\PBl3\code\Pbl3\bin\Debug\EntityFramework.xml
 C:\PBl3\code\Pbl3\bin\Debug\EntityFramework.SqlServer.xml
 C:\PBl3\code\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.Chart.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAccount.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAddClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fLH.resources

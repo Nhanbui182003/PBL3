@@ -282,7 +282,7 @@
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAccount";
-            this.Text = "fAccount";
+            this.Text = "TÀI KHOẢN";
             this.Load += new System.EventHandler(this.fAccount_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

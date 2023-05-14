@@ -20,12 +20,9 @@ namespace PBL3.View.Học_viên
         }
         public void setDGVDSHV (int Class_id)
         {
-            HVBLL bll = new HVBLL();
-            var li = bll.getHVInfoByClassIdBLL(Class_id);
-            var cl = bll.getClassByIdBLL(Class_id);
-
+            var cl = new HVBLL().getClassByIdBLL(Class_id);
             txtLop.Text = cl.ClassName;
-            DGVDSHV.DataSource = li.Select(p => new { p.AccountId, p.Name, p.Gender, p.Phone ,p.Email}).ToList();
+            DGVDSHV.DataSource = new HVBLL().getHVInfoByClassIdBLL(Class_id);   
         }
 
     }

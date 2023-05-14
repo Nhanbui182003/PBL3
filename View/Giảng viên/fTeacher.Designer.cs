@@ -481,7 +481,7 @@
             this.ClientSize = new System.Drawing.Size(1056, 609);
             this.Controls.Add(this.Tho);
             this.Name = "fTeacher";
-            this.Text = "fTeacher";
+            this.Text = "GIẢNG VIÊN";
             this.Load += new System.EventHandler(this.fTeacher_Load);
             this.Tho.ResumeLayout(false);
             this.tabClasses.ResumeLayout(false);

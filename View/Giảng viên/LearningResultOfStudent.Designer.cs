@@ -223,7 +223,7 @@
             this.Controls.Add(this.tbxIdStudent);
             this.Controls.Add(this.label1);
             this.Name = "LearningResultOfStudent";
-            this.Text = "LearningResultOfStudent";
+            this.Text = "BẢNG ĐIỂM HỌC VIÊN";
             this.Load += new System.EventHandler(this.LearningResultOfStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

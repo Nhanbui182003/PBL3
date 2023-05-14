@@ -66,6 +66,7 @@
             this.txtDN = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.lịchHọcTrongNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -95,7 +96,8 @@
             this.cáNhânToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinCáNhânToolStripMenuItem,
             this.họcPhíToolStripMenuItem,
-            this.kếtQuảHọcTậpToolStripMenuItem});
+            this.kếtQuảHọcTậpToolStripMenuItem,
+            this.lịchHọcTrongNgàyToolStripMenuItem});
             this.cáNhânToolStripMenuItem.Name = "cáNhânToolStripMenuItem";
             this.cáNhânToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.cáNhânToolStripMenuItem.Text = "Cá nhân";
@@ -105,7 +107,6 @@
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
             this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
-            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // họcPhíToolStripMenuItem
             // 
@@ -420,6 +421,13 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "THÔNG TIN HỌC VIÊN";
             // 
+            // lịchHọcTrongNgàyToolStripMenuItem
+            // 
+            this.lịchHọcTrongNgàyToolStripMenuItem.Name = "lịchHọcTrongNgàyToolStripMenuItem";
+            this.lịchHọcTrongNgàyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lịchHọcTrongNgàyToolStripMenuItem.Text = "Lịch học trong ngày";
+            this.lịchHọcTrongNgàyToolStripMenuItem.Click += new System.EventHandler(this.lịchHọcTrongNgàyToolStripMenuItem_Click);
+            // 
             // HV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -491,5 +499,6 @@
         private System.Windows.Forms.TextBox txtDN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStripMenuItem lịchHọcTrongNgàyToolStripMenuItem;
     }
 }

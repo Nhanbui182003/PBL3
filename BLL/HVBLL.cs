@@ -1,4 +1,4 @@
-﻿using PBL3.DAO;
+﻿using PBL3.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +42,12 @@ namespace PBL3.BLL
             }
             return 1;
         }
-        public List<AccountInfo> getHVInfoByClassIdBLL(int Class_id)
+        public dynamic getHVInfoByClassIdBLL(int Class_id)
         {
             return new HVDAL().getHVInfoByClassIdDAL(Class_id);
         }
         // class
-        public List<Class> getClassesByMSHVBLL (int mshv)
+        public dynamic getClassesByMSHVBLL (int mshv)
         {
             return new HVDAL().getClassesByMSHVDAL(mshv);    
         }
@@ -60,6 +60,11 @@ namespace PBL3.BLL
         public List<Calendar> getCalendarBLL(int Class_Id)
         {
             return new HVDAL().getCalendarDAL(Class_Id);
+        }
+
+        public dynamic getCalendarInDayByMSHVBLL(int mshv, string dayOfWeek)
+        {
+            return new HVDAL().getCalendarInDayByMSHVDAL(mshv,dayOfWeek);
         }
 
         //course
@@ -75,27 +80,24 @@ namespace PBL3.BLL
         }
 
         //Ket qua
-        public List<LearningResult> getLRByMSHVBLL (int mshv)
+        public dynamic getLRByMSHVBLL (int mshv)
         {
             return new HVDAL().getLRByMSHVDAL(mshv);
         }
         //Hocphi
-        public List<Bill> getBillByMSHV (int mshv)
+        public dynamic getBillByMSHV (int mshv)
         {
             return new HVDAL().getBillByMSHVDAL(mshv); 
         }
+        public string getTotalBillBLL(int mshv, int index)
+        {
+            return new HVDAL().getTotalBillDAL(mshv,index);
+        }
         // tai lieu
-        public List<Document> getDocumentByClassIdBLL (int classid)
+        public dynamic getDocumentByClassIdBLL (int classid)
         {
             return new HVDAL().getDocumentByClassIdDAL(classid);
         }
-        public void docFileBLL()
-        {
-            new HVDAL().docFileDAL();
-        }
-        public void downloadFile(int fileId)
-        {
-            new HVDAL().downloadFileDAL(fileId);
-        }
+        
     }
 }

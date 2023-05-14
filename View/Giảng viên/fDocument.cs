@@ -30,7 +30,6 @@ namespace PBL3.View.Giảng_viên
             IdClass = idClass; 
             IdDocument = idDocument;    
             bllDocument = new BLL_Document();   
-
         }
 
         private void btnOpen_Click(object sender, EventArgs e)

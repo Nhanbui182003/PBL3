@@ -92,9 +92,11 @@ namespace PBL3.View.Học_viên
             f.ShowDialog(); 
         }
 
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lịchHọcTrongNgàyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new HVBLL().docFileBLL();
+            this.Hide();
+            fLH f =new fLH(mshv);
+            f.ShowDialog();
         }
     }
 }

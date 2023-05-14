@@ -22,10 +22,7 @@ namespace PBL3.View.Học_viên
         }
         public void setDGVClass(int mshv)
         {
-            HVBLL bll = new HVBLL();
-            List<Class> li = new List<Class>();
-            li = bll.getClassesByMSHVBLL(mshv);
-            DGVClass.DataSource = li.Select(p => new { p.Id, p.ClassName, p.MaxStudent }).ToList();
+            DGVClass.DataSource = new HVBLL().getClassesByMSHVBLL(mshv);    
         }
 
         private void DGVClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,24 +30,17 @@ namespace PBL3.View.Học_viên
             int i;
             i = DGVClass.CurrentRow.Index;
             int class_Id = Convert.ToInt32(DGVClass.Rows[i].Cells["Id"].Value.ToString());
-            HVBLL bll = new HVBLL();
-            Class cl = new Class(); 
-            cl = bll.getClassByIdBLL(class_Id);
-
-            Course course = new Course();
-            course = bll.getCourseByIdBLL(cl.CourseId);
-
+            var cl = new HVBLL().getClassByIdBLL(class_Id); 
+            var course = new HVBLL().getCourseByIdBLL(cl.CourseId);
             List<Calendar> cal = new List<Calendar>();
-            cal.AddRange(bll.getCalendarBLL(cl.Id));
-
-            AccountInfo gvInfo = bll.getGVInfoByClassIdBLL(class_Id);
+            cal.AddRange(new HVBLL().getCalendarBLL(cl.Id));
+            var gvInfo = new HVBLL().getGVInfoByClassIdBLL(class_Id);   
 
             txtClassName.Text = cl.ClassName;
             txtCourseName.Text = course.CourseName;
             txtGV.Text = gvInfo.Name;
-            txtTKB1.Text = (cal[0].DayLesson + ", tiết" + cal[0].FromLesson.ToString() + "-" + cal[0].ToLesson.ToString());
-            txtTKB2.Text = (cal[1].DayLesson + ", tiết" + cal[1].FromLesson.ToString() + "-" + cal[1].ToLesson.ToString());
-
+            txtTKB1.Text = (cal[0].DayLesson + ", period" + cal[0].FromLesson.ToString() + "-" + cal[0].ToLesson.ToString());
+            txtTKB2.Text = (cal[1].DayLesson + ", period" + cal[1].FromLesson.ToString() + "-" + cal[1].ToLesson.ToString());
         }
         private void btnDSHV_Click(object sender, EventArgs e)
         {
@@ -60,9 +50,9 @@ namespace PBL3.View.Học_viên
             fDSHV f = new fDSHV(class_Id);
             f.ShowDialog();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTL_Click(object sender, EventArgs e)
         {
-            int i;
+            int i=0;
             i = DGVClass.CurrentRow.Index;
             int class_Id = Convert.ToInt32(DGVClass.Rows[i].Cells["Id"].Value.ToString());
             fTAILIEU f = new fTAILIEU(class_Id);
@@ -96,5 +86,11 @@ namespace PBL3.View.Học_viên
             f.ShowDialog();
         }
 
+        private void lịchHọcTrongNgàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fLH f = new fLH(MSHV);
+            f.ShowDialog();
+        }
     }
 }

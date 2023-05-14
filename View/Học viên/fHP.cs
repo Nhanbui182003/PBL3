@@ -23,12 +23,18 @@ namespace PBL3.View.Học_viên
         public void setDGVHP(int mshv)
         {
             HVBLL bll = new HVBLL();    
-            var li = bll.getBillByMSHV (mshv);
+            
             var hv = bll.setInfoBLL(mshv);
-
-            txtHT_hp.Text = hv[0].Name;
+            txtHT_hp.Text = hv[0].Name; 
+            txtHT_hp.ReadOnly = true;
             txtSDT_hp.Text = hv[0].Phone;
-            DGVHP.DataSource = li.Select(p => new { p.Id, p.Price, p.Status, p.Time }).ToList();
+            txtSDT_hp.ReadOnly = true;  
+
+            DGVHP.DataSource = bll.getBillByMSHV(mshv);
+            txtTotal.Text = bll.getTotalBillBLL(mshv,0);
+            txtTotal.ReadOnly = true;
+            txtNO.Text = bll.getTotalBillBLL(mshv, 1);
+            txtNO.ReadOnly = true;
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,6 +63,13 @@ namespace PBL3.View.Học_viên
         {
             this.Hide();
             FormLogin f = new FormLogin();
+            f.ShowDialog();
+        }
+
+        private void lịchHọcTrongNgàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fLH f = new fLH(MSHV);
             f.ShowDialog();
         }
     }

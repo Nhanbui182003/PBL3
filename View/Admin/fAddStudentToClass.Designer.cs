@@ -38,16 +38,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 80);
+            this.label1.Location = new System.Drawing.Point(54, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 1;
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(39, 31);
+            this.btnAddStudent.Location = new System.Drawing.Point(26, 20);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(195, 46);
+            this.btnAddStudent.Size = new System.Drawing.Size(130, 29);
             this.btnAddStudent.TabIndex = 4;
             this.btnAddStudent.Text = "Thêm học viên";
             this.btnAddStudent.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(798, 706);
+            this.btnExit.Location = new System.Drawing.Point(532, 452);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(127, 46);
+            this.btnExit.Size = new System.Drawing.Size(85, 29);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -66,24 +69,26 @@
             // dgvStudentAccount
             // 
             this.dgvStudentAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentAccount.Location = new System.Drawing.Point(39, 108);
+            this.dgvStudentAccount.Location = new System.Drawing.Point(26, 69);
+            this.dgvStudentAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvStudentAccount.Name = "dgvStudentAccount";
             this.dgvStudentAccount.RowHeadersWidth = 82;
             this.dgvStudentAccount.RowTemplate.Height = 33;
-            this.dgvStudentAccount.Size = new System.Drawing.Size(886, 567);
+            this.dgvStudentAccount.Size = new System.Drawing.Size(591, 363);
             this.dgvStudentAccount.TabIndex = 6;
             // 
             // fAddStudentToClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 792);
+            this.ClientSize = new System.Drawing.Size(652, 507);
             this.Controls.Add(this.dgvStudentAccount);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fAddStudentToClass";
-            this.Text = "fAddStudentToClass";
+            this.Text = "THÊM HỌC VIÊN VÀO LỚP";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentAccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

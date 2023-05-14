@@ -11,26 +11,14 @@ using System.Windows.Forms;
 
 namespace PBL3.View.Học_viên
 {
-    public partial class fKQ : Form
+    public partial class fLH : Form
     {
         public int MSHV;
-        public fKQ(int mshv)
+        public fLH(int mshv)
         {
             MSHV = mshv;
             InitializeComponent();
-            setKQ(mshv);
-        }
-        public void setKQ(int mshv)
-        {
-            HVBLL bll =  new HVBLL();
-            // ket qua xuat theo mshv 
-            /*var li = bll.getLRByMSHVBLL(mshv);
-            foreach (var i in li)
-            {
-                var cl = bll.getClassByIdBLL(i.ClassId);
-                DGVKetQua.Rows.Add(i.ClassId, cl.ClassName, i.AssignmentPoint, i.MidTermExamPoint, i.FinalExamPoint);
-            }*/   
-            DGVKetQua.DataSource = bll.getLRByMSHVBLL(mshv);    
+            setDGVLH(MSHV);
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +32,13 @@ namespace PBL3.View.Học_viên
         {
             this.Hide();
             fHP f = new fHP(MSHV);
+            f.ShowDialog();
+        }
+
+        private void kếtQuảHọcTậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fKQ f = new fKQ(MSHV);
             f.ShowDialog();
         }
 
@@ -61,11 +56,13 @@ namespace PBL3.View.Học_viên
             f.ShowDialog();
         }
 
-        private void lịchHọcTrongNgàyToolStripMenuItem_Click(object sender, EventArgs e)
+        public void setDGVLH (int MSHV)
         {
-            this.Hide();
-            fLH f = new fLH(MSHV);
-            f.ShowDialog();
+            DGVLH.DataSource = new HVBLL().getCalendarInDayByMSHVBLL(MSHV, dtpkLH.Value.DayOfWeek.ToString());
+        }
+        private void btnViewLH_Click(object sender, EventArgs e)
+        {
+            DGVLH.DataSource = new HVBLL().getCalendarInDayByMSHVBLL(MSHV, dtpkLH.Value.DayOfWeek.ToString());
         }
     }
 }

@@ -48,21 +48,24 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(204, 88);
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUsername.Location = new System.Drawing.Point(223, 82);
+            this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(517, 22);
+            this.txtUsername.Size = new System.Drawing.Size(498, 30);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "son";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(204, 172);
+            this.txtPassword.Location = new System.Drawing.Point(223, 166);
+            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(517, 22);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "1234";
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(498, 30);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "12345";
+            this.txtPassword.WordWrap = false;
             // 
             // label2
             // 
@@ -107,7 +110,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
-            this.Text = "Login";
+            this.Text = "LOGIN";
             this.ResumeLayout(false);
             this.PerformLayout();
 

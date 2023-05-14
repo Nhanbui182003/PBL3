@@ -91,7 +91,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView DGVDSHV;
         private System.Windows.Forms.Label label1;

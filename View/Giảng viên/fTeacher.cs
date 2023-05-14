@@ -19,18 +19,16 @@ namespace PBL3.View.Giảng_viên
         private BLL_Account bllAccount;
 
         #endregion
-        public fTeacher()
+        public fTeacher(int teacherId)
         {
+            IdTeacher = teacherId;
             InitializeComponent();
             BllClass = new BLL_Class();
-            bllAccount = new BLL_Account(); 
-            IdTeacher = 2;
-            
+            bllAccount = new BLL_Account();
         }
 
         void DisplayDataOfAllClasses()
         {
-            IdTeacher = 2;
             dtgvClassOfTeacher.DataSource = null;
             BllClass.LoadDataClass(dtgvClassOfTeacher, IdTeacher);
             dtgvClassOfTeacher.Columns[0].Width = (int)(dtgvClassOfTeacher.Width * 0.1);
@@ -66,7 +64,6 @@ namespace PBL3.View.Giảng_viên
         {
             int idCourse = Int32.Parse(cbxCourse.SelectedValue.ToString());
             string nameClass = tbxNameClass.Text;
-            IdTeacher = 2;
             BllClass.SearchClass(IdTeacher, idCourse, nameClass, dtgvClassOfTeacher);
 
         }

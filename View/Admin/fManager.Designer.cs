@@ -1170,9 +1170,14 @@ namespace PBL3.View
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.cbbYear = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnChart = new System.Windows.Forms.Button();
+            this.DGVRevenue = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTK = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -1202,7 +1207,7 @@ namespace PBL3.View
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRevenue)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -1214,9 +1219,9 @@ namespace PBL3.View
             this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Controls.Add(this.panel6);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage4.Size = new System.Drawing.Size(979, 564);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Lớp học";
@@ -1228,7 +1233,7 @@ namespace PBL3.View
             this.panel9.Controls.Add(this.btnSearchClass);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Location = new System.Drawing.Point(703, 4);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(267, 64);
             this.panel9.TabIndex = 2;
@@ -1237,7 +1242,7 @@ namespace PBL3.View
             // 
             this.txtSearchClass.Location = new System.Drawing.Point(126, 39);
             this.txtSearchClass.Name = "txtSearchClass";
-            this.txtSearchClass.Size = new System.Drawing.Size(257, 31);
+            this.txtSearchClass.Size = new System.Drawing.Size(257, 22);
             this.txtSearchClass.TabIndex = 5;
             // 
             // btnSearchClass
@@ -1303,7 +1308,7 @@ namespace PBL3.View
             // 
             this.panel7.Controls.Add(this.dgvClass);
             this.panel7.Location = new System.Drawing.Point(4, 72);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(968, 486);
             this.panel7.TabIndex = 1;
@@ -1313,7 +1318,7 @@ namespace PBL3.View
             this.dgvClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClass.Location = new System.Drawing.Point(2, 2);
-            this.dgvClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvClass.Margin = new System.Windows.Forms.Padding(2);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowHeadersWidth = 82;
             this.dgvClass.RowTemplate.Height = 33;
@@ -1325,7 +1330,7 @@ namespace PBL3.View
             this.panel6.Controls.Add(this.cbbListCourse);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(4, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(310, 64);
             this.panel6.TabIndex = 0;
@@ -1335,7 +1340,7 @@ namespace PBL3.View
             this.cbbListCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbListCourse.FormattingEnabled = true;
             this.cbbListCourse.Location = new System.Drawing.Point(98, 24);
-            this.cbbListCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbListCourse.Margin = new System.Windows.Forms.Padding(2);
             this.cbbListCourse.Name = "cbbListCourse";
             this.cbbListCourse.Size = new System.Drawing.Size(195, 24);
             this.cbbListCourse.TabIndex = 1;
@@ -1358,9 +1363,9 @@ namespace PBL3.View
             this.tabPage7.Controls.Add(this.panel16);
             this.tabPage7.Controls.Add(this.panel4);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage7.Size = new System.Drawing.Size(979, 564);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Tài khoản admin";
@@ -1375,7 +1380,7 @@ namespace PBL3.View
             this.panel20.Controls.Add(this.label13);
             this.panel20.Controls.Add(this.label12);
             this.panel20.Location = new System.Drawing.Point(593, 70);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(381, 484);
             this.panel20.TabIndex = 7;
@@ -1383,7 +1388,7 @@ namespace PBL3.View
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(253, 360);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 36);
             this.button2.TabIndex = 3;
@@ -1395,7 +1400,7 @@ namespace PBL3.View
             this.txtPassword.Location = new System.Drawing.Point(52, 453);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(499, 31);
+            this.txtPassword.Size = new System.Drawing.Size(499, 22);
             this.txtPassword.TabIndex = 21;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -1403,7 +1408,7 @@ namespace PBL3.View
             // 
             this.txtUsername.Location = new System.Drawing.Point(52, 254);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(499, 31);
+            this.txtUsername.Size = new System.Drawing.Size(499, 22);
             this.txtUsername.TabIndex = 20;
             // 
             // label14
@@ -1489,7 +1494,7 @@ namespace PBL3.View
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(4, 68);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(583, 487);
             this.panel4.TabIndex = 4;
@@ -1510,7 +1515,7 @@ namespace PBL3.View
             this.rbtnFemale.AutoSize = true;
             this.rbtnFemale.Location = new System.Drawing.Point(422, 496);
             this.rbtnFemale.Name = "rbtnFemale";
-            this.rbtnFemale.Size = new System.Drawing.Size(70, 29);
+            this.rbtnFemale.Size = new System.Drawing.Size(45, 20);
             this.rbtnFemale.TabIndex = 18;
             this.rbtnFemale.TabStop = true;
             this.rbtnFemale.Text = "Nữ";
@@ -1521,7 +1526,7 @@ namespace PBL3.View
             this.rbtnMale.AutoSize = true;
             this.rbtnMale.Location = new System.Drawing.Point(191, 496);
             this.rbtnMale.Name = "rbtnMale";
-            this.rbtnMale.Size = new System.Drawing.Size(87, 29);
+            this.rbtnMale.Size = new System.Drawing.Size(57, 20);
             this.rbtnMale.TabIndex = 17;
             this.rbtnMale.TabStop = true;
             this.rbtnMale.Text = "Nam";
@@ -1531,7 +1536,7 @@ namespace PBL3.View
             // 
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDate.Location = new System.Drawing.Point(127, 129);
-            this.dtDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(250, 22);
             this.dtDate.TabIndex = 16;
@@ -1567,7 +1572,7 @@ namespace PBL3.View
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(127, 252);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(396, 22);
             this.txtPhone.TabIndex = 8;
@@ -1575,7 +1580,7 @@ namespace PBL3.View
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(127, 189);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(396, 22);
             this.txtAddress.TabIndex = 7;
@@ -1583,7 +1588,7 @@ namespace PBL3.View
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(127, 66);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(396, 22);
             this.txtName.TabIndex = 5;
@@ -1643,9 +1648,9 @@ namespace PBL3.View
             this.tabPage5.Controls.Add(this.panel11);
             this.tabPage5.Controls.Add(this.panel10);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage5.Size = new System.Drawing.Size(979, 564);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tài khoản";
@@ -1714,7 +1719,7 @@ namespace PBL3.View
             // 
             this.tbxDisplayName.Location = new System.Drawing.Point(157, 109);
             this.tbxDisplayName.Name = "tbxDisplayName";
-            this.tbxDisplayName.Size = new System.Drawing.Size(267, 31);
+            this.tbxDisplayName.Size = new System.Drawing.Size(267, 22);
             this.tbxDisplayName.TabIndex = 11;
             // 
             // label16
@@ -1722,7 +1727,7 @@ namespace PBL3.View
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(4, 109);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 25);
+            this.label16.Size = new System.Drawing.Size(75, 16);
             this.label16.TabIndex = 7;
             this.label16.Text = "Tên hiển thị";
             // 
@@ -1731,7 +1736,7 @@ namespace PBL3.View
             this.cbxRole.FormattingEnabled = true;
             this.cbxRole.Location = new System.Drawing.Point(157, 23);
             this.cbxRole.Name = "cbxRole";
-            this.cbxRole.Size = new System.Drawing.Size(267, 33);
+            this.cbxRole.Size = new System.Drawing.Size(267, 24);
             this.cbxRole.TabIndex = 6;
             // 
             // label15
@@ -1739,7 +1744,7 @@ namespace PBL3.View
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(4, 26);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(147, 25);
+            this.label15.Size = new System.Drawing.Size(90, 16);
             this.label15.TabIndex = 5;
             this.label15.Text = "Loại tài khoản";
             // 
@@ -1777,9 +1782,9 @@ namespace PBL3.View
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(979, 564);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Khóa học";
@@ -1790,7 +1795,7 @@ namespace PBL3.View
             this.panel18.Controls.Add(this.cbSortCourse);
             this.panel18.Controls.Add(this.btnSortCourse);
             this.panel18.Location = new System.Drawing.Point(407, 4);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(295, 64);
             this.panel18.TabIndex = 4;
@@ -1805,7 +1810,7 @@ namespace PBL3.View
             "Ngày kết thúc",
             "Giá"});
             this.cbSortCourse.Location = new System.Drawing.Point(107, 21);
-            this.cbSortCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSortCourse.Margin = new System.Windows.Forms.Padding(2);
             this.cbSortCourse.Name = "cbSortCourse";
             this.cbSortCourse.Size = new System.Drawing.Size(172, 24);
             this.cbSortCourse.TabIndex = 28;
@@ -1813,7 +1818,7 @@ namespace PBL3.View
             // btnSortCourse
             // 
             this.btnSortCourse.Location = new System.Drawing.Point(17, 17);
-            this.btnSortCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortCourse.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortCourse.Name = "btnSortCourse";
             this.btnSortCourse.Size = new System.Drawing.Size(78, 28);
             this.btnSortCourse.TabIndex = 27;
@@ -1826,7 +1831,7 @@ namespace PBL3.View
             this.panel17.Controls.Add(this.txtSearchCourse);
             this.panel17.Controls.Add(this.btnSearch);
             this.panel17.Location = new System.Drawing.Point(706, 4);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(266, 64);
             this.panel17.TabIndex = 3;
@@ -1834,7 +1839,7 @@ namespace PBL3.View
             // txtSearchCourse
             // 
             this.txtSearchCourse.Location = new System.Drawing.Point(99, 20);
-            this.txtSearchCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchCourse.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchCourse.Name = "txtSearchCourse";
             this.txtSearchCourse.Size = new System.Drawing.Size(167, 22);
             this.txtSearchCourse.TabIndex = 26;
@@ -1842,7 +1847,7 @@ namespace PBL3.View
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(17, 17);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(78, 28);
             this.btnSearch.TabIndex = 0;
@@ -1855,7 +1860,7 @@ namespace PBL3.View
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.dgvCourse);
             this.panel5.Location = new System.Drawing.Point(5, 72);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(967, 487);
             this.panel5.TabIndex = 2;
@@ -1874,7 +1879,7 @@ namespace PBL3.View
             this.dgvCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCourse.Location = new System.Drawing.Point(2, 2);
-            this.dgvCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCourse.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCourse.Name = "dgvCourse";
             this.dgvCourse.RowHeadersWidth = 82;
             this.dgvCourse.RowTemplate.Height = 33;
@@ -1887,7 +1892,7 @@ namespace PBL3.View
             this.panel3.Controls.Add(this.btnDelCourse);
             this.panel3.Controls.Add(this.btnAddCourse);
             this.panel3.Location = new System.Drawing.Point(5, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(398, 64);
             this.panel3.TabIndex = 0;
@@ -1895,7 +1900,7 @@ namespace PBL3.View
             // btnUpdateCourse
             // 
             this.btnUpdateCourse.Location = new System.Drawing.Point(271, 13);
-            this.btnUpdateCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateCourse.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateCourse.Name = "btnUpdateCourse";
             this.btnUpdateCourse.Size = new System.Drawing.Size(115, 36);
             this.btnUpdateCourse.TabIndex = 3;
@@ -1906,7 +1911,7 @@ namespace PBL3.View
             // btnDelCourse
             // 
             this.btnDelCourse.Location = new System.Drawing.Point(141, 13);
-            this.btnDelCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelCourse.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelCourse.Name = "btnDelCourse";
             this.btnDelCourse.Size = new System.Drawing.Size(115, 36);
             this.btnDelCourse.TabIndex = 2;
@@ -1917,7 +1922,7 @@ namespace PBL3.View
             // btnAddCourse
             // 
             this.btnAddCourse.Location = new System.Drawing.Point(10, 13);
-            this.btnAddCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCourse.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(115, 36);
             this.btnAddCourse.TabIndex = 0;
@@ -1930,9 +1935,9 @@ namespace PBL3.View
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(979, 564);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh thu";
@@ -1940,52 +1945,111 @@ namespace PBL3.View
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.btnSort);
+            this.panel2.Controls.Add(this.cbbSort);
+            this.panel2.Controls.Add(this.cbbYear);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.btnChart);
+            this.panel2.Controls.Add(this.DGVRevenue);
             this.panel2.Location = new System.Drawing.Point(11, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(954, 487);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // btnSort
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(950, 465);
-            this.dataGridView1.TabIndex = 0;
+            this.btnSort.Location = new System.Drawing.Point(712, 443);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(75, 23);
+            this.btnSort.TabIndex = 6;
+            this.btnSort.Text = "Sắp xếp";
+            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Items.AddRange(new object[] {
+            "Mã hóa đơn",
+            "Tên khóa",
+            "Học phí"});
+            this.cbbSort.Location = new System.Drawing.Point(808, 442);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(121, 24);
+            this.cbbSort.TabIndex = 5;
+            // 
+            // cbbYear
+            // 
+            this.cbbYear.FormattingEnabled = true;
+            this.cbbYear.Items.AddRange(new object[] {
+            "2021",
+            "2022",
+            "2023"});
+            this.cbbYear.Location = new System.Drawing.Point(278, 442);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Size = new System.Drawing.Size(121, 24);
+            this.cbbYear.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(233, 450);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Năm:";
+            // 
+            // btnChart
+            // 
+            this.btnChart.Location = new System.Drawing.Point(34, 427);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(167, 39);
+            this.btnChart.TabIndex = 1;
+            this.btnChart.Text = "Biểu đồ thống kê ";
+            this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
+            // 
+            // DGVRevenue
+            // 
+            this.DGVRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVRevenue.Location = new System.Drawing.Point(2, 2);
+            this.DGVRevenue.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVRevenue.Name = "DGVRevenue";
+            this.DGVRevenue.RowHeadersWidth = 82;
+            this.DGVRevenue.RowTemplate.Height = 33;
+            this.DGVRevenue.Size = new System.Drawing.Size(950, 388);
+            this.DGVRevenue.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnTK);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Location = new System.Drawing.Point(11, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 64);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnTK
             // 
-            this.button1.Location = new System.Drawing.Point(808, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTK.Location = new System.Drawing.Point(808, 12);
+            this.btnTK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTK.Name = "btnTK";
+            this.btnTK.Size = new System.Drawing.Size(115, 36);
+            this.btnTK.TabIndex = 4;
+            this.btnTK.Text = "Thống kê";
+            this.btnTK.UseVisualStyleBackColor = true;
+            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(507, 19);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(201, 22);
             this.dateTimePicker2.TabIndex = 3;
@@ -2014,7 +2078,7 @@ namespace PBL3.View
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(113, 19);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(201, 22);
             this.dateTimePicker1.TabIndex = 0;
@@ -2027,7 +2091,7 @@ namespace PBL3.View
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(15, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(987, 593);
@@ -2041,9 +2105,9 @@ namespace PBL3.View
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1020, 615);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fManager";
-            this.Text = "Admin";
+            this.Text = "ADMIN";
             this.tabPage4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -2075,7 +2139,8 @@ namespace PBL3.View
             this.panel3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRevenue)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -2114,9 +2179,9 @@ namespace PBL3.View
         private System.Windows.Forms.Button btnAddCourse;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVRevenue;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTK;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -2165,5 +2230,10 @@ namespace PBL3.View
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnEditInfoAccount;
         private System.Windows.Forms.Button btnAddAccount;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnChart;
+        private System.Windows.Forms.ComboBox cbbYear;
+        private System.Windows.Forms.Button btnSort;
+        private System.Windows.Forms.ComboBox cbbSort;
     }
 }
