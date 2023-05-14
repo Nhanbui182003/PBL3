@@ -36,36 +36,38 @@ namespace PBL3.View.Admin
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            ManagerBLL bll = new ManagerBLL();
             if (dtStartDate.Value.CompareTo(dtEndDate.Value)<=0)
             {
-              
-                
-                // Trường hợp thêm 
-                if (id==0)
+                Course newCourse = new Course()
                 {
-                    new ManagerBLL().AddCourseBLL(new Course()
+                    CourseName = txtName.Text,
+                    StartDate = dtStartDate.Value.Date,
+                    EndDate = dtEndDate.Value.Date,
+                    Description = txtDescription.Text,
+                    Price = Convert.ToInt32(txtPrice.Text),
+                };
+                if (bll.isExistingCourseBLL(newCourse)==false)
+                {
+                    if (id == 0)
                     {
-                        CourseName = txtName.Text,
-                        StartDate = dtStartDate.Value.Date,
-                        EndDate = dtEndDate.Value.Date,
-                        Description = txtDescription.Text,
-                        Price = Convert.ToInt32(txtPrice.Text),
-                    });
-                } 
-                // Trường hợp cập nhật ( tồn tại id != 0)
-                else
+                        bll.AddCourseBLL(newCourse);
+                        MessageBox.Show("Thêm thành công!");
+                    }
+                    // Trường hợp cập nhật ( tồn tại id != 0)
+                    else
+                    {
+                        newCourse.Id = id;
+                        bll.UpdateCourseBLL(newCourse);
+                        MessageBox.Show("Cập nhật thành công!");
+                    }
+                    Dispose();
+                } else
                 {
-                    Course course = new Course();
-                    course.Id = id;
-                    course.CourseName = txtName.Text;
-                    course.StartDate = dtStartDate.Value.Date;
-                    course.EndDate = dtEndDate.Value.Date;
-                    course.Description = txtDescription.Text;
-                    course.Price = Convert.ToInt32(txtPrice.Text);
-                    new ManagerBLL().UpdateCourseBLL(course);
+                    MessageBox.Show("Khóa học đã tồn tại");
                 }
+                // Trường hợp thêm 
                 
-               Dispose();
             }
             else
             {
