@@ -37,18 +37,20 @@
             // dgvTeacher
             // 
             this.dgvTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTeacher.Location = new System.Drawing.Point(43, 159);
+            this.dgvTeacher.Location = new System.Drawing.Point(29, 102);
+            this.dgvTeacher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvTeacher.Name = "dgvTeacher";
             this.dgvTeacher.RowHeadersWidth = 82;
             this.dgvTeacher.RowTemplate.Height = 33;
-            this.dgvTeacher.Size = new System.Drawing.Size(1002, 485);
+            this.dgvTeacher.Size = new System.Drawing.Size(668, 310);
             this.dgvTeacher.TabIndex = 0;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(876, 681);
+            this.btnExit.Location = new System.Drawing.Point(584, 436);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(169, 49);
+            this.btnExit.Size = new System.Drawing.Size(113, 31);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(43, 60);
+            this.btnSubmit.Location = new System.Drawing.Point(29, 38);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(169, 44);
+            this.btnSubmit.Size = new System.Drawing.Size(113, 28);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Xác nhận";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -66,14 +69,15 @@
             // 
             // fChoiceTeacher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 769);
+            this.ClientSize = new System.Drawing.Size(719, 492);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.dgvTeacher);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fChoiceTeacher";
-            this.Text = "fChoiceTeacher";
+            this.Text = "CHỌN GIẢNG VIÊN";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeacher)).EndInit();
             this.ResumeLayout(false);
 

@@ -156,8 +156,8 @@ namespace PBL3.DAL
         public bool CheckOldPassWord(int IdTeacher, string oldPass)
         {
             using(db = new DBEnglishCenterEntities())
-            {
-                if (oldPass == db.Accounts.Find(IdTeacher).PassWord)
+            { 
+                if (new ManagerDAL().getMD5DAL(oldPass) == db.Accounts.Find(IdTeacher).PassWord)
                 {
                     return true;
                 }

@@ -21,6 +21,7 @@ namespace PBL3.View.Giảng_viên
         #endregion
         public fTeacher(int idTeacher)
         {
+            IdTeacher = idTeacher;
             InitializeComponent();
             BllClass = new BLL_Class();
             bllAccount = new BLL_Account(); 
@@ -65,7 +66,6 @@ namespace PBL3.View.Giảng_viên
         {
             int idCourse = Int32.Parse(cbxCourse.SelectedValue.ToString());
             string nameClass = tbxNameClass.Text;
-            IdTeacher = 2;
             BllClass.SearchClass(IdTeacher, idCourse, nameClass, dtgvClassOfTeacher);
 
         }

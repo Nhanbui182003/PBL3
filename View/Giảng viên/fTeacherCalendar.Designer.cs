@@ -198,7 +198,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fTeacherCalendar";
-            this.Text = "fTeacherCalendar";
+            this.Text = "LỊCH DẠY";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
