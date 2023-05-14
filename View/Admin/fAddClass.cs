@@ -98,7 +98,7 @@ namespace PBL3.View.Admin
                                     MaxStudent = Convert.ToInt32(txtMaxStudent.Text),
                                     ClassActive = true
                                 };
-                           
+                                
                                 if (bll.isExistingClassBLL(c) == false)
                                 {
                                     bll.AddClassBLL(c);
