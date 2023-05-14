@@ -15,16 +15,17 @@ namespace PBL3.View.Giảng_viên
     public partial class MyClass : Form
     {
         #region Properties
-
         private int IdClass;
+        private int IdTeacher;
         private BLL_Class bllClass;
         private BLL_Document bllDocument;
         private BLL_Calendar bllCalendar;
         #endregion
-        public MyClass(int idClass)
+        public MyClass(int idClass, int idTeacher)
         {
             InitializeComponent();
             IdClass = idClass;
+            IdTeacher = idTeacher;  
             bllClass= new BLL_Class();
             bllDocument = new BLL_Document();   
             bllCalendar = new BLL_Calendar();   
@@ -72,7 +73,10 @@ namespace PBL3.View.Giảng_viên
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            fTeacher f = new fTeacher(IdTeacher);
+            f.Show();
+            this.Hide();
+            
         }
 
         private void btnRate_Click(object sender, EventArgs e)

@@ -121,6 +121,7 @@ namespace PBL3.View.Giảng_viên
                 return;
             fCalendarInDay daily = new fCalendarInDay(new DateTime(dtpkDateSelection.Value.Year, dtpkDateSelection.Value.Month, Convert.ToInt32((sender as Button).Text)), IdTeacher);
             daily.ShowDialog();
+            
         }
 
         private void dtpkDateSelection_ValueChanged(object sender, EventArgs e)

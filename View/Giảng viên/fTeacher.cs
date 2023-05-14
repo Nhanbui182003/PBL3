@@ -82,8 +82,10 @@ namespace PBL3.View.Giảng_viên
                 DataGridViewRow row = dtgvClassOfTeacher.SelectedRows[0];
                 int idClass = Convert.ToInt32(row.Cells["Id"].Value.ToString());
                 
-                MyClass f = new MyClass(idClass);
+                MyClass f = new MyClass(idClass, IdTeacher);
                 f.Show();
+                this.Hide();
+                
             }
             else if(dtgvClassOfTeacher.SelectedRows.Count > 1)
             {

@@ -64,10 +64,12 @@ namespace PBL3.View.Admin
         {
             if (txtClassName.Text!=""||cbbNameCourse.SelectedIndex==-1||txtTeacherID.Text==""||txtMaxStudent.Text==""||cbbDay1.SelectedIndex==-1||txtStartLesson1.Text==""||txtEndLesson1.Text=="" || cbbDay2.SelectedIndex == -1 || txtStartLesson2.Text == "" || txtEndLesson2.Text == "")
             {
+
                 int startLesson1 = Convert.ToInt32(txtStartLesson1.Text);
                 int endLesson1 = Convert.ToInt32(txtEndLesson1.Text);
                 int startLesson2 = Convert.ToInt32(txtStartLesson2.Text);
                 int endLesson2 = Convert.ToInt32(txtEndLesson2.Text);
+
                 if (startLesson1 >= endLesson1 || startLesson2 >= endLesson2 )
                 {
                     MessageBox.Show("Thời gian tiết học không xác thực");

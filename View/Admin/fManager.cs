@@ -61,7 +61,7 @@ namespace PBL3.View
             dtDate.Value = admin.AccountInfo.Birthday.Value;
             txtAddress.Text = admin.AccountInfo.Address;
             txtPhone.Text = admin.AccountInfo.Phone;
-            txtEmail.Text = admin.AccountInfo.Email;
+            //txtEmail.Text = admin.AccountInfo.Email;
             if (admin.AccountInfo.Gender == true) rbtnMale.Checked = true; else rbtnFemale.Checked = true;
             txtUsername.Text = admin.UserName;
             txtPassword.Text = admin.PassWord;
@@ -264,7 +264,7 @@ namespace PBL3.View
                         list.Add(item);
 
                     }
-                    if (list.Contains(ID))
+                    if (list.Contains(AdminId))
                     {
                         MessageBox.Show("Bạn không thể xóa tài khoản này ");
                     }
@@ -341,8 +341,6 @@ namespace PBL3.View
                 Chart ch = new Chart(cbbYear.Text);
                 ch.ShowDialog();
             }
-        }
-
         }
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)

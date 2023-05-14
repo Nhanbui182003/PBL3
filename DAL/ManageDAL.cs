@@ -393,6 +393,7 @@ namespace PBL3.DAL
             {
                 Bill updatedBill = db.Bills.Where(p => p.Id == oldBill.Id).FirstOrDefault();
                 updatedBill.Status = true;
+                updatedBill.Time = DateTime.Now;
                 db.SaveChanges();
             }
         }
