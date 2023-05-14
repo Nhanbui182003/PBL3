@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PBL3.DAL
 {
@@ -422,32 +423,43 @@ namespace PBL3.DAL
             }
             return false;
         }
-        public dynamic getRevenueDAL (DateTime checkIn, DateTime checkOut, int index)
+        public dynamic getRevenueDAL (DateTime checkIn, DateTime checkOut, int index, string text)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
                 
                 if (index == 0)
                 {
-                    var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id,p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName,p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index== 1)
                 {
-                    var bill = db.Bills.OrderBy(p=>p.Id).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p=>p.Id).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index == 2)
                 {
-                    var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
                 else if (index == 3)
                 {
-                    var bill = db.Bills.OrderBy(p => p.Price).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    var bill = db.Bills.OrderBy(p => p.Price).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                     return bill;
                 }
-                var b = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn).Select(p => new { p.Id, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                else if (index == 4)
+                {
+                    var bill = db.Bills.OrderBy(p => p.Time).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
+                    return bill;
+                }
+                var b = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                    .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
                 return b;
             }
         }

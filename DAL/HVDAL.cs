@@ -139,13 +139,13 @@ namespace PBL3.DAL
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {   
                   
-                var lr = db.LearningResults.Where(p => p.AccountId == mshv).ToList();
+                var lr = db.LearningResults.Where(p => p.AccountId == mshv ).ToList();
                 foreach (var i in lr)
                 {
                     var cl = db.Classes.Where(p => p.Id == i.ClassId ).FirstOrDefault();
                     list.Add(cl);
                 }
-                var ds = list.Select(p => new { p.Id, p.ClassName, p.MaxStudent,p.Course.StartDate,p.Course.EndDate}).ToList();
+                var ds = list.Select(p => new { p.Id, p.ClassName, p.MaxStudent,p.Course.StartDate,p.Course.EndDate,p.ClassActive}).ToList();
                 return ds;
             }
         }
@@ -174,7 +174,7 @@ namespace PBL3.DAL
             List<Class> li = new List<Class>();
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var lr = db.LearningResults.Where(p => p.AccountId == mshv).ToList();
+                var lr = db.LearningResults.Where(p => p.AccountId == mshv & p.Class.ClassActive == true).ToList();
                 foreach (var i in lr)
                 {
                     var cl = db.Classes.Where(p => p.Id == i.ClassId).FirstOrDefault();
@@ -235,7 +235,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var lr = db.LearningResults.Where((p => p.AccountId == mshv)).ToList();
+                var lr = db.LearningResults.Where((p => p.AccountId == mshv & p.Class.ClassActive == true)).ToList();
                 List<Bill> bill = new List<Bill>();
                 foreach (var i in lr)
                 {
@@ -252,7 +252,7 @@ namespace PBL3.DAL
             List<int> li = new List<int>(); 
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var lr = db.LearningResults.Where((p => p.AccountId == mshv)).ToList();
+                var lr = db.LearningResults.Where(p => p.AccountId == mshv & p.Class.ClassActive == true).ToList();
                 if (index == 0)
                 {
                     foreach (var i in lr)

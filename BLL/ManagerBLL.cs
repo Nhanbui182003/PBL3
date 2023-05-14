@@ -159,7 +159,7 @@ namespace PBL3.BLL
 
         public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index)
         {
-            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index);
+            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index,text);
         }
         public dynamic getRevenueByMonthBLL(string year)
         {

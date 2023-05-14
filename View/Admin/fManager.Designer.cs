@@ -110,6 +110,8 @@ namespace PBL3.View
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTK = new System.Windows.Forms.TextBox();
+            this.btnSearchTK = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
             this.cbbSort = new System.Windows.Forms.ComboBox();
             this.cbbYear = new System.Windows.Forms.ComboBox();
@@ -117,9 +119,9 @@ namespace PBL3.View
             this.btnChart = new System.Windows.Forms.Button();
             this.DGVRevenue = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTK = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnTK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -340,6 +342,7 @@ namespace PBL3.View
             this.button2.TabIndex = 3;
             this.button2.Text = "Đổi mật khẩu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtPassword
             // 
@@ -408,6 +411,7 @@ namespace PBL3.View
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel16
             // 
@@ -919,6 +923,8 @@ namespace PBL3.View
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtTK);
+            this.panel2.Controls.Add(this.btnSearchTK);
             this.panel2.Controls.Add(this.btnSort);
             this.panel2.Controls.Add(this.cbbSort);
             this.panel2.Controls.Add(this.cbbYear);
@@ -931,11 +937,28 @@ namespace PBL3.View
             this.panel2.Size = new System.Drawing.Size(954, 487);
             this.panel2.TabIndex = 1;
             // 
+            // txtTK
+            // 
+            this.txtTK.Location = new System.Drawing.Point(480, 368);
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(122, 22);
+            this.txtTK.TabIndex = 9;
+            // 
+            // btnSearchTK
+            // 
+            this.btnSearchTK.Location = new System.Drawing.Point(341, 355);
+            this.btnSearchTK.Name = "btnSearchTK";
+            this.btnSearchTK.Size = new System.Drawing.Size(115, 36);
+            this.btnSearchTK.TabIndex = 8;
+            this.btnSearchTK.Text = "Tìm kiếm";
+            this.btnSearchTK.UseVisualStyleBackColor = true;
+            this.btnSearchTK.Click += new System.EventHandler(this.btnSearchTK_Click);
+            // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(712, 443);
+            this.btnSort.Location = new System.Drawing.Point(676, 355);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(75, 23);
+            this.btnSort.Size = new System.Drawing.Size(106, 36);
             this.btnSort.TabIndex = 6;
             this.btnSort.Text = "Sắp xếp";
             this.btnSort.UseVisualStyleBackColor = true;
@@ -947,8 +970,9 @@ namespace PBL3.View
             this.cbbSort.Items.AddRange(new object[] {
             "Mã hóa đơn",
             "Tên khóa",
-            "Học phí"});
-            this.cbbSort.Location = new System.Drawing.Point(808, 442);
+            "Học phí",
+            "Thời gian"});
+            this.cbbSort.Location = new System.Drawing.Point(803, 367);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.Size = new System.Drawing.Size(121, 24);
             this.cbbSort.TabIndex = 5;
@@ -957,10 +981,8 @@ namespace PBL3.View
             // 
             this.cbbYear.FormattingEnabled = true;
             this.cbbYear.Items.AddRange(new object[] {
-            "2021",
-            "2022",
             "2023"});
-            this.cbbYear.Location = new System.Drawing.Point(278, 442);
+            this.cbbYear.Location = new System.Drawing.Point(80, 434);
             this.cbbYear.Name = "cbbYear";
             this.cbbYear.Size = new System.Drawing.Size(121, 24);
             this.cbbYear.TabIndex = 4;
@@ -968,7 +990,7 @@ namespace PBL3.View
             // label17
             //
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(233, 450);
+            this.label17.Location = new System.Drawing.Point(31, 442);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 16);
             this.label17.TabIndex = 3;
@@ -976,7 +998,7 @@ namespace PBL3.View
             // 
             // btnChart
             // 
-            this.btnChart.Location = new System.Drawing.Point(34, 427);
+            this.btnChart.Location = new System.Drawing.Point(34, 359);
             this.btnChart.Name = "btnChart";
             this.btnChart.Size = new System.Drawing.Size(167, 39);
             this.btnChart.TabIndex = 1;
@@ -992,14 +1014,14 @@ namespace PBL3.View
             this.DGVRevenue.Name = "DGVRevenue";
             this.DGVRevenue.RowHeadersWidth = 82;
             this.DGVRevenue.RowTemplate.Height = 33;
-            this.DGVRevenue.Size = new System.Drawing.Size(950, 388);
+            this.DGVRevenue.Size = new System.Drawing.Size(950, 328);
             this.DGVRevenue.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnTK);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnTK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Location = new System.Drawing.Point(11, 4);
@@ -1008,21 +1030,10 @@ namespace PBL3.View
             this.panel1.Size = new System.Drawing.Size(954, 64);
             this.panel1.TabIndex = 0;
             // 
-            // btnTK
-            // 
-            this.btnTK.Location = new System.Drawing.Point(808, 12);
-            this.btnTK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(115, 36);
-            this.btnTK.TabIndex = 4;
-            this.btnTK.Text = "Thống kê";
-            this.btnTK.UseVisualStyleBackColor = true;
-            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(507, 19);
+            this.dateTimePicker2.Location = new System.Drawing.Point(723, 16);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(201, 22);
@@ -1031,12 +1042,23 @@ namespace PBL3.View
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(412, 22);
+            this.label2.Location = new System.Drawing.Point(629, 22);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Đến ngày";
+            // 
+            // btnTK
+            // 
+            this.btnTK.Location = new System.Drawing.Point(415, 12);
+            this.btnTK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTK.Name = "btnTK";
+            this.btnTK.Size = new System.Drawing.Size(115, 36);
+            this.btnTK.TabIndex = 4;
+            this.btnTK.Text = "Thống kê";
+            this.btnTK.UseVisualStyleBackColor = true;
+            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // label1
             // 
@@ -1210,5 +1232,7 @@ namespace PBL3.View
         private System.Windows.Forms.ComboBox cbbYear;
         private System.Windows.Forms.Button btnSort;
         private System.Windows.Forms.ComboBox cbbSort;
+        private System.Windows.Forms.TextBox txtTK;
+        private System.Windows.Forms.Button btnSearchTK;
     }
 }
