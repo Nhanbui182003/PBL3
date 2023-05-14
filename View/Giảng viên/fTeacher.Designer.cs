@@ -30,6 +30,7 @@
         {
             this.Tho = new System.Windows.Forms.TabControl();
             this.tabClasses = new System.Windows.Forms.TabPage();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnSelection = new System.Windows.Forms.Button();
             this.dtgvClassOfTeacher = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -68,7 +69,6 @@
             this.tbxNewPassAgain = new System.Windows.Forms.TextBox();
             this.tbxNewPass = new System.Windows.Forms.TextBox();
             this.tbxOldPass = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.Tho.SuspendLayout();
             this.tabClasses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvClassOfTeacher)).BeginInit();
@@ -109,6 +109,16 @@
             this.tabClasses.TabIndex = 0;
             this.tabClasses.Text = "Lớp học của tôi";
             this.tabClasses.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(920, 489);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(102, 49);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Đăng xuất";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSelection
             // 
@@ -475,16 +485,6 @@
             this.tbxOldPass.PasswordChar = '*';
             this.tbxOldPass.Size = new System.Drawing.Size(352, 22);
             this.tbxOldPass.TabIndex = 5;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(920, 489);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(102, 49);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Đăng xuất";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // fTeacher
             // 

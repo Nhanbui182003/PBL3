@@ -85,6 +85,7 @@ namespace PBL3.View.Giảng_viên
                 int idClass = Convert.ToInt32(row.Cells["Id"].Value.ToString());
                 
                 MyClass f = new MyClass(idClass);
+                f.StartPosition = FormStartPosition.CenterScreen;
                 f.Show();
             }
             else if(dtgvClassOfTeacher.SelectedRows.Count > 1)
@@ -131,6 +132,7 @@ namespace PBL3.View.Giảng_viên
         {
             
             fTeacherCalendar f = new fTeacherCalendar(IdTeacher);
+            f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog(); 
         }
 
