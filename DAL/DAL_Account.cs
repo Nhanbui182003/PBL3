@@ -89,6 +89,8 @@ namespace PBL3.DAL
                     {
                         throw new Exception("Chú ý phần tên của tài khoản và phần giới tính không được bỏ sót");
                     }
+                    string defaultPassWord = a.PassWord;
+                    a.PassWord = new ManagerDAL().getMD5DAL(defaultPassWord);
                     db.Accounts.Add(a);
                     db.SaveChanges();
                     int accountId = a.Id;
@@ -154,8 +156,8 @@ namespace PBL3.DAL
         public bool CheckOldPassWord(int IdTeacher, string oldPass)
         {
             using(db = new DBEnglishCenterEntities())
-            {
-                if (oldPass == db.Accounts.Find(IdTeacher).PassWord)
+            { 
+                if (new ManagerDAL().getMD5DAL(oldPass) == db.Accounts.Find(IdTeacher).PassWord)
                 {
                     return true;
                 }
@@ -171,7 +173,8 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities()) {
 
                 Account ac = db.Accounts.Find(IdTeacher);
-                ac.PassWord = newPass;
+
+                ac.PassWord = new ManagerDAL().getMD5DAL(newPass);
                 db.SaveChanges();
             }
            
@@ -221,7 +224,7 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 Account ac = db.Accounts.Find(id);
-                ac.PassWord = "123";
+                ac.PassWord = new ManagerDAL().getMD5DAL("123");
                 db.SaveChanges();
 
 

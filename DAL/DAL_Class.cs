@@ -246,7 +246,7 @@ namespace PBL3.DAL
             using (db = new DBEnglishCenterEntities())
             {
 
-                List<Calendar> list = db.Calendars.Where(s => s.Id == IdClass).ToList();
+                List<Calendar> list = db.Calendars.Where(s => s.ClassId == IdClass).ToList();
                 var ds = list.Select(s => new { s.Class.ClassName, s.Class.Course.CourseName, s.DayLesson, s.FromLesson, s.ToLesson }).ToList();
                 return ds;
                 

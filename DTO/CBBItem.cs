@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PBL3.BLL
+namespace PBL3.DTO
 {
     public class CBBItem
     {

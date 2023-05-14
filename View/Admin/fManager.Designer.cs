@@ -101,9 +101,14 @@
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSort = new System.Windows.Forms.Button();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.cbbYear = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnChart = new System.Windows.Forms.Button();
+            this.DGVRevenue = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTK = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,7 +137,7 @@
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRevenue)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -832,25 +837,85 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(16, 112);
+            this.panel2.Controls.Add(this.btnSort);
+            this.panel2.Controls.Add(this.cbbSort);
+            this.panel2.Controls.Add(this.cbbYear);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.btnChart);
+            this.panel2.Controls.Add(this.DGVRevenue);
+            this.panel2.Location = new System.Drawing.Point(11, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1431, 761);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // btnSort
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1425, 727);
-            this.dataGridView1.TabIndex = 0;
+            this.btnSort.Location = new System.Drawing.Point(712, 443);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(75, 23);
+            this.btnSort.TabIndex = 6;
+            this.btnSort.Text = "Sắp xếp";
+            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Items.AddRange(new object[] {
+            "Mã hóa đơn",
+            "Tên khóa",
+            "Học phí"});
+            this.cbbSort.Location = new System.Drawing.Point(808, 442);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(121, 24);
+            this.cbbSort.TabIndex = 5;
+            // 
+            // cbbYear
+            // 
+            this.cbbYear.FormattingEnabled = true;
+            this.cbbYear.Items.AddRange(new object[] {
+            "2021",
+            "2022",
+            "2023"});
+            this.cbbYear.Location = new System.Drawing.Point(278, 442);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Size = new System.Drawing.Size(121, 24);
+            this.cbbYear.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(233, 450);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Năm:";
+            // 
+            // btnChart
+            // 
+            this.btnChart.Location = new System.Drawing.Point(34, 427);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(167, 39);
+            this.btnChart.TabIndex = 1;
+            this.btnChart.Text = "Biểu đồ thống kê ";
+            this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
+            // 
+            // DGVRevenue
+            // 
+            this.DGVRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVRevenue.Location = new System.Drawing.Point(2, 2);
+            this.DGVRevenue.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVRevenue.Name = "DGVRevenue";
+            this.DGVRevenue.RowHeadersWidth = 82;
+            this.DGVRevenue.RowTemplate.Height = 33;
+            this.DGVRevenue.Size = new System.Drawing.Size(950, 388);
+            this.DGVRevenue.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnTK);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -860,14 +925,16 @@
             this.panel1.Size = new System.Drawing.Size(1431, 100);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnTK
             // 
-            this.button1.Location = new System.Drawing.Point(1212, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 56);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTK.Location = new System.Drawing.Point(808, 12);
+            this.btnTK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTK.Name = "btnTK";
+            this.btnTK.Size = new System.Drawing.Size(115, 36);
+            this.btnTK.TabIndex = 4;
+            this.btnTK.Text = "Thống kê";
+            this.btnTK.UseVisualStyleBackColor = true;
+            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // dateTimePicker2
             // 
@@ -925,7 +992,8 @@
             this.ClientSize = new System.Drawing.Size(1530, 961);
             this.Controls.Add(this.tabControl1);
             this.Name = "fManager";
-            this.Text = "Admin";
+            this.Text = "ADMIN";
+            this.Load += new System.EventHandler(this.fManager_Load);
             this.tabPage4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -956,7 +1024,8 @@
             this.panel3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVRevenue)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -995,9 +1064,9 @@
         private System.Windows.Forms.Button btnAddCourse;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVRevenue;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTK;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1044,7 +1113,10 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnEditInfoAccount;
         private System.Windows.Forms.Button btnAddAccount;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnChart;
+        private System.Windows.Forms.ComboBox cbbYear;
+        private System.Windows.Forms.Button btnSort;
+        private System.Windows.Forms.ComboBox cbbSort;
     }
 }

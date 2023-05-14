@@ -46,98 +46,110 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 57);
+            this.label1.Location = new System.Drawing.Point(34, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 74);
+            this.label2.Location = new System.Drawing.Point(90, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 25);
+            this.label2.Size = new System.Drawing.Size(31, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 178);
+            this.label3.Location = new System.Drawing.Point(29, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 25);
+            this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ngày bắt đầu";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 286);
+            this.label4.Location = new System.Drawing.Point(27, 183);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 25);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày kết thúc";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(98, 386);
+            this.label5.Location = new System.Drawing.Point(65, 247);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 25);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Giá tiền";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 498);
+            this.label6.Location = new System.Drawing.Point(79, 319);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 25);
+            this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Mô tả";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(229, 71);
+            this.txtName.Location = new System.Drawing.Point(153, 45);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(705, 31);
+            this.txtName.Size = new System.Drawing.Size(471, 22);
             this.txtName.TabIndex = 6;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(229, 383);
+            this.txtPrice.Location = new System.Drawing.Point(153, 245);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(705, 31);
+            this.txtPrice.Size = new System.Drawing.Size(471, 22);
             this.txtPrice.TabIndex = 9;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(229, 495);
+            this.txtDescription.Location = new System.Drawing.Point(153, 317);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(705, 31);
+            this.txtDescription.Size = new System.Drawing.Size(471, 22);
             this.txtDescription.TabIndex = 10;
             // 
             // dtStartDate
             // 
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartDate.Location = new System.Drawing.Point(229, 178);
+            this.dtStartDate.Location = new System.Drawing.Point(153, 114);
+            this.dtStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(397, 31);
+            this.dtStartDate.Size = new System.Drawing.Size(266, 22);
             this.dtStartDate.TabIndex = 11;
             // 
             // dtEndDate
             // 
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndDate.Location = new System.Drawing.Point(229, 280);
+            this.dtEndDate.Location = new System.Drawing.Point(153, 179);
+            this.dtEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(397, 31);
+            this.dtEndDate.Size = new System.Drawing.Size(266, 22);
             this.dtEndDate.TabIndex = 12;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(123, 617);
+            this.btnCancel.Location = new System.Drawing.Point(82, 395);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(165, 44);
+            this.btnCancel.Size = new System.Drawing.Size(110, 28);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -145,9 +157,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(876, 617);
+            this.btnOK.Location = new System.Drawing.Point(584, 395);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(165, 44);
+            this.btnOK.Size = new System.Drawing.Size(110, 28);
             this.btnOK.TabIndex = 14;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -155,9 +168,9 @@
             // 
             // fAddCourse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 724);
+            this.ClientSize = new System.Drawing.Size(788, 463);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dtEndDate);
@@ -171,8 +184,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fAddCourse";
-            this.Text = "Thêm khóa học";
+            this.Text = "THÊM KHÓA HỌC";
             this.ResumeLayout(false);
             this.PerformLayout();
 

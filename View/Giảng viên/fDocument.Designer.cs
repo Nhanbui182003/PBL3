@@ -80,7 +80,7 @@
             this.Controls.Add(this.tbxPath);
             this.Controls.Add(this.label1);
             this.Name = "fDocument";
-            this.Text = "fDocument";
+            this.Text = "TÀI LIỆU";
             this.ResumeLayout(false);
             this.PerformLayout();
 

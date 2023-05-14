@@ -48,21 +48,23 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(204, 88);
+            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUsername.Location = new System.Drawing.Point(223, 82);
+            this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(517, 22);
+            this.txtUsername.Size = new System.Drawing.Size(498, 30);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "ddd";
+            this.txtUsername.Text = "son";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(204, 172);
+            this.txtPassword.Location = new System.Drawing.Point(223, 166);
+            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(517, 22);
+            this.txtPassword.Size = new System.Drawing.Size(498, 30);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "123";
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Text = "12345";
             // 
             // label2
             // 
@@ -107,7 +109,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
-            this.Text = "Login";
+            this.Text = "LOGIN";
             this.ResumeLayout(false);
             this.PerformLayout();
 

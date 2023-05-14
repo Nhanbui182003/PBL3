@@ -1,4 +1,5 @@
 ﻿using PBL3.BLL;
+using PBL3.DTO;
 using PBL3.View.Admin;
 using PBL3.View.Giảng_viên;
 using System;
@@ -263,17 +264,26 @@ namespace PBL3.View
                         list.Add(item);
 
                     }
-                    if (bllAccount.DeleteAccount(list))
+                    if (list.Contains(ID))
                     {
-                        MessageBox.Show("Xóa tài khoản thành công !!!");
-
-                        LoadAllAccount();
-
+                        MessageBox.Show("Bạn không thể xóa tài khoản này ");
                     }
                     else
                     {
-                        MessageBox.Show("Xóa tài khoản thất bại !!! ");
+                        if (bllAccount.DeleteAccount(list))
+                        {
+                            MessageBox.Show("Xóa tài khoản thành công !!!");
+
+                            LoadAllAccount();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa tài khoản thất bại !!! ");
+                        }
                     }
+
+                    
 
                 }
 
@@ -316,6 +326,24 @@ namespace PBL3.View
             }
 
         }
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0);
+        }
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            if (cbbYear.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn năm thống kê!");
+            }
+            else
+            {
+                Chart ch = new Chart(cbbYear.Text);
+                ch.ShowDialog();
+            }
+        }
+
+        }
 
         private void btnUpdateInfo_Click(object sender, EventArgs e)
         {
@@ -330,9 +358,24 @@ namespace PBL3.View
             f.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSort_Click(object sender, EventArgs e)
         {
-            
+            if (cbbSort.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn phương thức sắp xếp");
+            }
+            else if (cbbSort.SelectedIndex == 0)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1);
+            }
+            else if (cbbSort.SelectedIndex == 1)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2);
+            }
+            else if (cbbSort.SelectedIndex == 2)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3);
+            }
         }
     }
 }
