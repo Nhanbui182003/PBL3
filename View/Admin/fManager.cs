@@ -328,7 +328,7 @@ namespace PBL3.View
         }
         private void btnTK_Click(object sender, EventArgs e)
         {
-            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0);
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0,"");
         }
         private void btnChart_Click(object sender, EventArgs e)
         {
@@ -342,20 +342,6 @@ namespace PBL3.View
                 ch.ShowDialog();
             }
         }
-
-        private void btnUpdateInfo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            Dispose();
-            FormLogin f = new FormLogin();
-            f.ShowDialog();
-        }
-
         private void btnSort_Click(object sender, EventArgs e)
         {
             if (cbbSort.SelectedIndex == -1)
@@ -364,16 +350,38 @@ namespace PBL3.View
             }
             else if (cbbSort.SelectedIndex == 0)
             {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1);
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1,txtTK.Text);
             }
             else if (cbbSort.SelectedIndex == 1)
             {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2);
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2, txtTK.Text);
             }
             else if (cbbSort.SelectedIndex == 2)
             {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3);
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3, txtTK.Text);
             }
+            else if (cbbSort.SelectedIndex == 3)
+            {
+                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 4, txtTK.Text);
+            }
+        }
+
+        private void btnLogOut_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+            FormLogin f = new FormLogin();
+            f.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fChangePassword f = new fChangePassword(AdminId);
+            f.ShowDialog();
+        }
+
+        private void btnSearchTK_Click(object sender, EventArgs e)
+        {
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, cbbSort.SelectedIndex, txtTK.Text);
         }
     }
 }

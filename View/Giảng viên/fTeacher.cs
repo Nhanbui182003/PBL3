@@ -83,7 +83,7 @@ namespace PBL3.View.Giảng_viên
                 int idClass = Convert.ToInt32(row.Cells["Id"].Value.ToString());
                 
                 MyClass f = new MyClass(idClass, IdTeacher);
-                MyClass f = new MyClass(idClass);
+                
                 f.StartPosition = FormStartPosition.CenterScreen;
                 f.Show();
                 this.Hide();
@@ -152,6 +152,7 @@ namespace PBL3.View.Giảng_viên
                 if(bllAccount.SetPassWord(IdTeacher, oldPass, newPass))
                 {
                     MessageBox.Show("Bạn đã cập nhật mật khẩu thành công!");
+                    tbxOldPass.Text = tbxNewPass.Text = tbxNewPassAgain.Text = "";
                 }
                 else
                 {

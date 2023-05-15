@@ -187,7 +187,7 @@ namespace PBL3.DAL
                     var calendar = db.Calendars.Where(p => p.ClassId == i.Id).ToList();
                     cal.AddRange(calendar);
                 }
-                var ds = cal.Where(p=>p.DayLesson == dayOfWeek).Select(p=> new {p.ClassId, p.Class.ClassName, p.DayLesson,p.FromLesson,p.ToLesson}).ToList();
+                var ds = cal.Where(p=>p.DayLesson == dayOfWeek).Select(p=> new {p.Id, p.Class.ClassName, p.DayLesson,p.FromLesson,p.ToLesson}).ToList();
                 return ds;
             }
         }
@@ -225,7 +225,7 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var lr = db.LearningResults.Where(p => p.AccountId == mshv).Select(p => new { p.ClassId, p.Class.ClassName, p.AssignmentPoint, p.MidTermExamPoint, p.FinalExamPoint }).ToList();
+                var lr = db.LearningResults.Where(p => p.AccountId == mshv).Select(p => new { p.Id, p.Class.ClassName, p.AssignmentPoint, p.MidTermExamPoint, p.FinalExamPoint }).ToList();
                 return lr;
             }
         }

@@ -135,7 +135,7 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 List<LearningResult> lr = new List<LearningResult>();
-                lr = db.LearningResults.Where(s => s.AccountId == idTeacher).ToList();
+                lr = db.LearningResults.Where(s => s.AccountId == idTeacher && s.Class.ClassActive == true).ToList();
                 List<Calendar> cal = new List<Calendar>();
                 Class lop = new Class();
                 foreach (LearningResult lrResult in lr)
