@@ -282,9 +282,6 @@ namespace PBL3.View
                             MessageBox.Show("Xóa tài khoản thất bại !!! ");
                         }
                     }
-
-                    
-
                 }
 
             }
