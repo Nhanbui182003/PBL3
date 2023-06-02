@@ -88,7 +88,7 @@
             this.cbbNameCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNameCourse.FormattingEnabled = true;
             this.cbbNameCourse.Location = new System.Drawing.Point(151, 98);
-            this.cbbNameCourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbNameCourse.Margin = new System.Windows.Forms.Padding(2);
             this.cbbNameCourse.Name = "cbbNameCourse";
             this.cbbNameCourse.Size = new System.Drawing.Size(204, 24);
             this.cbbNameCourse.TabIndex = 2;
@@ -96,7 +96,7 @@
             // txtClassName
             // 
             this.txtClassName.Location = new System.Drawing.Point(151, 42);
-            this.txtClassName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClassName.Margin = new System.Windows.Forms.Padding(2);
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Size = new System.Drawing.Size(204, 22);
             this.txtClassName.TabIndex = 3;
@@ -134,7 +134,7 @@
             // 
             this.txtTeacherID.Enabled = false;
             this.txtTeacherID.Location = new System.Drawing.Point(223, 161);
-            this.txtTeacherID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTeacherID.Margin = new System.Windows.Forms.Padding(2);
             this.txtTeacherID.Name = "txtTeacherID";
             this.txtTeacherID.Size = new System.Drawing.Size(131, 22);
             this.txtTeacherID.TabIndex = 7;
@@ -142,7 +142,7 @@
             // txtMaxStudent
             // 
             this.txtMaxStudent.Location = new System.Drawing.Point(223, 247);
-            this.txtMaxStudent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaxStudent.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaxStudent.Name = "txtMaxStudent";
             this.txtMaxStudent.Size = new System.Drawing.Size(131, 22);
             this.txtMaxStudent.TabIndex = 8;
@@ -167,9 +167,9 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(485, 68);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(433, 132);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -178,7 +178,7 @@
             // txtEndLesson1
             // 
             this.txtEndLesson1.Location = new System.Drawing.Point(159, 97);
-            this.txtEndLesson1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEndLesson1.Margin = new System.Windows.Forms.Padding(2);
             this.txtEndLesson1.Name = "txtEndLesson1";
             this.txtEndLesson1.Size = new System.Drawing.Size(204, 22);
             this.txtEndLesson1.TabIndex = 15;
@@ -186,7 +186,7 @@
             // txtStartLesson1
             // 
             this.txtStartLesson1.Location = new System.Drawing.Point(159, 62);
-            this.txtStartLesson1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStartLesson1.Margin = new System.Windows.Forms.Padding(2);
             this.txtStartLesson1.Name = "txtStartLesson1";
             this.txtStartLesson1.Size = new System.Drawing.Size(204, 22);
             this.txtStartLesson1.TabIndex = 11;
@@ -204,7 +204,7 @@
             "Saturday",
             "Sunday"});
             this.cbbDay1.Location = new System.Drawing.Point(159, 27);
-            this.cbbDay1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbDay1.Margin = new System.Windows.Forms.Padding(2);
             this.cbbDay1.Name = "cbbDay1";
             this.cbbDay1.Size = new System.Drawing.Size(204, 24);
             this.cbbDay1.TabIndex = 11;
@@ -248,9 +248,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Location = new System.Drawing.Point(485, 210);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(433, 132);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
@@ -259,7 +259,7 @@
             // txtEndLesson2
             // 
             this.txtEndLesson2.Location = new System.Drawing.Point(159, 97);
-            this.txtEndLesson2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEndLesson2.Margin = new System.Windows.Forms.Padding(2);
             this.txtEndLesson2.Name = "txtEndLesson2";
             this.txtEndLesson2.Size = new System.Drawing.Size(204, 22);
             this.txtEndLesson2.TabIndex = 15;
@@ -267,7 +267,7 @@
             // txtStartLesson2
             // 
             this.txtStartLesson2.Location = new System.Drawing.Point(159, 62);
-            this.txtStartLesson2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStartLesson2.Margin = new System.Windows.Forms.Padding(2);
             this.txtStartLesson2.Name = "txtStartLesson2";
             this.txtStartLesson2.Size = new System.Drawing.Size(204, 22);
             this.txtStartLesson2.TabIndex = 11;
@@ -285,7 +285,7 @@
             "Saturday",
             "Sunday"});
             this.cbbDay2.Location = new System.Drawing.Point(159, 27);
-            this.cbbDay2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbDay2.Margin = new System.Windows.Forms.Padding(2);
             this.cbbDay2.Name = "cbbDay2";
             this.cbbDay2.Size = new System.Drawing.Size(204, 24);
             this.cbbDay2.TabIndex = 11;
@@ -323,7 +323,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(115, 379);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(77, 29);
             this.btnCancel.TabIndex = 17;
@@ -334,7 +334,7 @@
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(742, 379);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(77, 29);
             this.btnOK.TabIndex = 18;
@@ -345,7 +345,7 @@
             // btnChoiceTeacher
             // 
             this.btnChoiceTeacher.Location = new System.Drawing.Point(223, 191);
-            this.btnChoiceTeacher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChoiceTeacher.Margin = new System.Windows.Forms.Padding(2);
             this.btnChoiceTeacher.Name = "btnChoiceTeacher";
             this.btnChoiceTeacher.Size = new System.Drawing.Size(130, 34);
             this.btnChoiceTeacher.TabIndex = 19;
@@ -373,9 +373,9 @@
             this.Controls.Add(this.cbbNameCourse);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAddClass";
-            this.Text = "THÊM LỚP";
+            this.Text = "LỚP ";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -37,5 +37,10 @@ namespace PBL3.View.Admin
                 txtOldPassword.Text = txtNewPassword.Text = txtConfirmPassword.Text = "";
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

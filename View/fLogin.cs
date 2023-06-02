@@ -34,17 +34,20 @@ namespace PBL3
                 {
                     this.Hide();
                     fManager f = new fManager(account.Id);
+                    f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                 } else
                 if (account.RoleId == 2)
                 {
                     this.Hide();
                     fTeacher f = new fTeacher(account.Id);
+                    f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                 } else
                 {
                     this.Hide();
                     HV f = new HV(account.Id);
+                    f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                 }
                 

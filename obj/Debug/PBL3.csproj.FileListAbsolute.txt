@@ -15,6 +15,7 @@ D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fManageClass.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fClass.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fLH.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fHP.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fHV.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fKQ.resources
 D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.dll
 D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.SqlServer.dll
@@ -23,6 +24,33 @@ D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.SqlServer.xml
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacher.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.MyClass.resources
+D:\PBL3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+D:\PBL3\obj\Debug\PBL3.csproj.SuggestedBindingRedirects.cache
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAddCourse.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fManageClass.resources
+D:\PBL3\obj\Debug\PBL3.FormLogin.resources
+D:\PBL3\obj\Debug\PBL3.Properties.Resources.resources
+D:\PBL3\obj\Debug\PBL3.View.fManager.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacher.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.MyClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fHP.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fKQ.resources
+D:\PBL3\obj\Debug\PBL3.csproj.GenerateResource.cache
+D:\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
+D:\PBL3\obj\Debug\PBL3.exe
+D:\PBL3\obj\Debug\PBL3.pdb
+D:\PBL3\bin\Debug\PBL3.exe.config
+D:\PBL3\bin\Debug\PBL3.exe
+D:\PBL3\bin\Debug\PBL3.pdb
+D:\PBL3\bin\Debug\EntityFramework.dll
+D:\PBL3\bin\Debug\EntityFramework.SqlServer.dll
+D:\PBL3\bin\Debug\EntityFramework.xml
+D:\PBL3\bin\Debug\EntityFramework.SqlServer.xml
+D:\PBL3\obj\Debug\PBL3.csproj.CopyComplete
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.HV.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fDSHV.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fTAILIEU.resources
 D:\vsstudio\programc#\Pbl3\obj\Debug\PBL3.csproj.AssemblyReference.cache
 D:\vsstudio\programc#\Pbl3\obj\Debug\PBL3.csproj.SuggestedBindingRedirects.cache
 D:\vsstudio\programc#\Pbl3\obj\Debug\PBL3.View.Admin.fAddCourse.resources
@@ -156,16 +184,51 @@ C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.exe
 C:\demo\Đồ án part 3\Pbl3\obj\Debug\PBL3.pdb
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAccount.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddClass.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChangePassword.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.Chart.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fDSHV.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.HV.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fTAILIEU.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
+D:\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.Chart.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAccount.resources
+D:\PBL3\obj\Debug\PBL3.View.Admin.fAddClass.resources
+D:\PBL3\obj\Debug\PBL3.View.Học_viên.fLH.resources
+C:\demo\Đố án part 4\Pbl3\bin\Debug\PBL3.exe.config
+C:\demo\Đố án part 4\Pbl3\bin\Debug\PBL3.exe
+C:\demo\Đố án part 4\Pbl3\bin\Debug\PBL3.pdb
+C:\demo\Đố án part 4\Pbl3\bin\Debug\EntityFramework.dll
+C:\demo\Đố án part 4\Pbl3\bin\Debug\EntityFramework.SqlServer.dll
+C:\demo\Đố án part 4\Pbl3\bin\Debug\EntityFramework.xml
+C:\demo\Đố án part 4\Pbl3\bin\Debug\EntityFramework.SqlServer.xml
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.AssemblyReference.cache
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.SuggestedBindingRedirects.cache
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.Chart.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fAccount.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fAddClass.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fAddCourse.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fManageClass.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.FormLogin.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.Properties.Resources.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.fManager.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.fTeacher.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Giảng_viên.MyClass.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fClass.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fDSHV.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fHP.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.HV.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fKQ.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fLH.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Học_viên.fTAILIEU.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.GenerateResource.cache
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.CoreCompileInputs.cache
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.exe
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.pdb
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fChangePassword.resources

@@ -89,6 +89,7 @@ namespace PBL3.View.Giảng_viên
                     int id = Convert.ToInt32(row.Cells["id"].Value.ToString());
                     LearningResultOfStudent f = new LearningResultOfStudent(id, IdClass);
                     f.LoadData += F_LoadData;
+                    f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
 
                 }
