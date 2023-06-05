@@ -435,12 +435,6 @@ namespace PBL3.DAL
                         .Select(p => new { p.Id,p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName,p.Price, p.Time }).ToList();
                     return bill;
                 }
-                else if (index== 1)
-                {
-                    var bill = db.Bills.OrderBy(p=>p.Id).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
-                    return bill;
-                }
                 else if (index == 2)
                 {
                     var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
