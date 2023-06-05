@@ -23,6 +23,7 @@ namespace PBL3.View
         {
             InitializeComponent();
             SetCBB();
+            txtDT.ReadOnly = true;  
             AdminId = id;
             ManagerBLL bll = new ManagerBLL();
             bllAccount = new BLL_Account();
@@ -326,9 +327,32 @@ namespace PBL3.View
             }
 
         }
+        private void setDGVRevenue()
+        {
+            DGVRevenue.Columns[0].HeaderText = "Số thứ tự";
+            DGVRevenue.Columns[1].HeaderText = "Mã khóa học";
+            DGVRevenue.Columns[2].HeaderText = "Tên khóa học";
+            DGVRevenue.Columns[3].HeaderText = "Số lượng học viên đã nộp";
+            DGVRevenue.Columns[4].HeaderText = "Học phí";
+            DGVRevenue.Columns[5].HeaderText = "Tổng học phí";
+        }
+        public void TKDT()
+        {
+            DataGridViewRowCollection rows = DGVRevenue.Rows;
+
+            int sum = 0;
+            foreach (DataGridViewRow row in rows)
+            {
+                string value = row.Cells["SumPrice"].Value.ToString();
+                sum += Convert.ToInt32(value);
+            }
+            txtDT.Text = sum.ToString();
+        }
         private void btnTK_Click(object sender, EventArgs e)
         {
-            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 0,"");
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value , cbbSort.SelectedIndex + 1 , "");
+            TKDT();
+            setDGVRevenue();
         }
         private void btnChart_Click(object sender, EventArgs e)
         {
@@ -364,6 +388,8 @@ namespace PBL3.View
             {
                 DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 4, txtTK.Text);
             }
+            TKDT();
+            setDGVRevenue();
         }
 
         private void btnLogOut_Click_1(object sender, EventArgs e)
@@ -381,7 +407,24 @@ namespace PBL3.View
 
         private void btnSearchTK_Click(object sender, EventArgs e)
         {
-            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, cbbSort.SelectedIndex, txtTK.Text);
+            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, cbbSort.SelectedIndex + 1, txtTK.Text);
+            TKDT();
+            setDGVRevenue();
+        }
+
+        private void btnDSCT_Click(object sender, EventArgs e)
+        {
+            if (DGVRevenue.SelectedRows.Count ==1)
+            {
+                int courseId = Convert.ToInt32(DGVRevenue.SelectedRows[0].Cells[1].Value.ToString());
+                string courseName = DGVRevenue.SelectedRows[0].Cells[2].Value.ToString();
+                fDSSV_HP f = new fDSSV_HP(courseName, courseId, dateTimePicker1.Value, dateTimePicker2.Value);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 trường!");
+            }
         }
     }
 }

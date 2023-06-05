@@ -19,6 +19,11 @@ namespace PBL3.View.Học_viên
             MSHV = mshv;
             InitializeComponent();
             setKQ(mshv);
+            DGVKetQua.Columns[0].HeaderText = "Mã kết quả";
+            DGVKetQua.Columns[1].HeaderText = "Tên lớp học";
+            DGVKetQua.Columns[2].HeaderText = "Điểm bài tập";
+            DGVKetQua.Columns[3].HeaderText = "Điểm giữa kì";
+            DGVKetQua.Columns[4].HeaderText = "Điểm cuối kì";
         }
         public void setKQ(int mshv)
         {

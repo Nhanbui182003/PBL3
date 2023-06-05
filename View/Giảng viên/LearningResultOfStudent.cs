@@ -40,7 +40,7 @@ namespace PBL3.View.Giảng_viên
             info = bllStudent.GetInfo(IdStudent);
             tbxIdStudent.Text = IdStudent.ToString();
             tbxNameStudent.Text = info.Name;
-            dtpkBirthday.Value = (DateTime)info.Birthday;
+            tbxBirthday.Text = ((DateTime)info.Birthday).ToString("dd/MM/yyyy");
             if(info.Gender == true)
             {
                 tbxGender.Text = "Nam";
@@ -49,6 +49,10 @@ namespace PBL3.View.Giảng_viên
             {
                 tbxGender.Text = "Nữ";
             }
+            tbxIdStudent.Enabled = false;
+            tbxNameStudent.Enabled = false;
+            tbxGender.Enabled = false;
+            tbxBirthday.Enabled = false;
         }
         void LoadLearningResult()
         {
@@ -99,5 +103,7 @@ namespace PBL3.View.Giảng_viên
         {
             this.Close();
         }
+
+       
     }
 }

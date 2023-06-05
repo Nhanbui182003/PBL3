@@ -428,34 +428,36 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                
-                if (index == 0)
+ 
+                var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.Course.CourseName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
+                    .Select(p=>p).ToList();
+                int groupIndex = 1; 
+                var list = bill.GroupBy(p => p.LearningResult.Class.Course.CourseName).Select(group => 
+                new {
+                    GroupIndex = groupIndex++,
+                    CourseId = group.First().LearningResult.Class.Course.Id,
+                    CourseName = group.Key,  
+                    Count = group.Count(),
+                    Price = group.First().Price,
+                    SumPrice = group.Sum(p=>p.Price)
+                }).ToList();
+                if (index == 1)
                 {
-                    var bill = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                        .Select(p => new { p.Id,p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName,p.Price, p.Time }).ToList();
-                    return bill;
+                    list = list.OrderBy(p=> p.GroupIndex).ToList();   
                 }
                 else if (index == 2)
                 {
-                    var bill = db.Bills.OrderBy(p => p.LearningResult.Class.Course.CourseName).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
-                    return bill;
+                    list = list.OrderByDescending(p => p.CourseName).ToList();
                 }
                 else if (index == 3)
                 {
-                    var bill = db.Bills.OrderBy(p => p.Price).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
-                    return bill;
+                    list = list.OrderByDescending(p => p.Price).ToList();
                 }
                 else if (index == 4)
                 {
-                    var bill = db.Bills.OrderBy(p => p.Time).Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                        .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
-                    return bill;
+                    list = list.OrderByDescending(p => p.SumPrice).ToList();
                 }
-                var b = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn & (p.LearningResult.Class.ClassName.Contains(text) || p.LearningResult.Account.AccountInfo.Name.Contains(text)))
-                    .Select(p => new { p.Id, p.LearningResult.Account.AccountInfo.Name, p.LearningResult.Class.Course.CourseName, p.LearningResult.Class.ClassName, p.Price, p.Time }).ToList();
-                return b;
+                return list;    
             }
         }
         public dynamic getRevenueByMonthDAL (string year)
@@ -477,6 +479,25 @@ namespace PBL3.DAL
                 }
             }
             return li.ToArray();    
+        }
+
+        public dynamic getAccoutByCourseNameDAL(int courseId, DateTime checkIn, DateTime checkOut, int index , string name)
+        {
+            using(DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                var ds = db.Bills.Where(p => p.Status == true && p.Time <= checkOut & p.Time >= checkIn && p.LearningResult.Class.Course.Id == courseId && p.LearningResult.Account.AccountInfo.Name.Contains(name))
+                    .Select(p => new { p.LearningResult.Account.Id, p.LearningResult.Account.AccountInfo.Name,p.LearningResult.Class.ClassName ,p.Price, p.Time }).ToList();
+                if (index == 0)
+                {
+                    ds = ds.OrderBy(p=> p.Name).ToList();   
+                }
+                else
+                {
+                    ds = ds.OrderBy(p=> p.Time).ToList();   
+                }
+                return ds;
+            }
+        
         }
         public int saveMKDAL(string MKC, string MKM, string check, int adminId)
         {

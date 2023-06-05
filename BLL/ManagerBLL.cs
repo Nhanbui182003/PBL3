@@ -165,6 +165,10 @@ namespace PBL3.BLL
         {
             return new ManagerDAL().getRevenueByMonthDAL(year); 
         }
+        public dynamic getAccoutByCourseIdBLL (int courseId,DateTime checkIn , DateTime checkOut, int index, string name)
+        {
+            return new ManagerDAL().getAccoutByCourseNameDAL(courseId, checkIn, checkOut, index, name);
+        }
         public int saveMKBLL(string MKC, string MKM, string check, int adminId)
         {
             int i = new ManagerDAL().saveMKDAL( MKC, MKM, check, adminId);

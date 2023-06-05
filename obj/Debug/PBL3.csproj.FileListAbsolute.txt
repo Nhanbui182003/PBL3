@@ -232,3 +232,4 @@ C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.exe
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.pdb
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fChangePassword.resources
+C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fDSSV_HP.resources

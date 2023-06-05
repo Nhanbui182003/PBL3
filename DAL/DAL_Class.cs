@@ -163,6 +163,16 @@ namespace PBL3.DAL
             }
            
         }
+        public Course GetCourseFromIdClass(int id)
+        {
+            using (db = new DBEnglishCenterEntities())
+            {
+                Class cl = db.Classes.Where(s => s.Id == id).FirstOrDefault();
+                Course course = cl.Course;
+                return course;
+            }
+
+        }
         public dynamic GetStudentInClass(int idClass)
         {
             using(db = new DBEnglishCenterEntities())

@@ -17,6 +17,12 @@ namespace PBL3.View.Học_viên
         {
             InitializeComponent();
             setDGVDSHV(Class_id);
+            DGVDSHV.Columns[0].HeaderText = "Mã học viên";
+            DGVDSHV.Columns[1].HeaderText = "Tên học viên";
+            DGVDSHV.Columns[2].HeaderText = "Ngày sinh";
+            DGVDSHV.Columns[3].HeaderText = "Giới tính";
+            DGVDSHV.Columns[4].HeaderText = "Số điện thoại";
+            DGVDSHV.Columns[5].HeaderText = "Email";
         }
         public void setDGVDSHV (int Class_id)
         {
