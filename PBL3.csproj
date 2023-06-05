@@ -110,7 +110,6 @@
     <Compile Include="DTO\CBBRole.cs" />
     <Compile Include="DTO\Cons.cs" />
     <Compile Include="BLL\HVBLL.cs" />
-    <Compile Include="BLL\ManagerBLL.cs" />
     <Compile Include="LearningResult.cs">
       <DependentUpon>DBEnglishCenter.tt</DependentUpon>
     </Compile>

@@ -209,21 +209,30 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                LearningResult student = new LearningResult()
+                var l = db.LearningResults.Where(p=>p.AccountId== accountId&& p.ClassId == classID&&p.LearningResultActive==false).FirstOrDefault();
+                if (l==null)
                 {
-                    AccountId = accountId,
-                    ClassId = classID,
-                    LearningResultActive = true
-                };
-                db.LearningResults.Add(student);
+                    LearningResult student = new LearningResult()
+                    {
+                        AccountId = accountId,
+                        ClassId = classID,
+                        LearningResultActive = true
+                    };
+                    db.LearningResults.Add(student);
 
-                Class c = db.Classes.Include(p => p.Course).Where(p => p.Id == classID && p.ClassActive==true).FirstOrDefault();
-                db.Bills.Add(new Bill()
+                    Class c = db.Classes.Include(p => p.Course).Where(p => p.Id == classID && p.ClassActive == true).FirstOrDefault();
+                    db.Bills.Add(new Bill()
+                    {
+                        LearningResultId = student.Id,
+                        Price = c.Course.Price,
+                        Status = false,
+                    });
+                }
+                else 
                 {
-                    LearningResultId = student.Id,
-                    Price = c.Course.Price,
-                    Status = false,
-                });
+                    l.LearningResultActive = true;
+                }
+                
                 db.SaveChanges();
             };
         }

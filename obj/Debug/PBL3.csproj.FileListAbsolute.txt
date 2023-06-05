@@ -15,7 +15,6 @@ D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fManageClass.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fClass.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fLH.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fHP.resources
-D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fHV.resources
 D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fKQ.resources
 D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.dll
 D:\Subjects\PBL3\PBL3\bin\Debug\EntityFramework.SqlServer.dll
@@ -232,3 +231,16 @@ C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.csproj.CopyComplete
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.exe
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.pdb
 C:\demo\Đố án part 4\Pbl3\obj\Debug\PBL3.View.Admin.fChangePassword.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.Chart.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAccount.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddClass.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fAddStudentToClass.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChangePassword.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Admin.fChoiceTeacher.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fCalendarInDay.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fDocument.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.fTeacherCalendar.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Giảng_viên.LearningResultOfStudent.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fDSHV.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.HV.resources
+D:\Subjects\PBL3\PBL3\obj\Debug\PBL3.View.Học_viên.fTAILIEU.resources

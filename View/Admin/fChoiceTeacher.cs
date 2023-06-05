@@ -51,7 +51,8 @@ namespace PBL3.View.Admin
         {
             if (dgvTeacher.SelectedRows.Count>0)
             {
-                teacherId = Convert.ToInt32(dgvTeacher.SelectedRows[0].Cells[0].Value);
+                String MaGiangVien = dgvTeacher.SelectedRows[0].Cells[0].Value.ToString();
+                teacherId = int.Parse(MaGiangVien.Substring(2));
                 DialogResult = DialogResult.OK;
             }
         }

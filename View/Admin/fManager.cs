@@ -98,12 +98,17 @@ namespace PBL3.View
 
             if (dgvCourse.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow i in dgvCourse.SelectedRows)
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa hay không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(i.Cells[0].Value);
-                    bll.DeleteCourseBLL(id);
+                    foreach (DataGridViewRow i in dgvCourse.SelectedRows)
+                    {
+                        String maKhoaHoc = i.Cells[0].Value.ToString();
+                        bll.DeleteCourseBLL(maKhoaHoc);
+                    }
+                    MessageBox.Show("Xóa thành công!!!");
                 }
-                MessageBox.Show("Xóa thành công!!!");
+                
             }
             bll.LoadDataGridViewCourse(dgvCourse);
 
@@ -117,8 +122,8 @@ namespace PBL3.View
         {
             if (dgvCourse.SelectedRows.Count>0)
             {
-                int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells[0].Value.ToString());
-                fAddCourse f = new fAddCourse(id);
+                String MaKhoaHoc = dgvCourse.SelectedRows[0].Cells[0].Value.ToString();
+                fAddCourse f = new fAddCourse(MaKhoaHoc);
                 f.ShowDialog();
                 new ManagerBLL().LoadDataGridViewCourse(dgvCourse);
             }
@@ -178,8 +183,8 @@ namespace PBL3.View
         {
             if (dgvClass.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvClass.SelectedRows[0].Cells[0].Value);
-                fManageClass f = new fManageClass(id);
+                string maLopHoc = dgvClass.SelectedRows[0].Cells[0].Value.ToString();
+                fManageClass f = new fManageClass(maLopHoc);
                 f.ShowDialog();
                 f.Dispose();
             }
@@ -190,13 +195,18 @@ namespace PBL3.View
             ManagerBLL bll  = new ManagerBLL(); 
             if (dgvClass.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow i in dgvClass.SelectedRows)
+                DialogResult result = MessageBox.Show("Bạn có muôn xóa không?", "Xác nhận xóa!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(i.Cells[0].Value);
-                    bll.DeleteClassByClassIDBLL(id);
+                    foreach (DataGridViewRow i in dgvClass.SelectedRows)
+                    {
+                        String maLopHoc = i.Cells[0].Value.ToString();
+                        bll.DeleteClassByMaLopHocBLL(maLopHoc);
+                    }
+                    MessageBox.Show("Xóa thành công!");
+                    bll.LoadDataGridViewClass(dgvClass);
                 }
-                MessageBox.Show("Xóa thành công!");
-                bll.LoadDataGridViewClass(dgvClass);
+                
             }
         }
 
@@ -345,22 +355,22 @@ namespace PBL3.View
             {
                 MessageBox.Show("Vui lòng chọn phương thức sắp xếp");
             }
-            else if (cbbSort.SelectedIndex == 0)
-            {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1,txtTK.Text);
-            }
-            else if (cbbSort.SelectedIndex == 1)
-            {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2, txtTK.Text);
-            }
-            else if (cbbSort.SelectedIndex == 2)
-            {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3, txtTK.Text);
-            }
-            else if (cbbSort.SelectedIndex == 3)
-            {
-                DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 4, txtTK.Text);
-            }
+            //else if (cbbSort.SelectedIndex == 0)
+            //{
+            //    DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 1, txtTK.Text);
+            //}
+            //else if (cbbSort.SelectedIndex == 1)
+            //{
+            //    DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 2, txtTK.Text);
+            //}
+            //else if (cbbSort.SelectedIndex == 2)
+            //{
+            //    DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 3, txtTK.Text);
+            //}
+            //else if (cbbSort.SelectedIndex == 3)
+            //{
+            //    DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, 4, txtTK.Text);
+            //}
         }
 
         private void btnLogOut_Click_1(object sender, EventArgs e)
@@ -378,7 +388,14 @@ namespace PBL3.View
 
         private void btnSearchTK_Click(object sender, EventArgs e)
         {
-            DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, cbbSort.SelectedIndex, txtTK.Text);
+            //DGVRevenue.DataSource = new ManagerBLL().getRevenueBLL(dateTimePicker1.Value, dateTimePicker2.Value, cbbSort.SelectedIndex, txtTK.Text);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            FormLogin f = new FormLogin();
+            f.ShowDialog();
         }
     }
 }

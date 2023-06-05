@@ -8,8 +8,33 @@ using System.Windows.Forms;
 
 namespace PBL3.BLL
 {
+
     class ManagerBLL
     {
+        public String GenerateCourseID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maKhoaHoc = "K" + numberPart;
+            return maKhoaHoc;
+        }
+        public String GenerateClassID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maLopHoc = "C" + numberPart;
+            return maLopHoc;
+        }
+        public String GenerateStudentID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maLopHoc = "SV" + numberPart;
+            return maLopHoc;
+        }
+        public String GenerateTeacherID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maLopHoc = "GV" + numberPart;
+            return maLopHoc;
+        }
         public List<Course> GetALlCourseBLL()
         {
             return new ManagerDAL().GetAllCourseDAL();
@@ -25,7 +50,7 @@ namespace PBL3.BLL
         }
         public void LoadDataGridViewCourse(DataGridView dgv)
         {
-            dgv.DataSource = GetALlCourseBLL().Select(p => new { p.Id, p.CourseName, p.StartDate, p.EndDate, p.Price }).ToList();
+            dgv.DataSource = GetALlCourseBLL().Select(p => new { MaKhoaHoc = GenerateCourseID(p.Id), p.CourseName, p.StartDate, p.EndDate, p.Price }).ToList();
         }
         public bool isExistingCourseBLL(Course course)
         {
@@ -35,8 +60,9 @@ namespace PBL3.BLL
         {
             new ManagerDAL().AddCourseDAL(course);
         }
-        public void DeleteCourseBLL(int id)
+        public void DeleteCourseBLL(String maKhoaHoc)
         {
+            int id = int.Parse(maKhoaHoc.Substring(1));
             new ManagerDAL().DeleteCourseDAL(id);
         }
         public void UpdateCourseBLL(Course course)
@@ -49,12 +75,12 @@ namespace PBL3.BLL
         }
         public void LoadDataGridViewClass(DataGridView dgv)
         {
-            dgv.DataSource = GetAllClassBLL().Select(p => new { p.Id, p.ClassName, p.Course.CourseName, p.MaxStudent }).ToList();
+            dgv.DataSource = GetAllClassBLL().Select(p => new { maLopHoc = GenerateClassID(p.Id), p.ClassName, p.Course.CourseName, p.MaxStudent }).ToList();
 
         }
         public List<Class> GetAllClassByCourseIDBLL(int id)
         {
-            return new ManagerDAL().GetAllClassByCourseIDDAL(id);   
+            return new ManagerDAL().GetAllClassByCourseIDDAL(id);
         }
         public Account GetAccountByUsernamePassword(string username, string password)
         {
@@ -68,8 +94,8 @@ namespace PBL3.BLL
         {
             return new ManagerDAL().isExistingClassDAL(c);
         }
-        public void AddClassBLL(Class c) 
-        { 
+        public void AddClassBLL(Class c)
+        {
             new ManagerDAL().AddClassDAL(c);
         }
         public void AddLearningResult(LearningResult learningResult)
@@ -86,19 +112,22 @@ namespace PBL3.BLL
         }
         public void LoadDataGridViewStudent(DataGridView dgv, int classID)
         {
-            dgv.DataSource = GetAllStudentByClassIdBLL(classID).Select(p => new {p.Id,p.AccountInfo.Name,p.AccountInfo.Phone,p.AccountInfo.Email,p.AccountInfo.Gender}).ToList();
+            dgv.DataSource = GetAllStudentByClassIdBLL(classID).Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
         }
-        public bool IsExistingStudentBLL(int accountId,int classID)
+        public bool IsExistingStudentBLL(String MaHocVien , int classID)
         {
+            int accountId = int.Parse(MaHocVien.Substring(2));
             return new ManagerDAL().isExistingStudentDAL(accountId, classID);
         }
-        public void AddStudentToClassBLL(int accountId,int classId)
+        public void AddStudentToClassBLL(String MaHocVien, int classId)
         {
+            int accountId = int.Parse(MaHocVien.Substring(3));
             new ManagerDAL().AddStudentToClassDAL(accountId, classId);
         }
-        public void DeleteStudentBLL(int accountId , int classId)
+        public void DeleteStudentBLL(String MaHocVien, int classId)
         {
-            new ManagerDAL().DeleteStudentDAL(accountId, classId);  
+            int accountId = int.Parse(MaHocVien.Substring(2));
+            new ManagerDAL().DeleteStudentDAL(accountId, classId);
         }
         public Class GetClassByClassIDBLL(int classID)
         {
@@ -116,13 +145,18 @@ namespace PBL3.BLL
         {
             new ManagerDAL().DeleteClassByClassIDDAL(classID);
         }
-        public List<Class> GetClassByNameBLL(string name) 
-        { 
+        public void DeleteClassByMaLopHocBLL(String maLopHoc)
+        {
+            int classID = int.Parse(maLopHoc.Substring(1));
+            new ManagerDAL().DeleteClassByClassIDDAL(classID);
+        }
+        public List<Class> GetClassByNameBLL(string name)
+        {
             return new ManagerDAL().GetClassByNameDAL(name);
         }
-        public List<Account> GetStudentByNameANDCLassIDBLL(string name,int classID)
+        public List<Account> GetStudentByNameANDCLassIDBLL(string name, int classID)
         {
-            return new ManagerDAL().GetStudentByNameANDClassIDDAL(name,classID);
+            return new ManagerDAL().GetStudentByNameANDClassIDDAL(name, classID);
         }
         public LearningResult GetLearningResultOfTeacherByClassIDBLL(int classID)
         {
@@ -130,23 +164,24 @@ namespace PBL3.BLL
         }
         public void UpdateClassBLL(Class newClass, LearningResult newTeacher, List<Calendar> newCalendars)
         {
-            new ManagerDAL().UpdateClassDAL(newClass,newTeacher,newCalendars);   
+            new ManagerDAL().UpdateClassDAL(newClass, newTeacher, newCalendars);
         }
         public void LoadDataGridViewStudentAccounts(DataGridView dgv)
         {
-            dgv.DataSource = new ManagerDAL().GetAllStudentAccountDAL().Select(p => new { p.Id, p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();   
+            dgv.DataSource = new ManagerDAL().GetAllStudentAccountDAL().Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
         }
         public void LoadDataGridViewTeacherAccounts(DataGridView dgv)
         {
-            dgv.DataSource = new ManagerDAL().GetAllTeacherAccountDAL().Select(p => new { p.Id, p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
+            dgv.DataSource = new ManagerDAL().GetAllTeacherAccountDAL().Select(p => new { MaGiangVien = GenerateTeacherID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
         }
         public LearningResult GetLearningResultOfStudentBLL(int studentId, int classId)
         {
             return new ManagerDAL().GetLearningResultOfStudentDAL(studentId, classId);
         }
-        public Bill GetBillOfStudentBLL(int studentId, int classId)
+        public Bill GetBillOfStudentBLL(String MaHocVien, int classId)
         {
-            return new ManagerDAL().GetBillOfStudentDAL(studentId, classId); 
+            int studentId = int.Parse(MaHocVien.Substring(2));
+            return new ManagerDAL().GetBillOfStudentDAL(studentId, classId);
         }
         public void ConfirmPaymentBLL(Bill oldBill)
         {
@@ -157,17 +192,17 @@ namespace PBL3.BLL
             return new ManagerDAL().isExistingCalendarByAccountIDDAL(accountId, CheckedCalendar);
         }
 
-        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index,String text)
+        public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index, String text)
         {
-            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index,text);
+            return new ManagerDAL().getRevenueDAL(checkIn, checkOut, index, text);
         }
         public dynamic getRevenueByMonthBLL(string year)
         {
-            return new ManagerDAL().getRevenueByMonthDAL(year); 
+            return new ManagerDAL().getRevenueByMonthDAL(year);
         }
         public int saveMKBLL(string MKC, string MKM, string check, int adminId)
         {
-            int i = new ManagerDAL().saveMKDAL( MKC, MKM, check, adminId);
+            int i = new ManagerDAL().saveMKDAL(MKC, MKM, check, adminId);
             if (i == 2)
             {
                 return 2;
@@ -184,3 +219,4 @@ namespace PBL3.BLL
         }
     }
 }
+
