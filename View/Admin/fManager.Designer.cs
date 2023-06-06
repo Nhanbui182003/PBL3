@@ -109,6 +109,7 @@ namespace PBL3.View
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDSCT = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.txtDT = new System.Windows.Forms.TextBox();
             this.txtTK = new System.Windows.Forms.TextBox();
@@ -126,7 +127,6 @@ namespace PBL3.View
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnDSCT = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -161,11 +161,10 @@ namespace PBL3.View
             this.tabPage4.Controls.Add(this.panel8);
             this.tabPage4.Controls.Add(this.panel7);
             this.tabPage4.Controls.Add(this.panel6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Location = new System.Drawing.Point(8, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(979, 564);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Size = new System.Drawing.Size(1464, 880);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Lớp học";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -175,24 +174,21 @@ namespace PBL3.View
             this.panel9.Controls.Add(this.txtSearchClass);
             this.panel9.Controls.Add(this.btnSearchClass);
             this.panel9.Controls.Add(this.label4);
-            this.panel9.Location = new System.Drawing.Point(703, 4);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2);
+            this.panel9.Location = new System.Drawing.Point(1054, 6);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(400, 100);
             this.panel9.TabIndex = 2;
             // 
             // txtSearchClass
             // 
-            this.txtSearchClass.Location = new System.Drawing.Point(84, 25);
-            this.txtSearchClass.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchClass.Location = new System.Drawing.Point(126, 39);
             this.txtSearchClass.Name = "txtSearchClass";
             this.txtSearchClass.Size = new System.Drawing.Size(258, 31);
             this.txtSearchClass.TabIndex = 5;
             // 
             // btnSearchClass
             // 
-            this.btnSearchClass.Location = new System.Drawing.Point(11, 21);
-            this.btnSearchClass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchClass.Location = new System.Drawing.Point(16, 33);
             this.btnSearchClass.Name = "btnSearchClass";
             this.btnSearchClass.Size = new System.Drawing.Size(104, 42);
             this.btnSearchClass.TabIndex = 4;
@@ -213,16 +209,14 @@ namespace PBL3.View
             this.panel8.Controls.Add(this.btnDeleteClass);
             this.panel8.Controls.Add(this.btnManageClass);
             this.panel8.Controls.Add(this.btnAddClass);
-            this.panel8.Location = new System.Drawing.Point(318, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Location = new System.Drawing.Point(477, 6);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(572, 100);
             this.panel8.TabIndex = 1;
             // 
             // btnDeleteClass
             // 
-            this.btnDeleteClass.Location = new System.Drawing.Point(260, 15);
-            this.btnDeleteClass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteClass.Location = new System.Drawing.Point(390, 23);
             this.btnDeleteClass.Name = "btnDeleteClass";
             this.btnDeleteClass.Size = new System.Drawing.Size(172, 56);
             this.btnDeleteClass.TabIndex = 3;
@@ -232,8 +226,7 @@ namespace PBL3.View
             // 
             // btnManageClass
             // 
-            this.btnManageClass.Location = new System.Drawing.Point(134, 15);
-            this.btnManageClass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnManageClass.Location = new System.Drawing.Point(201, 23);
             this.btnManageClass.Name = "btnManageClass";
             this.btnManageClass.Size = new System.Drawing.Size(172, 56);
             this.btnManageClass.TabIndex = 1;
@@ -243,8 +236,7 @@ namespace PBL3.View
             // 
             // btnAddClass
             // 
-            this.btnAddClass.Location = new System.Drawing.Point(9, 15);
-            this.btnAddClass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddClass.Location = new System.Drawing.Point(14, 23);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(172, 56);
             this.btnAddClass.TabIndex = 0;
@@ -255,8 +247,7 @@ namespace PBL3.View
             // panel7
             // 
             this.panel7.Controls.Add(this.dgvClass);
-            this.panel7.Location = new System.Drawing.Point(4, 72);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Location = new System.Drawing.Point(6, 112);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1452, 759);
             this.panel7.TabIndex = 1;
@@ -265,8 +256,7 @@ namespace PBL3.View
             // 
             this.dgvClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClass.Location = new System.Drawing.Point(2, 2);
-            this.dgvClass.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvClass.Location = new System.Drawing.Point(3, 3);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowHeadersWidth = 82;
             this.dgvClass.RowTemplate.Height = 33;
@@ -277,8 +267,7 @@ namespace PBL3.View
             // 
             this.panel6.Controls.Add(this.cbbListCourse);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(4, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Location = new System.Drawing.Point(6, 6);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(465, 100);
             this.panel6.TabIndex = 0;
@@ -287,8 +276,7 @@ namespace PBL3.View
             // 
             this.cbbListCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbListCourse.FormattingEnabled = true;
-            this.cbbListCourse.Location = new System.Drawing.Point(98, 24);
-            this.cbbListCourse.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbListCourse.Location = new System.Drawing.Point(147, 38);
             this.cbbListCourse.Name = "cbbListCourse";
             this.cbbListCourse.Size = new System.Drawing.Size(290, 33);
             this.cbbListCourse.TabIndex = 1;
@@ -309,11 +297,10 @@ namespace PBL3.View
             this.tabPage7.Controls.Add(this.panel19);
             this.tabPage7.Controls.Add(this.panel16);
             this.tabPage7.Controls.Add(this.panel4);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage7.Location = new System.Drawing.Point(8, 39);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage7.Size = new System.Drawing.Size(979, 564);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Size = new System.Drawing.Size(1464, 880);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Tài khoản admin";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -326,26 +313,24 @@ namespace PBL3.View
             this.panel20.Controls.Add(this.label14);
             this.panel20.Controls.Add(this.label13);
             this.panel20.Controls.Add(this.label12);
-            this.panel20.Location = new System.Drawing.Point(593, 70);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2);
+            this.panel20.Location = new System.Drawing.Point(890, 109);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(572, 756);
             this.panel20.TabIndex = 7;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(253, 360);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(380, 562);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 56);
             this.button2.TabIndex = 3;
             this.button2.Text = "Đổi mật khẩu";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(35, 290);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Location = new System.Drawing.Point(52, 453);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(499, 31);
@@ -354,8 +339,7 @@ namespace PBL3.View
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(35, 163);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Location = new System.Drawing.Point(52, 255);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(499, 31);
             this.txtUsername.TabIndex = 20;
@@ -391,27 +375,24 @@ namespace PBL3.View
             // panel19
             // 
             this.panel19.Controls.Add(this.btnLogOut);
-            this.panel19.Location = new System.Drawing.Point(591, 3);
-            this.panel19.Margin = new System.Windows.Forms.Padding(2);
+            this.panel19.Location = new System.Drawing.Point(886, 5);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(572, 98);
             this.panel19.TabIndex = 6;
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(255, 13);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogOut.Location = new System.Drawing.Point(382, 20);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(172, 56);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Đăng xuất";
             this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
             // panel16
             // 
-            this.panel16.Location = new System.Drawing.Point(4, 2);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2);
+            this.panel16.Location = new System.Drawing.Point(6, 3);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(874, 100);
             this.panel16.TabIndex = 5;
@@ -433,8 +414,7 @@ namespace PBL3.View
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(4, 68);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(6, 106);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(874, 761);
             this.panel4.TabIndex = 4;
@@ -452,8 +432,7 @@ namespace PBL3.View
             // rbtnFemale
             // 
             this.rbtnFemale.AutoSize = true;
-            this.rbtnFemale.Location = new System.Drawing.Point(281, 317);
-            this.rbtnFemale.Margin = new System.Windows.Forms.Padding(2);
+            this.rbtnFemale.Location = new System.Drawing.Point(422, 495);
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(70, 29);
             this.rbtnFemale.TabIndex = 18;
@@ -464,8 +443,7 @@ namespace PBL3.View
             // rbtnMale
             // 
             this.rbtnMale.AutoSize = true;
-            this.rbtnMale.Location = new System.Drawing.Point(127, 317);
-            this.rbtnMale.Margin = new System.Windows.Forms.Padding(2);
+            this.rbtnMale.Location = new System.Drawing.Point(190, 495);
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(87, 29);
             this.rbtnMale.TabIndex = 17;
@@ -476,16 +454,14 @@ namespace PBL3.View
             // dtDate
             // 
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDate.Location = new System.Drawing.Point(127, 129);
-            this.dtDate.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDate.Location = new System.Drawing.Point(190, 202);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(373, 31);
             this.dtDate.TabIndex = 16;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(66, 364);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(99, 569);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 52);
             this.btnCancel.TabIndex = 15;
@@ -494,8 +470,7 @@ namespace PBL3.View
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(429, 364);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOK.Location = new System.Drawing.Point(644, 569);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(140, 52);
             this.btnOK.TabIndex = 5;
@@ -513,24 +488,21 @@ namespace PBL3.View
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(127, 252);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPhone.Location = new System.Drawing.Point(190, 394);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(592, 31);
             this.txtPhone.TabIndex = 8;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(127, 189);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.Location = new System.Drawing.Point(190, 295);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(592, 31);
             this.txtAddress.TabIndex = 7;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(127, 66);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Location = new System.Drawing.Point(190, 103);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(592, 31);
             this.txtName.TabIndex = 5;
@@ -586,7 +558,7 @@ namespace PBL3.View
             this.tabPage5.Controls.Add(this.panel10);
             this.tabPage5.Location = new System.Drawing.Point(8, 39);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage5.Size = new System.Drawing.Size(1464, 880);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tài khoản";
@@ -605,9 +577,9 @@ namespace PBL3.View
             // 
             // btnResetAccount
             // 
-            this.btnResetAccount.Location = new System.Drawing.Point(616, 23);
+            this.btnResetAccount.Location = new System.Drawing.Point(624, 25);
             this.btnResetAccount.Name = "btnResetAccount";
-            this.btnResetAccount.Size = new System.Drawing.Size(201, 56);
+            this.btnResetAccount.Size = new System.Drawing.Size(172, 56);
             this.btnResetAccount.TabIndex = 15;
             this.btnResetAccount.Text = "Reset mật khẩu";
             this.btnResetAccount.UseVisualStyleBackColor = true;
@@ -615,7 +587,7 @@ namespace PBL3.View
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(427, 23);
+            this.btnDeleteAccount.Location = new System.Drawing.Point(429, 25);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(172, 56);
             this.btnDeleteAccount.TabIndex = 14;
@@ -625,7 +597,7 @@ namespace PBL3.View
             // 
             // btnEditInfoAccount
             // 
-            this.btnEditInfoAccount.Location = new System.Drawing.Point(235, 23);
+            this.btnEditInfoAccount.Location = new System.Drawing.Point(232, 25);
             this.btnEditInfoAccount.Name = "btnEditInfoAccount";
             this.btnEditInfoAccount.Size = new System.Drawing.Size(172, 56);
             this.btnEditInfoAccount.TabIndex = 13;
@@ -635,9 +607,9 @@ namespace PBL3.View
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Location = new System.Drawing.Point(27, 23);
+            this.btnAddAccount.Location = new System.Drawing.Point(39, 25);
             this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(191, 56);
+            this.btnAddAccount.Size = new System.Drawing.Size(172, 56);
             this.btnAddAccount.TabIndex = 12;
             this.btnAddAccount.Text = "Thêm tài khoản";
             this.btnAddAccount.UseVisualStyleBackColor = true;
@@ -652,12 +624,12 @@ namespace PBL3.View
             this.panel11.Controls.Add(this.btnSearchAccount);
             this.panel11.Location = new System.Drawing.Point(6, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(596, 100);
+            this.panel11.Size = new System.Drawing.Size(597, 100);
             this.panel11.TabIndex = 1;
             // 
             // tbxDisplayName
             // 
-            this.tbxDisplayName.Location = new System.Drawing.Point(191, 60);
+            this.tbxDisplayName.Location = new System.Drawing.Point(158, 48);
             this.tbxDisplayName.Name = "tbxDisplayName";
             this.tbxDisplayName.Size = new System.Drawing.Size(266, 31);
             this.tbxDisplayName.TabIndex = 11;
@@ -665,7 +637,7 @@ namespace PBL3.View
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(21, 63);
+            this.label16.Location = new System.Drawing.Point(4, 50);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(125, 25);
             this.label16.TabIndex = 7;
@@ -674,8 +646,7 @@ namespace PBL3.View
             // cbxRole
             // 
             this.cbxRole.FormattingEnabled = true;
-            this.cbxRole.Location = new System.Drawing.Point(191, 11);
-            this.cbxRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxRole.Location = new System.Drawing.Point(158, 9);
             this.cbxRole.Name = "cbxRole";
             this.cbxRole.Size = new System.Drawing.Size(266, 33);
             this.cbxRole.TabIndex = 6;
@@ -683,7 +654,7 @@ namespace PBL3.View
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(21, 14);
+            this.label15.Location = new System.Drawing.Point(4, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(147, 25);
             this.label15.TabIndex = 5;
@@ -691,7 +662,7 @@ namespace PBL3.View
             // 
             // btnSearchAccount
             // 
-            this.btnSearchAccount.Location = new System.Drawing.Point(680, 36);
+            this.btnSearchAccount.Location = new System.Drawing.Point(430, 37);
             this.btnSearchAccount.Name = "btnSearchAccount";
             this.btnSearchAccount.Size = new System.Drawing.Size(140, 52);
             this.btnSearchAccount.TabIndex = 4;
@@ -710,11 +681,11 @@ namespace PBL3.View
             // dtgvListAccounts
             // 
             this.dtgvListAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListAccounts.Location = new System.Drawing.Point(3, 3);
+            this.dtgvListAccounts.Location = new System.Drawing.Point(7, 3);
             this.dtgvListAccounts.Name = "dtgvListAccounts";
             this.dtgvListAccounts.RowHeadersWidth = 82;
             this.dtgvListAccounts.RowTemplate.Height = 33;
-            this.dtgvListAccounts.Size = new System.Drawing.Size(1437, 756);
+            this.dtgvListAccounts.Size = new System.Drawing.Size(1440, 756);
             this.dtgvListAccounts.TabIndex = 0;
             // 
             // tabPage3
@@ -725,7 +696,7 @@ namespace PBL3.View
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage3.Size = new System.Drawing.Size(1464, 880);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Khóa học";
@@ -749,7 +720,7 @@ namespace PBL3.View
             "Ngày bắt đầu",
             "Ngày kết thúc",
             "Giá"});
-            this.cbSortCourse.Location = new System.Drawing.Point(160, 29);
+            this.cbSortCourse.Location = new System.Drawing.Point(160, 33);
             this.cbSortCourse.Name = "cbSortCourse";
             this.cbSortCourse.Size = new System.Drawing.Size(256, 33);
             this.cbSortCourse.TabIndex = 28;
@@ -862,11 +833,10 @@ namespace PBL3.View
             // 
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(979, 564);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1464, 880);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh thu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -884,40 +854,54 @@ namespace PBL3.View
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.btnChart);
             this.panel2.Controls.Add(this.DGVRevenue);
-            this.panel2.Location = new System.Drawing.Point(11, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(16, 112);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1431, 761);
             this.panel2.TabIndex = 1;
             // 
+            // btnDSCT
+            // 
+            this.btnDSCT.Location = new System.Drawing.Point(1282, 228);
+            this.btnDSCT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDSCT.Name = "btnDSCT";
+            this.btnDSCT.Size = new System.Drawing.Size(144, 81);
+            this.btnDSCT.TabIndex = 12;
+            this.btnDSCT.Text = "Danh sách chi tiết";
+            this.btnDSCT.UseVisualStyleBackColor = true;
+            this.btnDSCT.Click += new System.EventHandler(this.btnDSCT_Click);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(338, 442);
+            this.label18.Location = new System.Drawing.Point(507, 691);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(100, 16);
+            this.label18.Size = new System.Drawing.Size(163, 25);
             this.label18.TabIndex = 11;
             this.label18.Text = "Tổng doanh thu";
             // 
             // txtDT
             // 
-            this.txtDT.Location = new System.Drawing.Point(481, 436);
+            this.txtDT.Location = new System.Drawing.Point(722, 681);
+            this.txtDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDT.Name = "txtDT";
-            this.txtDT.Size = new System.Drawing.Size(156, 22);
+            this.txtDT.Size = new System.Drawing.Size(232, 31);
             this.txtDT.TabIndex = 10;
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(481, 364);
+            this.txtTK.Location = new System.Drawing.Point(722, 569);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(122, 22);
+            this.txtTK.Size = new System.Drawing.Size(181, 31);
             this.txtTK.TabIndex = 9;
             // 
             // btnSearchTK
             // 
-            this.btnSearchTK.Location = new System.Drawing.Point(341, 355);
+            this.btnSearchTK.Location = new System.Drawing.Point(512, 555);
+            this.btnSearchTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearchTK.Name = "btnSearchTK";
-            this.btnSearchTK.Size = new System.Drawing.Size(115, 36);
+            this.btnSearchTK.Size = new System.Drawing.Size(172, 56);
             this.btnSearchTK.TabIndex = 8;
             this.btnSearchTK.Text = "Tìm kiếm";
             this.btnSearchTK.UseVisualStyleBackColor = true;
@@ -925,9 +909,10 @@ namespace PBL3.View
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(676, 355);
+            this.btnSort.Location = new System.Drawing.Point(1014, 555);
+            this.btnSort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(106, 36);
+            this.btnSort.Size = new System.Drawing.Size(159, 56);
             this.btnSort.TabIndex = 6;
             this.btnSort.Text = "Sắp xếp";
             this.btnSort.UseVisualStyleBackColor = true;
@@ -941,9 +926,10 @@ namespace PBL3.View
             "Tên khóa",
             "Học phí",
             "Tổng học phí"});
-            this.cbbSort.Location = new System.Drawing.Point(803, 362);
+            this.cbbSort.Location = new System.Drawing.Point(1204, 566);
+            this.cbbSort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbSort.Name = "cbbSort";
-            this.cbbSort.Size = new System.Drawing.Size(121, 24);
+            this.cbbSort.Size = new System.Drawing.Size(180, 33);
             this.cbbSort.TabIndex = 5;
             // 
             // cbbYear
@@ -951,25 +937,28 @@ namespace PBL3.View
             this.cbbYear.FormattingEnabled = true;
             this.cbbYear.Items.AddRange(new object[] {
             "2023"});
-            this.cbbYear.Location = new System.Drawing.Point(80, 434);
+            this.cbbYear.Location = new System.Drawing.Point(120, 678);
+            this.cbbYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbYear.Name = "cbbYear";
-            this.cbbYear.Size = new System.Drawing.Size(121, 24);
+            this.cbbYear.Size = new System.Drawing.Size(180, 33);
             this.cbbYear.TabIndex = 4;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(31, 442);
+            this.label17.Location = new System.Drawing.Point(46, 691);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 16);
+            this.label17.Size = new System.Drawing.Size(62, 25);
             this.label17.TabIndex = 3;
             this.label17.Text = "Năm:";
             // 
             // btnChart
             // 
-            this.btnChart.Location = new System.Drawing.Point(34, 359);
+            this.btnChart.Location = new System.Drawing.Point(51, 561);
+            this.btnChart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnChart.Name = "btnChart";
-            this.btnChart.Size = new System.Drawing.Size(167, 39);
+            this.btnChart.Size = new System.Drawing.Size(250, 61);
             this.btnChart.TabIndex = 1;
             this.btnChart.Text = "Biểu đồ thống kê ";
             this.btnChart.UseVisualStyleBackColor = true;
@@ -978,51 +967,47 @@ namespace PBL3.View
             // DGVRevenue
             // 
             this.DGVRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVRevenue.Location = new System.Drawing.Point(16, 2);
-            this.DGVRevenue.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVRevenue.Location = new System.Drawing.Point(24, 3);
             this.DGVRevenue.Name = "DGVRevenue";
             this.DGVRevenue.RowHeadersWidth = 82;
             this.DGVRevenue.RowTemplate.Height = 33;
-            this.DGVRevenue.Size = new System.Drawing.Size(817, 328);
+            this.DGVRevenue.Size = new System.Drawing.Size(1226, 512);
             this.DGVRevenue.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnTK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Location = new System.Drawing.Point(11, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(16, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 64);
+            this.panel1.Size = new System.Drawing.Size(1431, 100);
             this.panel1.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(723, 16);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1084, 25);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(201, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(300, 31);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(629, 22);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(944, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Đến ngày";
             // 
             // btnTK
             // 
-            this.btnTK.Location = new System.Drawing.Point(415, 12);
-            this.btnTK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTK.Location = new System.Drawing.Point(622, 19);
             this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(115, 36);
+            this.btnTK.Size = new System.Drawing.Size(172, 56);
             this.btnTK.TabIndex = 4;
             this.btnTK.Text = "Thống kê";
             this.btnTK.UseVisualStyleBackColor = true;
@@ -1031,20 +1016,18 @@ namespace PBL3.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(46, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(90, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Từ ngày";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 19);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(170, 30);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(201, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(300, 31);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // tabControl1
@@ -1054,22 +1037,11 @@ namespace PBL3.View
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(15, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Location = new System.Drawing.Point(22, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(987, 593);
+            this.tabControl1.Size = new System.Drawing.Size(1480, 927);
             this.tabControl1.TabIndex = 0;
-            // 
-            // btnDSCT
-            // 
-            this.btnDSCT.Location = new System.Drawing.Point(855, 146);
-            this.btnDSCT.Name = "btnDSCT";
-            this.btnDSCT.Size = new System.Drawing.Size(96, 52);
-            this.btnDSCT.TabIndex = 12;
-            this.btnDSCT.Text = "Danh sách chi tiết";
-            this.btnDSCT.UseVisualStyleBackColor = true;
-            this.btnDSCT.Click += new System.EventHandler(this.btnDSCT_Click);
             // 
             // fManager
             // 
@@ -1079,7 +1051,6 @@ namespace PBL3.View
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1530, 961);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fManager";
             this.Text = "ADMIN";
             this.Load += new System.EventHandler(this.fManager_Load);
