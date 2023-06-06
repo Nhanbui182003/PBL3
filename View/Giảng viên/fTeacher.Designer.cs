@@ -34,6 +34,7 @@
             this.btnSelection = new System.Windows.Forms.Button();
             this.dtgvClassOfTeacher = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnCalendarOfClasses = new System.Windows.Forms.Button();
             this.tbxNameClass = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -87,9 +87,9 @@
             // 
             this.Tho.Controls.Add(this.tabClasses);
             this.Tho.Controls.Add(this.tabInfos);
-            this.Tho.Controls.Add(this.tabPage1);
             this.Tho.Controls.Add(this.tabPage2);
             this.Tho.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tho.ItemSize = new System.Drawing.Size(215, 30);
             this.Tho.Location = new System.Drawing.Point(13, 13);
             this.Tho.Name = "Tho";
             this.Tho.SelectedIndex = 0;
@@ -102,10 +102,10 @@
             this.tabClasses.Controls.Add(this.btnSelection);
             this.tabClasses.Controls.Add(this.dtgvClassOfTeacher);
             this.tabClasses.Controls.Add(this.panel7);
-            this.tabClasses.Location = new System.Drawing.Point(4, 25);
+            this.tabClasses.Location = new System.Drawing.Point(4, 34);
             this.tabClasses.Name = "tabClasses";
             this.tabClasses.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClasses.Size = new System.Drawing.Size(1031, 565);
+            this.tabClasses.Size = new System.Drawing.Size(1031, 556);
             this.tabClasses.TabIndex = 0;
             this.tabClasses.Text = "Lớp học của tôi";
             this.tabClasses.UseVisualStyleBackColor = true;
@@ -142,6 +142,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnCalendarOfClasses);
             this.panel7.Controls.Add(this.tbxNameClass);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label7);
@@ -151,6 +152,16 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1021, 78);
             this.panel7.TabIndex = 0;
+            // 
+            // btnCalendarOfClasses
+            // 
+            this.btnCalendarOfClasses.Location = new System.Drawing.Point(916, 6);
+            this.btnCalendarOfClasses.Name = "btnCalendarOfClasses";
+            this.btnCalendarOfClasses.Size = new System.Drawing.Size(102, 49);
+            this.btnCalendarOfClasses.TabIndex = 5;
+            this.btnCalendarOfClasses.Text = "Lịch dạy";
+            this.btnCalendarOfClasses.UseVisualStyleBackColor = true;
+            this.btnCalendarOfClasses.Click += new System.EventHandler(this.btnCalendarOfClasses_Click);
             // 
             // tbxNameClass
             // 
@@ -187,7 +198,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(916, 12);
+            this.btnSearch.Location = new System.Drawing.Point(792, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(102, 49);
             this.btnSearch.TabIndex = 0;
@@ -204,10 +215,10 @@
             this.tabInfos.Controls.Add(this.panel3);
             this.tabInfos.Controls.Add(this.panel2);
             this.tabInfos.Controls.Add(this.panel1);
-            this.tabInfos.Location = new System.Drawing.Point(4, 25);
+            this.tabInfos.Location = new System.Drawing.Point(4, 34);
             this.tabInfos.Name = "tabInfos";
             this.tabInfos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfos.Size = new System.Drawing.Size(1031, 565);
+            this.tabInfos.Size = new System.Drawing.Size(1031, 556);
             this.tabInfos.TabIndex = 1;
             this.tabInfos.Text = "Thông tin";
             this.tabInfos.UseVisualStyleBackColor = true;
@@ -394,17 +405,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và tên:";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1031, 565);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Lịch dạy";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label11);
@@ -414,10 +414,10 @@
             this.tabPage2.Controls.Add(this.tbxNewPassAgain);
             this.tabPage2.Controls.Add(this.tbxNewPass);
             this.tabPage2.Controls.Add(this.tbxOldPass);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1031, 565);
+            this.tabPage2.Size = new System.Drawing.Size(1031, 556);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Đổi mật khẩu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -549,7 +549,6 @@
         private System.Windows.Forms.TextBox tbxNameClass;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.DateTimePicker dtpkBirthday;
@@ -562,5 +561,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnCalendarOfClasses;
     }
 }

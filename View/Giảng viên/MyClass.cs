@@ -43,7 +43,15 @@ namespace PBL3.View.Giảng_viên
             Class cl = bllClass.GetClassFromId(IdClass);
             tbxIdClass.Text = cl.Id.ToString();
             tbxNameClass.Text = cl.ClassName.ToString();    
-            tbxMaxStudent.Text = cl.MaxStudent.ToString();  
+            tbxMaxStudent.Text = cl.MaxStudent.ToString();
+            tbxIdClass.Enabled = false;
+            tbxNameClass.Enabled = false;
+            tbxMaxStudent.Enabled = false;
+            Course course = bllClass.GetCourseFromIdClass(IdClass); 
+            string TimeRate = "Từ ";
+            TimeRate += course.StartDate.ToString("dd/MM/yyyy");
+            TimeRate += " Đến " + course.EndDate.ToString("dd/MM/yyyy");
+            tbxTimeRate.Text = TimeRate;
         }
         void LoadListSudentInClass(int id)
         {

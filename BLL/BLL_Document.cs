@@ -35,6 +35,7 @@ namespace PBL3.BLL
                 }
                 
             }
+            
             dg.Columns[0].Width = (int)(dg.Width * 0.2);
             dg.Columns[1].Width = (int)(dg.Width * 0.4);
             dg.Columns[2].Width = (int)(dg.Width * 0.4);
@@ -101,9 +102,10 @@ namespace PBL3.BLL
                 }
 
             }
+            
 
             
-            dg.Columns[0].Width = (int)(dg.Width * 0.2);
+            dg.Columns[0].Width = (int)(dg.Width * 0.1);
             dg.Columns[1].Width = (int)(dg.Width * 0.4);
             dg.Columns[2].Width = (int)(dg.Width * 0.4);
         }

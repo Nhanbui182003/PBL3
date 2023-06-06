@@ -45,6 +45,14 @@ namespace PBL3.BLL
                 }
 
             }
+            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
+            colSoThuTu.HeaderText = "Số thứ tự";
+            colSoThuTu.Name = "colSoThuTu";
+            dg.Columns.Insert(0, colSoThuTu);
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
+            }
         }
         public void GetAllCourse(ComboBox cb)
         {
@@ -79,6 +87,14 @@ namespace PBL3.BLL
                 }
 
             }
+            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
+            colSoThuTu.HeaderText = "Số thứ tự";
+            colSoThuTu.Name = "colSoThuTu";
+            dg.Columns.Insert(0, colSoThuTu);
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
+            }
 
         }
         public AccountInfo GetInfo(int idTeacher)
@@ -109,6 +125,12 @@ namespace PBL3.BLL
             Class cl = new Class();
             cl = DalClass.GetClassFromId(idClass);
             return cl;
+        }
+        public Course GetCourseFromIdClass(int idClass)
+        {
+            Course course = new Course();
+            course = DalClass.GetCourseFromIdClass(idClass);
+            return course;
         }
         public void GetListStudent(int idClass, DataGridView dg)
         {
@@ -145,6 +167,14 @@ namespace PBL3.BLL
                 }
 
             }
+            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
+            colSoThuTu.HeaderText = "Số thứ tự";
+            colSoThuTu.Name = "colSoThuTu";
+            dg.Columns.Insert(0,colSoThuTu);
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
+            }
         }
         public void SearchStudent(int idClass, DataGridView dg, string nameStudent)
         {
@@ -180,6 +210,14 @@ namespace PBL3.BLL
                     column.HeaderText = "Điểm cuối kì";
                 }
 
+            }
+            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
+            colSoThuTu.HeaderText = "Số thứ tự";
+            colSoThuTu.Name = "colSoThuTu";
+            dg.Columns.Insert(0, colSoThuTu);
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
             }
         }
         public bool CheckTimeClass(int idclass)
@@ -220,6 +258,14 @@ namespace PBL3.BLL
                     column.HeaderText = "Điểm cuối kì";
                 }
 
+            }
+            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
+            colSoThuTu.HeaderText = "Số thứ tự";
+            colSoThuTu.Name = "colSoThuTu";
+            dg.Columns.Insert(0, colSoThuTu);
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
             }
 
         }

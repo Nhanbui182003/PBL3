@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnDownLoadFile = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAddFile = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDownLoadFile = new System.Windows.Forms.Button();
             this.cbxSortDocument = new System.Windows.Forms.ComboBox();
             this.dtgvListDocument = new System.Windows.Forms.DataGridView();
+            this.btnAddFile = new System.Windows.Forms.Button();
             this.btnSortDocument = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -58,8 +58,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
             this.dtgvListLesson = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbxTimeRate = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListDocument)).BeginInit();
@@ -76,43 +78,13 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1010, 570);
+            this.tabPage2.Size = new System.Drawing.Size(1025, 580);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài liệu";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnDownLoadFile
-            // 
-            this.btnDownLoadFile.Location = new System.Drawing.Point(222, 31);
-            this.btnDownLoadFile.Name = "btnDownLoadFile";
-            this.btnDownLoadFile.Size = new System.Drawing.Size(99, 42);
-            this.btnDownLoadFile.TabIndex = 3;
-            this.btnDownLoadFile.Text = "Tải tài liệu";
-            this.btnDownLoadFile.UseVisualStyleBackColor = true;
-            this.btnDownLoadFile.Click += new System.EventHandler(this.btnDownLoadFile_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(438, 32);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(98, 41);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa tài liệu";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAddFile
-            // 
-            this.btnAddFile.Location = new System.Drawing.Point(24, 32);
-            this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(134, 42);
-            this.btnAddFile.TabIndex = 1;
-            this.btnAddFile.Text = "Thêm tài liệu";
-            this.btnAddFile.UseVisualStyleBackColor = true;
-            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
             // 
             // panel3
             // 
@@ -126,6 +98,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(990, 551);
             this.panel3.TabIndex = 0;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(438, 32);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(98, 41);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Xóa tài liệu";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnDownLoadFile
+            // 
+            this.btnDownLoadFile.Location = new System.Drawing.Point(222, 31);
+            this.btnDownLoadFile.Name = "btnDownLoadFile";
+            this.btnDownLoadFile.Size = new System.Drawing.Size(99, 42);
+            this.btnDownLoadFile.TabIndex = 3;
+            this.btnDownLoadFile.Text = "Tải tài liệu";
+            this.btnDownLoadFile.UseVisualStyleBackColor = true;
+            this.btnDownLoadFile.Click += new System.EventHandler(this.btnDownLoadFile_Click);
             // 
             // cbxSortDocument
             // 
@@ -148,6 +140,16 @@
             this.dtgvListDocument.Size = new System.Drawing.Size(943, 443);
             this.dtgvListDocument.TabIndex = 0;
             // 
+            // btnAddFile
+            // 
+            this.btnAddFile.Location = new System.Drawing.Point(24, 32);
+            this.btnAddFile.Name = "btnAddFile";
+            this.btnAddFile.Size = new System.Drawing.Size(134, 42);
+            this.btnAddFile.TabIndex = 1;
+            this.btnAddFile.Text = "Thêm tài liệu";
+            this.btnAddFile.UseVisualStyleBackColor = true;
+            this.btnAddFile.Click += new System.EventHandler(this.btnAddFile_Click);
+            // 
             // btnSortDocument
             // 
             this.btnSortDocument.Location = new System.Drawing.Point(628, 32);
@@ -160,16 +162,18 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tbxTimeRate);
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.btnRate);
             this.tabPage1.Controls.Add(this.dtgvListStudentInClass);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1010, 570);
+            this.tabPage1.Size = new System.Drawing.Size(1025, 580);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin học viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -217,7 +221,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(885, 515);
+            this.btnCancel.Location = new System.Drawing.Point(885, 501);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 51);
             this.btnCancel.TabIndex = 17;
@@ -227,7 +231,7 @@
             // 
             // btnRate
             // 
-            this.btnRate.Location = new System.Drawing.Point(763, 515);
+            this.btnRate.Location = new System.Drawing.Point(763, 501);
             this.btnRate.Name = "btnRate";
             this.btnRate.Size = new System.Drawing.Size(102, 51);
             this.btnRate.TabIndex = 10;
@@ -242,7 +246,7 @@
             this.dtgvListStudentInClass.Name = "dtgvListStudentInClass";
             this.dtgvListStudentInClass.RowHeadersWidth = 51;
             this.dtgvListStudentInClass.RowTemplate.Height = 24;
-            this.dtgvListStudentInClass.Size = new System.Drawing.Size(983, 321);
+            this.dtgvListStudentInClass.Size = new System.Drawing.Size(983, 297);
             this.dtgvListStudentInClass.TabIndex = 16;
             // 
             // panel1
@@ -356,33 +360,24 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 24);
+            this.tabControl1.ItemSize = new System.Drawing.Size(215, 30);
+            this.tabControl1.Location = new System.Drawing.Point(12, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1018, 599);
+            this.tabControl1.Size = new System.Drawing.Size(1033, 618);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dtgvListLesson);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1010, 570);
+            this.tabPage3.Size = new System.Drawing.Size(1025, 580);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Lịch dạy cụ thể";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(407, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Lịch dạy";
             // 
             // dtgvListLesson
             // 
@@ -394,11 +389,37 @@
             this.dtgvListLesson.Size = new System.Drawing.Size(917, 438);
             this.dtgvListLesson.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(407, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 23);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Lịch dạy";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 515);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(316, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "CHÚ Ý: Khoảng thời gian có thể đánh giá học viên là:";
+            // 
+            // tbxTimeRate
+            // 
+            this.tbxTimeRate.Location = new System.Drawing.Point(376, 515);
+            this.tbxTimeRate.Name = "tbxTimeRate";
+            this.tbxTimeRate.Size = new System.Drawing.Size(346, 22);
+            this.tbxTimeRate.TabIndex = 20;
+            // 
             // MyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 620);
+            this.ClientSize = new System.Drawing.Size(1042, 624);
             this.Controls.Add(this.tabControl1);
             this.Name = "MyClass";
             this.Text = "LỚP HỌC";
@@ -407,6 +428,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListDocument)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListStudentInClass)).EndInit();
@@ -456,5 +478,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dtgvListLesson;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbxTimeRate;
+        private System.Windows.Forms.Label label7;
     }
 }

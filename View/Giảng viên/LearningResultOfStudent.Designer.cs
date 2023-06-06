@@ -45,7 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.OK = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dtpkBirthday = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbxBirthday = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +181,7 @@
             // 
             // OK
             // 
-            this.OK.Location = new System.Drawing.Point(445, 508);
+            this.OK.Location = new System.Drawing.Point(472, 549);
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(93, 52);
             this.OK.TabIndex = 10;
@@ -190,7 +191,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(581, 508);
+            this.button2.Location = new System.Drawing.Point(581, 549);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 52);
             this.button2.TabIndex = 11;
@@ -198,19 +199,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dtpkBirthday
+            // label9
             // 
-            this.dtpkBirthday.Location = new System.Drawing.Point(329, 111);
-            this.dtpkBirthday.Name = "dtpkBirthday";
-            this.dtpkBirthday.Size = new System.Drawing.Size(316, 22);
-            this.dtpkBirthday.TabIndex = 12;
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(367, 504);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(307, 16);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "CHÚ Ý: Điểm số là số thực nằm trong khoảng [0;10]";
+            // 
+            // tbxBirthday
+            // 
+            this.tbxBirthday.Location = new System.Drawing.Point(329, 112);
+            this.tbxBirthday.Name = "tbxBirthday";
+            this.tbxBirthday.Size = new System.Drawing.Size(316, 22);
+            this.tbxBirthday.TabIndex = 14;
             // 
             // LearningResultOfStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 591);
-            this.Controls.Add(this.dtpkBirthday);
+            this.ClientSize = new System.Drawing.Size(699, 623);
+            this.Controls.Add(this.tbxBirthday);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.OK);
             this.Controls.Add(this.label5);
@@ -251,6 +263,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button OK;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dtpkBirthday;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbxBirthday;
     }
 }

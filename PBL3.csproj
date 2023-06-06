@@ -161,6 +161,12 @@
     <Compile Include="View\Admin\fChoiceTeacher.Designer.cs">
       <DependentUpon>fChoiceTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\fDSSV_HP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\fDSSV_HP.Designer.cs">
+      <DependentUpon>fDSSV_HP.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\fManageClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fChoiceTeacher.resx">
       <DependentUpon>fChoiceTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\fDSSV_HP.resx">
+      <DependentUpon>fDSSV_HP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\fManageClass.resx">
       <DependentUpon>fManageClass.cs</DependentUpon>

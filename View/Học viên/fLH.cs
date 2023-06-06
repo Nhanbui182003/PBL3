@@ -19,6 +19,11 @@ namespace PBL3.View.Học_viên
             MSHV = mshv;
             InitializeComponent();
             setDGVLH(MSHV);
+            DGVLH.Columns[0].HeaderText = "Mã lớp học";
+            DGVLH.Columns[1].HeaderText = "Tên lớp học";
+            DGVLH.Columns[2].HeaderText = "TKB";
+            DGVLH.Columns[3].HeaderText = "Tiết bắt đầu";
+            DGVLH.Columns[4].HeaderText = "Tiết kết thúc";
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)

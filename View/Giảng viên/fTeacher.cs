@@ -129,13 +129,7 @@ namespace PBL3.View.Giảng_viên
             DisplayInfoTeacher();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            
-            fTeacherCalendar f = new fTeacherCalendar(IdTeacher);
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.ShowDialog(); 
-        }
+       
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -168,6 +162,14 @@ namespace PBL3.View.Giảng_viên
             FormLogin f = new FormLogin();
             f.ShowDialog();
             
+        }
+
+        private void btnCalendarOfClasses_Click(object sender, EventArgs e)
+        {
+
+            fTeacherCalendar f = new fTeacherCalendar(IdTeacher);
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog();
         }
     }
 }

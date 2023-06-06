@@ -19,6 +19,12 @@ namespace PBL3.View.Học_viên
             MSHV = mshv;
             InitializeComponent();
             setDGVClass(mshv);
+            DGVClass.Columns[0].HeaderText = "Mã lớp học";
+            DGVClass.Columns[1].HeaderText = "Tên lớp học";
+            DGVClass.Columns[2].HeaderText = "Học viên tối đa";
+            DGVClass.Columns[3].HeaderText = "Ngày bắt đầu";
+            DGVClass.Columns[4].HeaderText = "Ngày kết thúc";
+            DGVClass.Columns[5].HeaderText = "Tình trạng lớp học";
         }
         public void setDGVClass(int mshv)
         {

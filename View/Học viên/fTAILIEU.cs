@@ -22,6 +22,9 @@ namespace PBL3.View.Học_viên
             classid= class_id;
             InitializeComponent();
             setDGVTL(class_id);
+            DGVTL.Columns[0].HeaderText = "Mã tài liệu";
+            DGVTL.Columns[1].HeaderText = "Tài liệu";
+            DGVTL.Columns[2].HeaderText = "Ngày cập nhật";
         }
         public void setDGVTL(int class_id)
         {
