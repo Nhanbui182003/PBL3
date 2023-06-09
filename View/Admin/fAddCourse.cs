@@ -61,8 +61,16 @@ namespace PBL3.View.Admin
                     else
                     {
                         newCourse.Id = id;
-                        bll.UpdateCourseBLL(newCourse);
-                        MessageBox.Show("Cập nhật thành công!");
+                        if (bll.isExpiredCourseBLL(id)!=true)
+                        {
+                            bll.UpdateCourseBLL(newCourse);
+                            MessageBox.Show("Cập nhật thành công!");
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Khóa học đã hết hạn không thể thay đổi giá tiền. Cập nhật không thành công!");
+                        }    
+                        
                     }
                     Dispose();
                     // Trường hợp thêm 

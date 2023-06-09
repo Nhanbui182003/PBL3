@@ -20,7 +20,7 @@ namespace PBL3.View.Admin
             InitializeComponent();
 
             ManagerBLL bll = new ManagerBLL();
-            bll.LoadDataGridViewStudentAccounts(dgvStudentAccount);
+            bll.LoadDataGridViewStudentAccounts(dgvStudentAccount, classid);
             dgvStudentAccount.Columns[0].HeaderText = "Mã số học viên";
             dgvStudentAccount.Columns[1].HeaderText = "Tên học viên";
             dgvStudentAccount.Columns[2].HeaderText = "Số điện thoại";

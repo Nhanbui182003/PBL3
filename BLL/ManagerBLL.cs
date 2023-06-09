@@ -56,6 +56,10 @@ namespace PBL3.BLL
         {
             return new ManagerDAL().isExistingCourseDAL(course);
         }
+        public bool isExpiredCourseBLL(int courseId)
+        {
+            return new ManagerDAL().isExpiredCourseDAL(courseId);
+        }
         public void AddCourseBLL(Course course)
         {
             new ManagerDAL().AddCourseDAL(course);
@@ -110,9 +114,11 @@ namespace PBL3.BLL
         {
             return new ManagerDAL().GetAllStudentByClassIdDAL(classID);
         }
+
         public void LoadDataGridViewStudent(DataGridView dgv, int classID)
         {
             dgv.DataSource = GetAllStudentByClassIdBLL(classID).Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
+            
         }
         public bool IsExistingStudentBLL(String MaHocVien , int classID)
         {
@@ -166,9 +172,9 @@ namespace PBL3.BLL
         {
             new ManagerDAL().UpdateClassDAL(newClass, newTeacher, newCalendars);
         }
-        public void LoadDataGridViewStudentAccounts(DataGridView dgv)
+        public void LoadDataGridViewStudentAccounts(DataGridView dgv, int ClassID)
         {
-            dgv.DataSource = new ManagerDAL().GetAllStudentAccountDAL().Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
+            dgv.DataSource = new ManagerDAL().GetALLStudentAccountToAddUpClassDAL(ClassID).Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
         }
         public void LoadDataGridViewTeacherAccounts(DataGridView dgv)
         {

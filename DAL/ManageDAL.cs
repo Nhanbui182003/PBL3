@@ -42,6 +42,15 @@ namespace PBL3.DAL
                 return db.Courses.Any(p => p.CourseName == course.CourseName && p.StartDate.CompareTo(course.StartDate) == 0 && p.EndDate.CompareTo(course.EndDate) == 0 && p.CourseActive==true);
             }
         }
+        public bool isExpiredCourseDAL(int courseId)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                var course = db.Courses.Where(p => p.Id == courseId).FirstOrDefault();
+                DateTime dayNow = DateTime.Now;
+                if (dayNow.CompareTo(course.EndDate) > 0) return true; else return false;
+            }
+        }
         public void AddCourseDAL(Course course)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
@@ -195,6 +204,33 @@ namespace PBL3.DAL
 
                 }
                 return students;
+            }
+        }
+        public dynamic GetAllStudentByClassId(int classID)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                var lrs = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive == true).ToList();
+                List<Bill> acc = new List<Bill>();
+                foreach (var i in lrs)
+                {
+                    var bill = db.Bills.Where(p => p.LearningResultId == i.Id && p.LearningResult.Account.Id == i.AccountId).FirstOrDefault();
+                    acc.Add(bill);
+                }
+                return acc;
+                //var students = new List<Account>();
+                //for (int i = 0; i < ids.Length; i++)
+                //{
+                //    int id = ids[i];
+                //    var student = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3 && p.AccountActive==true).FirstOrDefault();
+                //    var studentbll = db.Bills.Where() 
+                //    if (account != null)
+                //    {
+                //        tudents.Add(account);
+                //    }
+
+                //}
+                //return students;
             }
         }
         public bool isExistingStudentDAL(int accountId, int classID)
@@ -372,6 +408,28 @@ namespace PBL3.DAL
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
                 List<Account> listStudentAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 3 && p.AccountActive == true ).ToList();
+                return listStudentAccounts;
+            }
+        }
+        public List<Account> GetALLStudentAccountToAddUpClassDAL(int ClassID)
+        {
+            using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
+            {
+                int[] ids = db.LearningResults.Where(p => p.ClassId == ClassID && p.LearningResultActive == true).Select(p => p.AccountId).ToArray();
+                List<Account> students = new List<Account>();
+                for (int i = 0; i < ids.Length; i++)
+                {
+                    int id = ids[i];
+                    var account = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3 && p.AccountActive == true).FirstOrDefault();
+                    if (account != null)
+                    {
+                        students.Add(account);
+                    }
+
+                }
+                //List<Account> listStudentByClassID = GetAllStudentByClassIdDAL(ClassID);
+                List<Account> listStudentAccounts = db.Accounts.Include(p => p.AccountInfo).Where(p => p.RoleId == 3 && p.AccountActive == true).ToList();
+                listStudentAccounts = listStudentAccounts.Except(students).ToList();
                 return listStudentAccounts;
             }
         }
