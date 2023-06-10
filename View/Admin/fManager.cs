@@ -99,12 +99,17 @@ namespace PBL3.View
 
             if (dgvCourse.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow i in dgvCourse.SelectedRows)
+                DialogResult result = MessageBox.Show("Bạn có muốn xóa hay không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(i.Cells[0].Value);
-                    bll.DeleteCourseBLL(id);
+                    foreach (DataGridViewRow i in dgvCourse.SelectedRows)
+                    {
+                        String maKhoaHoc = i.Cells[0].Value.ToString();
+                        bll.DeleteCourseBLL(maKhoaHoc);
+                    }
+                    MessageBox.Show("Xóa thành công!!!");
                 }
-                MessageBox.Show("Xóa thành công!!!");
+                
             }
             bll.LoadDataGridViewCourse(dgvCourse);
 
@@ -118,8 +123,8 @@ namespace PBL3.View
         {
             if (dgvCourse.SelectedRows.Count>0)
             {
-                int id = Convert.ToInt32(dgvCourse.SelectedRows[0].Cells[0].Value.ToString());
-                fAddCourse f = new fAddCourse(id);
+                String MaKhoaHoc = dgvCourse.SelectedRows[0].Cells[0].Value.ToString();
+                fAddCourse f = new fAddCourse(MaKhoaHoc);
                 f.ShowDialog();
                 new ManagerBLL().LoadDataGridViewCourse(dgvCourse);
             }
@@ -179,8 +184,8 @@ namespace PBL3.View
         {
             if (dgvClass.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvClass.SelectedRows[0].Cells[0].Value);
-                fManageClass f = new fManageClass(id);
+                string maLopHoc = dgvClass.SelectedRows[0].Cells[0].Value.ToString();
+                fManageClass f = new fManageClass(maLopHoc);
                 f.ShowDialog();
                 f.Dispose();
             }
@@ -191,13 +196,18 @@ namespace PBL3.View
             ManagerBLL bll  = new ManagerBLL(); 
             if (dgvClass.SelectedRows.Count > 0)
             {
-                foreach (DataGridViewRow i in dgvClass.SelectedRows)
+                DialogResult result = MessageBox.Show("Bạn có muôn xóa không?", "Xác nhận xóa!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(i.Cells[0].Value);
-                    bll.DeleteClassByClassIDBLL(id);
+                    foreach (DataGridViewRow i in dgvClass.SelectedRows)
+                    {
+                        String maLopHoc = i.Cells[0].Value.ToString();
+                        bll.DeleteClassByMaLopHocBLL(maLopHoc);
+                    }
+                    MessageBox.Show("Xóa thành công!");
+                    bll.LoadDataGridViewClass(dgvClass);
                 }
-                MessageBox.Show("Xóa thành công!");
-                bll.LoadDataGridViewClass(dgvClass);
+                
             }
         }
 
@@ -283,9 +293,6 @@ namespace PBL3.View
                             MessageBox.Show("Xóa tài khoản thất bại !!! ");
                         }
                     }
-
-                    
-
                 }
 
             }

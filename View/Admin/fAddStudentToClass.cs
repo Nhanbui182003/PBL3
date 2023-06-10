@@ -20,7 +20,7 @@ namespace PBL3.View.Admin
             InitializeComponent();
 
             ManagerBLL bll = new ManagerBLL();
-            bll.LoadDataGridViewStudentAccounts(dgvStudentAccount);
+            bll.LoadDataGridViewStudentAccounts(dgvStudentAccount, classid);
             dgvStudentAccount.Columns[0].HeaderText = "Mã số học viên";
             dgvStudentAccount.Columns[1].HeaderText = "Tên học viên";
             dgvStudentAccount.Columns[2].HeaderText = "Số điện thoại";
@@ -38,10 +38,10 @@ namespace PBL3.View.Admin
             {
                 foreach (DataGridViewRow i in dgvStudentAccount.SelectedRows)
                 {
-                    int AccountId = Convert.ToInt32(i.Cells[0].Value);
-                    if (bll.IsExistingStudentBLL(AccountId, ClassID)==false)
+                    String MaHocVien = i.Cells[0].Value.ToString();
+                    if (bll.IsExistingStudentBLL(MaHocVien, ClassID)==false)
                     {
-                        bll.AddStudentToClassBLL(AccountId,ClassID);
+                        bll.AddStudentToClassBLL(MaHocVien,ClassID);
                     }
                 }
                 MessageBox.Show("Thêm thành công!");

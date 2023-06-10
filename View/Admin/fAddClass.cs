@@ -19,6 +19,7 @@ namespace PBL3.View.Admin
         public fAddClass()
         {
             InitializeComponent();
+            this.Text = "Thêm lớp học";
             SetCBB();
             
         }
@@ -26,6 +27,7 @@ namespace PBL3.View.Admin
         {
             ClassID= id;
             InitializeComponent();
+            this.Text = "Cập nhật lớp học";
             SetCBB();
 
             ManagerBLL bll = new ManagerBLL();
@@ -98,7 +100,7 @@ namespace PBL3.View.Admin
                                     MaxStudent = Convert.ToInt32(txtMaxStudent.Text),
                                     ClassActive = true
                                 };
-                           
+                                
                                 if (bll.isExistingClassBLL(c) == false)
                                 {
                                     bll.AddClassBLL(c);

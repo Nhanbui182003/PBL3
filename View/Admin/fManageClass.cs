@@ -17,19 +17,23 @@ namespace PBL3.View.Admin
     public partial class fManageClass : Form
     {
         private int ClassID;
-        public fManageClass(int id)
+        public fManageClass(String maLopHoc)
         {
             InitializeComponent();
-            ClassID = id;
+            
+            ClassID = int.Parse(maLopHoc.Substring(1));
             SetCBB();
 
             ManagerBLL bll = new ManagerBLL();
             bll.LoadDataGridViewStudent(dgvStudent,ClassID);
-            dgvStudent.Columns[0].HeaderText = "Mã số học viên";
-            dgvStudent.Columns[1].HeaderText = "Tên học viên";
-            dgvStudent.Columns[2].HeaderText = "Số điện thoại";
-            dgvStudent.Columns[3].HeaderText = "Email";
-            dgvStudent.Columns[4].HeaderText = "Giới tính";
+            if (dgvStudent.Columns.Count > 4)
+            {
+                dgvStudent.Columns[0].HeaderText = "Mã số học viên";
+                dgvStudent.Columns[1].HeaderText = "Tên học viên";
+                dgvStudent.Columns[2].HeaderText = "Số điện thoại";
+                dgvStudent.Columns[3].HeaderText = "Email";
+                dgvStudent.Columns[4].HeaderText = "Đã nộp tiền";
+            }
 
             ShowClassInfo();
 
@@ -80,8 +84,8 @@ namespace PBL3.View.Admin
             {
                 foreach (DataGridViewRow i in dgvStudent.SelectedRows)
                 {
-                    int id = Convert.ToInt32(i.Cells[0].Value);
-                    bll.DeleteStudentBLL(id, ClassID);
+                    String MaHocVien = i.Cells[0].Value.ToString();
+                    bll.DeleteStudentBLL(MaHocVien, ClassID);
                 }
                 MessageBox.Show("Xoá thành công!");
             }
@@ -105,8 +109,8 @@ namespace PBL3.View.Admin
             ManagerBLL bll = new ManagerBLL();
             if (dgvStudent.SelectedRows.Count > 0)
             {
-                int accountId = Convert.ToInt32(dgvStudent.SelectedRows[0].Cells[0].Value);
-                Bill studentBill = bll.GetBillOfStudentBLL(accountId, ClassID);
+                String MaHocVien = dgvStudent.SelectedRows[0].Cells[0].Value.ToString();
+                Bill studentBill = bll.GetBillOfStudentBLL(MaHocVien, ClassID);
                 if (studentBill.Status == false)
                 {
                     bll.ConfirmPaymentBLL(studentBill);
@@ -117,6 +121,7 @@ namespace PBL3.View.Admin
                     MessageBox.Show("Học viên đó đã nộp!");
                 }
             }
+            bll.LoadDataGridViewStudent(dgvStudent, ClassID);
         }
     }
 }

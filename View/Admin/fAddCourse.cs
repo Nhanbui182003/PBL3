@@ -21,11 +21,13 @@ namespace PBL3.View.Admin
         public fAddCourse()
         {
             InitializeComponent();
+            this.Text = "Thêm khóa học";
         }
-        public fAddCourse(int id)
-        {
+        public fAddCourse(String MaKhoaHoc)
+        {   
+            id = int.Parse(MaKhoaHoc.Substring(1));
             InitializeComponent();
-            this.id = id;
+            this.Text = "Cập nhật khóa học";
             var course = new ManagerBLL().GetCourseByIDBLL(id);
             txtName.Text = course.CourseName;
             txtDescription.Text = course.Description;
@@ -39,17 +41,17 @@ namespace PBL3.View.Admin
             ManagerBLL bll = new ManagerBLL();
             if (dtStartDate.Value.CompareTo(dtEndDate.Value)<=0)
             {
-                Course newCourse = new Course()
+                if (txtPrice.Text != "")
                 {
-                    CourseName = txtName.Text,
-                    StartDate = dtStartDate.Value.Date,
-                    EndDate = dtEndDate.Value.Date,
-                    Description = txtDescription.Text,
-                    Price = Convert.ToInt32(txtPrice.Text),
-                    CourseActive = true
-                };
-                if (bll.isExistingCourseBLL(newCourse)==false)
-                {
+                    Course newCourse = new Course()
+                    {
+                        CourseName = txtName.Text,
+                        StartDate = dtStartDate.Value.Date,
+                        EndDate = dtEndDate.Value.Date,
+                        Description = txtDescription.Text,
+                        Price = Convert.ToInt32(txtPrice.Text),
+                        CourseActive = true
+                    };
                     if (id == 0)
                     {
                         bll.AddCourseBLL(newCourse);
@@ -59,16 +61,25 @@ namespace PBL3.View.Admin
                     else
                     {
                         newCourse.Id = id;
-                        bll.UpdateCourseBLL(newCourse);
-                        MessageBox.Show("Cập nhật thành công!");
+                        if (bll.isExpiredCourseBLL(id)!=true)
+                        {
+                            bll.UpdateCourseBLL(newCourse);
+                            MessageBox.Show("Cập nhật thành công!");
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Khóa học đã hết hạn không thể thay đổi giá tiền. Cập nhật không thành công!");
+                        }    
+                        
                     }
                     Dispose();
+                    // Trường hợp thêm 
+
                 } else
                 {
-                    MessageBox.Show("Khóa học đã tồn tại");
+                    MessageBox.Show("Vui lòng nhập giá tiền!");
                 }
-                // Trường hợp thêm 
-                
+
             }
             else
             {
