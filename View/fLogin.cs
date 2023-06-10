@@ -40,7 +40,7 @@ namespace PBL3
                 if (account.RoleId == 2)
                 {
                     this.Hide();
-                    fTeacher f = new fTeacher(account.Id);
+                    fMainTeacher f = new fMainTeacher(account.Id);
                     f.StartPosition = FormStartPosition.CenterScreen;
                     f.ShowDialog();
                 } else

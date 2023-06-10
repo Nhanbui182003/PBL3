@@ -16,44 +16,7 @@ namespace PBL3.BLL
         {
             DalClass= new DAL_Class();  
         }
-        public void LoadDataClass(DataGridView dg, int id)
-        {
-            dg.DataSource = DalClass.GetClassOfTeacher(id);
-            dg.Columns[0].Width = (int)(dg.Width * 0.1);
-            dg.Columns[1].Width = (int)(dg.Width * 0.4);
-            dg.Columns[2].Width = (int)(dg.Width * 0.3);
-            dg.Columns[3].Width = (int)(dg.Width * 0.2);
-
-            // đặt tên cho các header
-            foreach (DataGridViewColumn column in dg.Columns)
-            {
-                if (column.Name == "Id")
-                {
-                    column.HeaderText = "Mã lớp";
-                }
-                else if (column.Name == "ClassName")
-                {
-                    column.HeaderText = "Tên lớp";
-                }
-                else if (column.Name == "MaxStudent")
-                {
-                    column.HeaderText = "Số Học viên tối đa";
-                }
-                else if (column.Name == "Coursename")
-                {
-                    column.HeaderText = "Tên khóa học";
-                }
-
-            }
-            DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
-            colSoThuTu.HeaderText = "Số thứ tự";
-            colSoThuTu.Name = "colSoThuTu";
-            dg.Columns.Insert(0, colSoThuTu);
-            for (int i = 0; i < dg.Rows.Count; i++)
-            {
-                dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
-            }
-        }
+        
         public void GetAllCourse(ComboBox cb)
         {
             cb.DataSource = DalClass.GetAllCourse();
@@ -62,9 +25,10 @@ namespace PBL3.BLL
         }
         public void SearchClass(int idTeacher,int idCourse, string nameClass, DataGridView dg)
         {
+            
             dg.DataSource = DalClass.SearchClass(idTeacher, idCourse, nameClass);
             dg.Columns[0].Width = (int)(dg.Width * 0.1);
-            dg.Columns[1].Width = (int)(dg.Width * 0.4);
+            dg.Columns[1].Width = (int)(dg.Width * 0.2);
             dg.Columns[2].Width = (int)(dg.Width * 0.3);
             dg.Columns[3].Width = (int)(dg.Width * 0.2);
             foreach (DataGridViewColumn column in dg.Columns)
@@ -90,7 +54,10 @@ namespace PBL3.BLL
             DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
             colSoThuTu.HeaderText = "Số thứ tự";
             colSoThuTu.Name = "colSoThuTu";
-            dg.Columns.Insert(0, colSoThuTu);
+            if (dg.Columns[0].Name != "colSoThuTu")
+            {
+                dg.Columns.Insert(0, colSoThuTu);
+            }
             for (int i = 0; i < dg.Rows.Count; i++)
             {
                 dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
@@ -170,7 +137,10 @@ namespace PBL3.BLL
             DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
             colSoThuTu.HeaderText = "Số thứ tự";
             colSoThuTu.Name = "colSoThuTu";
-            dg.Columns.Insert(0,colSoThuTu);
+            if (dg.Columns[0].Name != "colSoThuTu")
+            {
+                dg.Columns.Insert(0, colSoThuTu);
+            }
             for (int i = 0; i < dg.Rows.Count; i++)
             {
                 dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
@@ -214,7 +184,10 @@ namespace PBL3.BLL
             DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
             colSoThuTu.HeaderText = "Số thứ tự";
             colSoThuTu.Name = "colSoThuTu";
-            dg.Columns.Insert(0, colSoThuTu);
+            if (dg.Columns[0].Name != "colSoThuTu")
+            {
+                dg.Columns.Insert(0, colSoThuTu);
+            }
             for (int i = 0; i < dg.Rows.Count; i++)
             {
                 dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();
@@ -262,7 +235,10 @@ namespace PBL3.BLL
             DataGridViewTextBoxColumn colSoThuTu = new DataGridViewTextBoxColumn();
             colSoThuTu.HeaderText = "Số thứ tự";
             colSoThuTu.Name = "colSoThuTu";
-            dg.Columns.Insert(0, colSoThuTu);
+            if (dg.Columns[0].Name != "colSoThuTu")
+            {
+                dg.Columns.Insert(0, colSoThuTu);
+            }
             for (int i = 0; i < dg.Rows.Count; i++)
             {
                 dg.Rows[i].Cells["colSoThuTu"].Value = (i + 1).ToString();

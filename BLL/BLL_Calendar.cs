@@ -1,4 +1,5 @@
 ﻿using PBL3.DAL;
+using PBL3.View.Giảng_viên;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +78,14 @@ namespace PBL3.BLL
             dg.Columns[3].Width = (int)(dg.Width * 0.2);
 
 
+        }
+        public bool CheckCalendarOfTeacher(DateTime useDate,int IdTeacher)
+        {
+            if(dalClass.CheckCalendarOfTeacher(useDate, IdTeacher))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

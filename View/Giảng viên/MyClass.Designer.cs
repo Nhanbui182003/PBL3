@@ -37,11 +37,12 @@
             this.btnAddFile = new System.Windows.Forms.Button();
             this.btnSortDocument = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbxTimeRate = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSortStudent = new System.Windows.Forms.Button();
             this.cbxSortStudent = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnRate = new System.Windows.Forms.Button();
             this.dtgvListStudentInClass = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,8 +61,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dtgvListLesson = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbxTimeRate = new System.Windows.Forms.TextBox();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvListDocument)).BeginInit();
@@ -103,7 +102,7 @@
             // 
             this.btnDelete.Location = new System.Drawing.Point(438, 32);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(98, 41);
+            this.btnDelete.Size = new System.Drawing.Size(120, 41);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa tài liệu";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -127,7 +126,7 @@
             "Ngày đăng tải"});
             this.cbxSortDocument.Location = new System.Drawing.Point(767, 42);
             this.cbxSortDocument.Name = "cbxSortDocument";
-            this.cbxSortDocument.Size = new System.Drawing.Size(200, 24);
+            this.cbxSortDocument.Size = new System.Drawing.Size(200, 25);
             this.cbxSortDocument.TabIndex = 4;
             // 
             // dtgvListDocument
@@ -165,7 +164,6 @@
             this.tabPage1.Controls.Add(this.tbxTimeRate);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.panel5);
-            this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.btnRate);
             this.tabPage1.Controls.Add(this.dtgvListStudentInClass);
             this.tabPage1.Controls.Add(this.panel1);
@@ -177,6 +175,22 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thông tin học viên";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbxTimeRate
+            // 
+            this.tbxTimeRate.Location = new System.Drawing.Point(437, 512);
+            this.tbxTimeRate.Name = "tbxTimeRate";
+            this.tbxTimeRate.Size = new System.Drawing.Size(329, 25);
+            this.tbxTimeRate.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 515);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(350, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "CHÚ Ý: Khoảng thời gian có thể đánh giá học viên là:";
             // 
             // panel5
             // 
@@ -207,7 +221,7 @@
             "Điểm trung bình"});
             this.cbxSortStudent.Location = new System.Drawing.Point(41, 52);
             this.cbxSortStudent.Name = "cbxSortStudent";
-            this.cbxSortStudent.Size = new System.Drawing.Size(203, 24);
+            this.cbxSortStudent.Size = new System.Drawing.Size(203, 25);
             this.cbxSortStudent.TabIndex = 1;
             // 
             // label2
@@ -215,23 +229,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sắp xếp theo";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(885, 501);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(102, 51);
-            this.btnCancel.TabIndex = 17;
-            this.btnCancel.Text = "Thoát";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnRate
             // 
-            this.btnRate.Location = new System.Drawing.Point(763, 501);
+            this.btnRate.Location = new System.Drawing.Point(885, 501);
             this.btnRate.Name = "btnRate";
             this.btnRate.Size = new System.Drawing.Size(102, 51);
             this.btnRate.TabIndex = 10;
@@ -272,7 +276,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(38, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 16);
+            this.label5.Size = new System.Drawing.Size(91, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Tên học viên";
             // 
@@ -290,7 +294,7 @@
             // 
             this.tbxNameStudent.Location = new System.Drawing.Point(41, 28);
             this.tbxNameStudent.Name = "tbxNameStudent";
-            this.tbxNameStudent.Size = new System.Drawing.Size(203, 22);
+            this.tbxNameStudent.Size = new System.Drawing.Size(203, 25);
             this.tbxNameStudent.TabIndex = 9;
             // 
             // panel2
@@ -311,7 +315,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(5, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
+            this.label4.Size = new System.Drawing.Size(80, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Mã lớp học";
             // 
@@ -319,7 +323,7 @@
             // 
             this.tbxIdClass.Location = new System.Drawing.Point(151, 9);
             this.tbxIdClass.Name = "tbxIdClass";
-            this.tbxIdClass.Size = new System.Drawing.Size(194, 22);
+            this.tbxIdClass.Size = new System.Drawing.Size(194, 25);
             this.tbxIdClass.TabIndex = 12;
             // 
             // label1
@@ -327,7 +331,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên lớp học ";
             // 
@@ -335,14 +339,14 @@
             // 
             this.tbxNameClass.Location = new System.Drawing.Point(151, 50);
             this.tbxNameClass.Name = "tbxNameClass";
-            this.tbxNameClass.Size = new System.Drawing.Size(194, 22);
+            this.tbxNameClass.Size = new System.Drawing.Size(194, 25);
             this.tbxNameClass.TabIndex = 4;
             // 
             // tbxMaxStudent
             // 
             this.tbxMaxStudent.Location = new System.Drawing.Point(151, 105);
             this.tbxMaxStudent.Name = "tbxMaxStudent";
-            this.tbxMaxStudent.Size = new System.Drawing.Size(194, 22);
+            this.tbxMaxStudent.Size = new System.Drawing.Size(194, 25);
             this.tbxMaxStudent.TabIndex = 6;
             // 
             // label3
@@ -350,7 +354,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 16);
+            this.label3.Size = new System.Drawing.Size(127, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Số lượng học viên";
             // 
@@ -359,7 +363,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(215, 30);
             this.tabControl1.Location = new System.Drawing.Point(12, 9);
             this.tabControl1.Name = "tabControl1";
@@ -398,22 +402,6 @@
             this.label6.Size = new System.Drawing.Size(83, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Lịch dạy";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 515);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(316, 16);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "CHÚ Ý: Khoảng thời gian có thể đánh giá học viên là:";
-            // 
-            // tbxTimeRate
-            // 
-            this.tbxTimeRate.Location = new System.Drawing.Point(376, 515);
-            this.tbxTimeRate.Name = "tbxTimeRate";
-            this.tbxTimeRate.Size = new System.Drawing.Size(346, 22);
-            this.tbxTimeRate.TabIndex = 20;
             // 
             // MyClass
             // 
@@ -461,7 +449,6 @@
         private System.Windows.Forms.TextBox tbxMaxStudent;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnDownLoadFile;
         private System.Windows.Forms.Button btnDelete;

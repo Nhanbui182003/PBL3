@@ -16,7 +16,7 @@ namespace PBL3.DAL
         public AccountInfo GetAccountInfoFromIdAccount(int id)
         {
             using(db = new DBEnglishCenterEntities()) {
-                return db.AccountInfoes.Where(s => s.AccountId == id).FirstOrDefault();
+                return db.AccountInfoes.Where(s => s.AccountId == id && s.Account.AccountActive == true).FirstOrDefault();
             }
             
         }
@@ -25,7 +25,7 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 LearningResult lr = new LearningResult();
-                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();
+                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass && s.LearningResultActive == true).FirstOrDefault();
                 return lr;
             }   
             
@@ -37,7 +37,7 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 LearningResult lr = new LearningResult();
-                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass).FirstOrDefault();
+                lr = db.LearningResults.Where(s => s.AccountId == idStudent && s.ClassId == idClass && s.LearningResultActive == true ).FirstOrDefault();
                 if (assignment != "")
                 {
                     lr.AssignmentPoint = Convert.ToDouble(assignment);

@@ -28,8 +28,9 @@ namespace PBL3.View.Giảng_viên
             IdTeacher = idTeacher;  
             bllClass= new BLL_Class();
             bllDocument = new BLL_Document();   
-            bllCalendar = new BLL_Calendar();   
-            
+            bllCalendar = new BLL_Calendar();
+            bllClass.GetListStudent(IdClass, dtgvListStudentInClass);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace PBL3.View.Giảng_viên
                 if (dtgvListStudentInClass.SelectedRows.Count == 1)
                 {
                     DataGridViewRow row = dtgvListStudentInClass.SelectedRows[0];
-                    int id = Convert.ToInt32(row.Cells["id"].Value.ToString());
+                    int id = Convert.ToInt32(row.Cells["id"].Value.ToString().Substring(2));
                     LearningResultOfStudent f = new LearningResultOfStudent(id, IdClass);
                     f.LoadData += F_LoadData;
                     f.StartPosition = FormStartPosition.CenterScreen;

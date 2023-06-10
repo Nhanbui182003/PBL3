@@ -1,4 +1,5 @@
 ﻿using PBL3.DTO;
+using PBL3.View.Giảng_viên;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,18 +18,19 @@ namespace PBL3.DAL
         {
             db = new DBEnglishCenterEntities(); 
         }
+
         public dynamic GetClassOfTeacher(int id)
         {
             using(db = new DBEnglishCenterEntities())
             {
                 List<LearningResult> lr = new List<LearningResult>();
-                lr = db.LearningResults.Where(s => s.AccountId == id).ToList();
+                lr = db.LearningResults.Where(s => s.AccountId == id ).ToList();
                 List<Class> ListClass = new List<Class>();
                 foreach (LearningResult lrResult in lr)
                 {
-                    ListClass.Add(db.Classes.Where(s => s.Id == lrResult.ClassId).FirstOrDefault());
+                    ListClass.Add(db.Classes.Where(s => s.Id == lrResult.ClassId ).FirstOrDefault());
                 }
-                var ds = ListClass.Where(s => s.ClassActive == true).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
+                var ds = ListClass.Where(s => s.ClassActive == true).Select(s => new {Id = GenerateClassID(s.Id), s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
                 return ds;
             }
             
@@ -44,7 +46,11 @@ namespace PBL3.DAL
                 listC = db.Courses.ToList();
                 foreach (Course item in listC)
                 {
-                    listCourse.Add(new CbbCourse() { Id = item.Id, Name = item.CourseName });
+                    if(item.CourseActive== true)
+                    {
+                        listCourse.Add(new CbbCourse() { Id = item.Id, Name = item.CourseName });
+                    }    
+                    
                 }
 
 
@@ -62,20 +68,22 @@ namespace PBL3.DAL
                 List<Class> ListClass = new List<Class>();
                 foreach (LearningResult lrResult in lr)
                 {
-                    ListClass.Add(db.Classes.Where(s => s.Id == lrResult.ClassId).FirstOrDefault());
+                    ListClass.Add(db.Classes.Where(s => s.Id == lrResult.ClassId ).FirstOrDefault());
                 }
-                if (idCourse == 0)
-                {
-                    var ds = ListClass.Where(s => s.ClassName.Contains(nameClass)).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
-                    return ds;
-                }
-                else
-                {
+               
+                 if (idCourse == 0){
+                        var ds = ListClass.Where(s => s.ClassName.Contains(nameClass) && s.ClassActive == true ).Select(s => new {Id = GenerateClassID(s.Id), s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
+                        return ds;
+                    }
+                 else { 
+                    
 
-                    var ds = ListClass.Where(s => s.ClassName.Contains(nameClass) && s.CourseId == idCourse).Select(s => new { s.Id, s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
-                    return ds;
+                        var ds = ListClass.Where(s => s.ClassName.Contains(nameClass) && s.CourseId == idCourse && s.ClassActive == true).Select(s => new {Id = GenerateClassID(s.Id), s.ClassName, s.MaxStudent, s.Course.CourseName }).ToList();
+                        return ds;
 
-                }
+                    }
+               
+                
             }
             
             
@@ -158,7 +166,7 @@ namespace PBL3.DAL
         public Class GetClassFromId(int id)
         {
             using(db = new DBEnglishCenterEntities()) {
-                Class cl = db.Classes.Where(s => s.Id == id).FirstOrDefault();
+                Class cl = db.Classes.Where(s => s.Id == id && s.ClassActive == true).FirstOrDefault();
                 return cl;
             }
            
@@ -167,7 +175,7 @@ namespace PBL3.DAL
         {
             using (db = new DBEnglishCenterEntities())
             {
-                Class cl = db.Classes.Where(s => s.Id == id).FirstOrDefault();
+                Class cl = db.Classes.Where(s => s.Id == id && s.ClassActive == true).FirstOrDefault();
                 Course course = cl.Course;
                 return course;
             }
@@ -178,8 +186,8 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 List<LearningResult> lr = new List<LearningResult>();
-                lr = db.LearningResults.Where(s => s.ClassId == idClass && s.Account.RoleId == 3).ToList();
-                var ds = lr.Select(s => new { s.Account.Id, s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
+                lr = db.LearningResults.Where(s => s.ClassId == idClass && s.Account.RoleId == 3 && s.LearningResultActive == true ).ToList();
+                var ds = lr.Select(s => new { Id = GenerateStudentID( s.Account.Id), s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
 
                 return ds;
             }
@@ -190,7 +198,7 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 List<LearningResult> lr = new List<LearningResult>();
-                lr = db.LearningResults.Where(s => s.ClassId == IdClass && s.Account.RoleId == 3).ToList();
+                lr = db.LearningResults.Where(s => s.ClassId == IdClass && s.Account.RoleId == 3 && s.Account.AccountActive == true && s.LearningResultActive == true).ToList();
 
                 switch (type)
                 {
@@ -214,7 +222,7 @@ namespace PBL3.DAL
 
                         break;
                 }
-                var ds = lr.Select(s => new { s.Account.Id, s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
+                var ds = lr.Select(s => new {Id = GenerateStudentID( s.Account.Id), s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
                 return ds;
             }
             
@@ -226,9 +234,8 @@ namespace PBL3.DAL
             using(db = new DBEnglishCenterEntities())
             {
                 List<LearningResult> lr = new List<LearningResult>();
-                lr = db.LearningResults.Where(s => s.ClassId == idClass && s.Account.RoleId == 3 && s.Account.AccountInfo.Name.Contains(nameStudent)).ToList();
-                var ds = lr.Select(s => new { s.Account.Id, s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
-
+                lr = db.LearningResults.Where(s => s.ClassId == idClass && s.Account.RoleId == 3 && s.Account.AccountInfo.Name.Contains(nameStudent) && s.LearningResultActive == true && s.Account.AccountActive == true).ToList();
+                var ds = lr.Select(s => new {Id = GenerateStudentID( s.Account.Id) , s.Account.AccountInfo.Name, s.Account.AccountInfo.Birthday, s.Account.AccountInfo.Gender, s.AssignmentPoint, s.MidTermExamPoint, s.FinalExamPoint }).ToList();
                 return ds;
             }
            
@@ -262,6 +269,49 @@ namespace PBL3.DAL
                 
             }
         }
+        public bool CheckCalendarOfTeacher(DateTime useDate,int IdTeacher)
+        {
+            List<LearningResult> lr = new List<LearningResult>();
+            lr = db.LearningResults.Where(s => s.AccountId == IdTeacher && s.Class.ClassActive == true).ToList();
+            List<Calendar> cal = new List<Calendar>();
+            Class lop = new Class();
+            foreach (LearningResult lrResult in lr)
+            {
+
+                lop = db.Classes.Where(s => s.Id == lrResult.ClassId).FirstOrDefault();
+                if (CheckTime(lop, useDate))
+                {
+                    cal.AddRange(db.Calendars.Where(s => s.ClassId == lop.Id).ToList());
+                }
+
+
+            }
+            foreach (Calendar item in cal)
+            {
+                Class cl = item.Class;
+                if (CheckTime(cl, useDate)){
+                    if (useDate.DayOfWeek.ToString() == item.DayLesson)
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            return false;
+        }
+        public String GenerateClassID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maLopHoc = "C" + numberPart;
+            return maLopHoc;
+        }
+        public String GenerateStudentID(int ID)
+        {
+            String numberPart = ID.ToString().PadLeft(9, '0');
+            String maLopHoc = "SV" + numberPart;
+            return maLopHoc;
+        }
+
 
     }
 }

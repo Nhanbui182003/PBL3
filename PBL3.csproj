@@ -188,6 +188,12 @@
     <Compile Include="View\Admin\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Giảng viên\fAccountOfTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fAccountOfTeacher.Designer.cs">
+      <DependentUpon>fAccountOfTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Giảng viên\fCalendarInDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,12 @@
     </Compile>
     <Compile Include="View\Giảng viên\fDocument.Designer.cs">
       <DependentUpon>fDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Giảng viên\fMainTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Giảng viên\fMainTeacher.Designer.cs">
+      <DependentUpon>fMainTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Giảng viên\fTeacher.cs">
       <SubType>Form</SubType>
@@ -309,11 +321,17 @@
     <EmbeddedResource Include="View\Admin\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fAccountOfTeacher.resx">
+      <DependentUpon>fAccountOfTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Giảng viên\fCalendarInDay.resx">
       <DependentUpon>fCalendarInDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Giảng viên\fDocument.resx">
       <DependentUpon>fDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Giảng viên\fMainTeacher.resx">
+      <DependentUpon>fMainTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Giảng viên\fTeacher.resx">
       <DependentUpon>fTeacher.cs</DependentUpon>

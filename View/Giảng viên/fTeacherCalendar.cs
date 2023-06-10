@@ -1,8 +1,10 @@
-﻿using PBL3.DTO;
+﻿using PBL3.BLL;
+using PBL3.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,12 +19,13 @@ namespace PBL3.View.Giảng_viên
         int IdTeacher;
         public List<List<Button>> Matrix { get; set; }
         private List<string> dateOfWeek = new List<string>() { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-
+        private BLL_Calendar bllCalendar;
         #endregion
         public fTeacherCalendar(int idTeacher)
         {
             InitializeComponent();
-            IdTeacher = idTeacher;  
+            IdTeacher = idTeacher;
+            bllCalendar = new BLL_Calendar();
             fLoad();
         }
         void fLoad()
@@ -102,14 +105,17 @@ namespace PBL3.View.Giảng_viên
                     line++;
                 }
 
-                if (IsEqualDatetime(useDate, date))
+                
+                
+                if(bllCalendar.CheckCalendarOfTeacher(useDate, IdTeacher) == true )
                 {
                     btn.BackColor = Color.Aqua;
                 }
-                if (IsEqualDatetime(useDate, DateTime.Now))
+                if (IsEqualDatetime(useDate, DateTime.Now) == true || IsEqualDatetime(useDate, date))
                 {
                     btn.BackColor = Color.Yellow;
                 }
+                
                 useDate = useDate.AddDays(1);
 
 
@@ -143,6 +149,11 @@ namespace PBL3.View.Giảng_viên
         private void btnNextMonth_Click(object sender, EventArgs e)
         {
             dtpkDateSelection.Value =  dtpkDateSelection.Value.AddMonths(1);
+        }
+
+        private void fTeacherCalendar_Load(object sender, EventArgs e)
+        {
+            dtpkDateSelection.Value = DateTime.Now;
         }
     }
 }
