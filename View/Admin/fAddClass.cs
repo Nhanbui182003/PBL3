@@ -126,7 +126,7 @@ namespace PBL3.View.Admin
                                         FromLesson = startLesson2,
                                         ToLesson = endLesson2,
                                     };
-                                    if (bll.isExistingCalendarByAccountIDBLL(t.AccountId,t1)==true|| bll.isExistingCalendarByAccountIDBLL(t.AccountId, t1) == true)
+                                    if (bll.isExistingCalendarByAccountIDBLL(t.AccountId,t1,0)==true|| bll.isExistingCalendarByAccountIDBLL(t.AccountId, t1, 0) == true)
                                     {
                                         bll.DeleteClassByClassIDBLL(c.Id);
                                         MessageBox.Show("Giảng viên trên đã tồn tại lịch học");
@@ -166,14 +166,22 @@ namespace PBL3.View.Admin
                                 calendas[1].DayLesson= cbbDay2.SelectedItem.ToString();
                                 calendas[1].FromLesson = startLesson2;
                                 calendas[1].ToLesson = endLesson2;
-                                if (bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[0]) == true || bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[1]) == true)
+                                if (bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[0],ClassID) == true || bll.isExistingCalendarByAccountIDBLL(newTeacher.AccountId, calendas[1],ClassID) == true)
                                 {
                                     MessageBox.Show("Giảng viên trên đã tồn tại lịch học");
                                 }
                                 else
                                 {
-                                    bll.UpdateClassBLL(newClass, newTeacher, calendas);
-                                    MessageBox.Show("Cập nhật thành công!");
+                                    try
+                                    {
+                                        bll.UpdateClassBLL(newClass, newTeacher, calendas);
+                                        MessageBox.Show("Cập nhật thành công!");
+                                    } catch (Exception ex)
+                                    {
+                                        MessageBox.Show(ex.Message);
+                                    }
+                                    
+                                    
                                     Dispose();
                                 }
                             }

@@ -197,9 +197,9 @@ namespace PBL3.BLL
         {
             new ManagerDAL().ConfirmPaymentDAL(oldBill);
         }
-        public bool isExistingCalendarByAccountIDBLL(int accountId, Calendar CheckedCalendar)
+        public bool isExistingCalendarByAccountIDBLL(int accountId, Calendar CheckedCalendar, int classId)
         {
-            return new ManagerDAL().isExistingCalendarByAccountIDDAL(accountId, CheckedCalendar);
+            return new ManagerDAL().isExistingCalendarByAccountIDDAL(accountId, CheckedCalendar, classId);
         }
 
         public dynamic getRevenueBLL(DateTime checkIn, DateTime checkOut, int index, String text)

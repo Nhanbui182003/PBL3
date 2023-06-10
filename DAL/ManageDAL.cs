@@ -469,11 +469,11 @@ namespace PBL3.DAL
                 db.SaveChanges();
             }
         }
-        public bool isExistingCalendarByAccountIDDAL(int accountId, Calendar CheckedCalendar)
+        public bool isExistingCalendarByAccountIDDAL(int accountId, Calendar CheckedCalendar, int classId)
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var learningResults = db.LearningResults.Where(p => p.AccountId == accountId && p.LearningResultActive==true);
+                var learningResults = db.LearningResults.Where(p => p.AccountId == accountId && p.LearningResultActive == true && p.ClassId != classId) ;
                 foreach (var l in learningResults)
                 {
                     var calendars = db.Calendars.Where(p=>p.ClassId== l.ClassId);
