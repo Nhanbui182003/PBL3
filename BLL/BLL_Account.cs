@@ -33,7 +33,7 @@ namespace PBL3.BLL
             {
                 if (column.Name == "Id")
                 {
-                    column.HeaderText = "Mã học viên";
+                    column.HeaderText = "Mã tài khoản";
                 }
                 else if (column.Name == "UserName")
                 {
@@ -77,6 +77,45 @@ namespace PBL3.BLL
         public void SearchAccount(string UserName,int idRole , DataGridView dg)
         {
             dg.DataSource = dalAccount.SearchAccountFromUserNameAndIdRole(UserName, idRole);
+            dg.Columns[0].Width = (int)(dg.Width * 0.2);
+            dg.Columns[1].Width = (int)(dg.Width * 0.2);
+            dg.Columns[2].Width = (int)(dg.Width * 0.2);
+            dg.Columns[3].Width = (int)(dg.Width * 0.2);
+            dg.Columns[4].Width = (int)(dg.Width * 0.2);
+            dg.Columns[5].Width = (int)(dg.Width * 0.1);
+            dg.Columns[6].Width = (int)(dg.Width * 0.1);
+            foreach (DataGridViewColumn column in dg.Columns)
+            {
+                if (column.Name == "Id")
+                {
+                    column.HeaderText = "Mã tài khoản";
+                }
+                else if (column.Name == "UserName")
+                {
+                    column.HeaderText = "Tên hiển thị";
+                }
+                else if (column.Name == "RoleName")
+                {
+                    column.HeaderText = "Loại tài khoản";
+                }
+                else if (column.Name == "Name")
+                {
+                    column.HeaderText = "Họ và tên";
+                }
+                else if (column.Name == "Address")
+                {
+                    column.HeaderText = "Địa chỉ";
+                }
+                else if (column.Name == "Gender")
+                {
+                    column.HeaderText = "Giới tính";
+                }
+                else if (column.Name == "Birthday")
+                {
+                    column.HeaderText = "Ngày sinh";
+                }
+
+            }
         }
         public bool AddAccount(Account a, AccountInfo info)
         {
