@@ -26,14 +26,14 @@ namespace PBL3.BLL
         public String GenerateStudentID(int ID)
         {
             String numberPart = ID.ToString().PadLeft(9, '0');
-            String maLopHoc = "SV" + numberPart;
-            return maLopHoc;
+            String maHocVien = "SV" + numberPart;
+            return maHocVien;
         }
         public String GenerateTeacherID(int ID)
         {
             String numberPart = ID.ToString().PadLeft(9, '0');
-            String maLopHoc = "GV" + numberPart;
-            return maLopHoc;
+            String maGiangVien = "GV" + numberPart;
+            return maGiangVien;
         }
         public List<Course> GetALlCourseBLL()
         {
@@ -114,11 +114,15 @@ namespace PBL3.BLL
         {
             return new ManagerDAL().GetAllStudentByClassIdDAL(classID);
         }
-
+        public dynamic GetAllStudentAndStatusBillByClassIdBLL(int classId)
+        {
+            return new ManagerDAL().GetAllStudentByClassId(classId);
+        }
         public void LoadDataGridViewStudent(DataGridView dgv, int classID)
         {
-            dgv.DataSource = GetAllStudentByClassIdBLL(classID).Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
-            
+            //dgv.DataSource = GetAllStudentByClassIdBLL(classID).Select(p => new { MaHocVien = GenerateStudentID(p.Id), p.AccountInfo.Name, p.AccountInfo.Phone, p.AccountInfo.Email, p.AccountInfo.Gender }).ToList();
+            dgv.DataSource = GetAllStudentAndStatusBillByClassIdBLL(classID);
+                        
         }
         public bool IsExistingStudentBLL(String MaHocVien , int classID)
         {

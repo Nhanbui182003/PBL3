@@ -201,7 +201,6 @@ namespace PBL3.DAL
                     {
                         students.Add(account);
                     }
-
                 }
                 return students;
             }
@@ -210,27 +209,31 @@ namespace PBL3.DAL
         {
             using (DBEnglishCenterEntities db = new DBEnglishCenterEntities())
             {
-                var lrs = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive == true).ToList();
-                List<Bill> acc = new List<Bill>();
-                foreach (var i in lrs)
+                var lrs = db.LearningResults.Where(p => p.ClassId == classID && p.LearningResultActive == true);
+                var students = new List<dynamic>();
+                foreach (var lr in lrs)
                 {
-                    var bill = db.Bills.Where(p => p.LearningResultId == i.Id && p.LearningResult.Account.Id == i.AccountId).FirstOrDefault();
-                    acc.Add(bill);
+                    int id = lr.AccountId;
+                    var account = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3 && p.AccountActive == true).FirstOrDefault();
+                    if (account != null)
+                    {
+                        bool statusBill = db.Bills.Where(p => p.LearningResultId == lr.Id).Select(p => p.Status).FirstOrDefault(); 
+                        var student = new
+                        {
+                            MaHocVien = "SV" + account.Id.ToString().PadLeft(9, '0'),
+                            Name = account.AccountInfo.Name,
+                            Phone = account.AccountInfo.Phone,
+                            Email = account.AccountInfo.Email,
+                            StatusBill = statusBill,
+                        };
+                        students.Add(student);
+                    }
                 }
-                return acc;
-                //var students = new List<Account>();
-                //for (int i = 0; i < ids.Length; i++)
-                //{
-                //    int id = ids[i];
-                //    var student = db.Accounts.Include(p => p.AccountInfo).Where(p => p.Id == id && p.RoleId == 3 && p.AccountActive==true).FirstOrDefault();
-                //    var studentbll = db.Bills.Where() 
-                //    if (account != null)
-                //    {
-                //        tudents.Add(account);
-                //    }
-
-                //}
-                //return students;
+                if (students==null)
+                {
+                    return null;
+                } 
+                return students;
             }
         }
         public bool isExistingStudentDAL(int accountId, int classID)

@@ -26,11 +26,14 @@ namespace PBL3.View.Admin
 
             ManagerBLL bll = new ManagerBLL();
             bll.LoadDataGridViewStudent(dgvStudent,ClassID);
-            dgvStudent.Columns[0].HeaderText = "Mã số học viên";
-            dgvStudent.Columns[1].HeaderText = "Tên học viên";
-            dgvStudent.Columns[2].HeaderText = "Số điện thoại";
-            dgvStudent.Columns[3].HeaderText = "Email";
-            dgvStudent.Columns[4].HeaderText = "Giới tính";
+            if (dgvStudent.Columns.Count > 4)
+            {
+                dgvStudent.Columns[0].HeaderText = "Mã số học viên";
+                dgvStudent.Columns[1].HeaderText = "Tên học viên";
+                dgvStudent.Columns[2].HeaderText = "Số điện thoại";
+                dgvStudent.Columns[3].HeaderText = "Email";
+                dgvStudent.Columns[4].HeaderText = "Đã nộp tiền";
+            }
 
             ShowClassInfo();
 
@@ -118,6 +121,7 @@ namespace PBL3.View.Admin
                     MessageBox.Show("Học viên đó đã nộp!");
                 }
             }
+            bll.LoadDataGridViewStudent(dgvStudent, ClassID);
         }
     }
 }
